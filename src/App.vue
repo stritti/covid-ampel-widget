@@ -14,7 +14,7 @@
 <script>
 </script>
 
-<style>
+<style scoped>
 body {
   margin: 0;
 }

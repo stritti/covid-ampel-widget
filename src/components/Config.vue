@@ -17,16 +17,6 @@ export default {
   name: 'Config',
   components: {
     Landkreise
-  },
-  methods: {
-    ok () {
-      console.log('okay ...')
-    }
   }
-
 }
 </script>
-
-<style>
-
-</style>
