@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h3>Datenschutz</h3>
+  </div>
 </template>
 
 <script>

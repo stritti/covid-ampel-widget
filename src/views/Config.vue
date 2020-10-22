@@ -1,5 +1,6 @@
 <template>
   <div id="config-view">
+    <h3>Einstellungen</h3>
     <config />
   </div>
 </template>

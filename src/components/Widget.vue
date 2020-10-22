@@ -12,7 +12,6 @@
       <p><small>Fälle der letzten 7 Tage pro 100.000 Einwohner</small></p>
       <p>
         <small>Aktualisiert: {{ item.attributes.last_update }}</small>
-        <small><router-link to="/config">Einstellungen</router-link></small>
       </p>
     </div>
 
@@ -83,23 +82,26 @@ export default {
 
 <style lang="css" scoped>
 .widget {
+  text-align: center;
   padding: 0;
 }
 .widget-green {
-  background-color: rgba(0, 255, 0, 0.705);
+  background-color: rgba(2, 156, 2, 0.705);
 }
 .widget-yellow {
   background-color: rgb(255, 251, 0);
 }
 .widget-red {
-  color: rgba(255, 253, 253, 0.705);
+  color: rgb(248, 214, 186);
   background-color: rgb(255, 36, 36);
 }
 .widget-darkred {
-  background-color: rgba(255, 0, 0, 0.507);
+  color: rgba(255, 253, 253, 0.89);
+  background-color: rgb(168, 4, 4);
 }
 .cases {
   font-size: 3em;
+  font-weight: 700;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   text-align: center;

@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h3>Über das Corona Ampel-Widget</h3>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h3>Impressum</h3>
+  </div>
 </template>
 
 <script>

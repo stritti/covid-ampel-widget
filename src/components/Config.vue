@@ -1,13 +1,12 @@
 <template>
   <div id="config">
-    <h3>Einstellungen</h3>
     <p>
       Wählen sie bitte den gewünschten Landkreis aus:
     </p>
     <landkreise />
-    <div>
-      <router-link to="/"><button>OK</button></router-link>
-    </div>
+    <p>
+      <router-link to="/"><button> OK </button></router-link>
+    </p>
   </div>
 </template>
 
