@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h3><router-link class="nav" to="/">◀</router-link> Über das Covid-19 Ampel-Widget</h3>
+    <h3><router-link class="button" to="/">◀</router-link> Das Covid-19 Ampel-Widget</h3>
 
     <h4>Datenquelle</h4>
     <p>
       Das Covid-19 Ampel-Widget basiert auf den Zahlen, welche das
       <a href="https://www.rki.de/">Robert-Koch-Institut (RKI)</a> aus den
       Landkreisen in Deutschland erfasst. Für die Daten wird keine Haftung übernommen.<br />
-      In den <router-link to="/config">Einstellungen (⚙)</router-link> kann ein Landkreis
+      In den <router-link to="/config">Einstellungen</router-link> kann ein Landkreis
       ausgewählt werden, um die Corona-Ampel für diesen anzuzeigen.
     </p>
 

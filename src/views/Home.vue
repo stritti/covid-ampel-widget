@@ -1,15 +1,17 @@
 <template>
   <widget :objectId="selected" v-if="selected != null"/>
+  <config v-else />
 </template>
 
 <script>
 import Widget from '@/components/Widget.vue'
+import Config from '@/components/Config.vue'
 
 export default {
   name: 'Home',
   props: ['id'],
   components: {
-    Widget,
+    Widget, Config
   },
   data() {
     return {
@@ -24,9 +26,7 @@ export default {
       this.selected = localStorage.getItem('landkreis')
     }
 
-    if(this.selected == null) {
-      this.$router.push('/config')
-    } else {
+    if(this.selected) {
       this.$router.push('/lkr/' + this.selected)
     }
   }

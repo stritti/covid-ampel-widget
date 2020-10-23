@@ -7,7 +7,10 @@
       <landkreise />
     </p>
     <p>
-      <router-link to="/"><button> OK </button></router-link>
+      <router-link class="button" to="/"> OK </router-link>
+    </p>
+    <p>
+      Diese Einstellung wird nur lokal im Browser gespeichert.
     </p>
   </div>
 </template>
@@ -22,10 +25,4 @@ export default {
   }
 }
 </script>
-<style scoped>
-button {
-  width: 120px;
-  height: 1.8rem;
-  margin: 0.8rem;
-}
-</style>
+

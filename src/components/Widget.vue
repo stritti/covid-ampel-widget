@@ -105,19 +105,20 @@ export default {
   padding: 0;
 }
 .widget-green {
-  background-color: rgba(2, 156, 2, 0.705);
+  color: rgb(221, 221, 221);
+  background-color: rgb(2, 156, 2);
 }
 .widget-yellow {
   color: rgba(45, 45, 45, 0.99);
   background-color: rgb(230, 200, 50);
 }
 .widget-red {
-  color: rgb(248, 214, 186);
-  background-color: rgb(255, 36, 36);
+  color: rgb(41, 41, 41);
+  background-color: rgb(255, 142, 36);
 }
 .widget-darkred {
-  color: rgba(255, 253, 253, 0.89);
-  background-color: rgb(200, 70, 60);;
+  color: rgb(255, 253, 253);
+  background-color: rgb(255, 36, 36);
 }
 .cases {
   font-size: 3em;
