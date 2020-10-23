@@ -14,7 +14,7 @@
         <img src="@/assets/coronaampel.png" class="ampel"/>
         {{ rounded(item.attributes.cases7_per_100k) }}
         </p>
-      <p>
+      <div class="info">
         <small>
           Fälle der letzten 7 Tage pro 100.000 Einwohner
         </small>
@@ -26,7 +26,7 @@
             target="_blank"
             href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">RKI</a>
         </small>
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -107,18 +107,22 @@ export default {
 .widget-green {
   color: rgb(221, 221, 221);
   background-color: rgb(2, 156, 2);
+  padding-bottom: 0.5em;
 }
 .widget-yellow {
   color: rgba(45, 45, 45, 0.99);
   background-color: rgb(230, 200, 50);
+  padding-bottom: 0.5em;
 }
 .widget-red {
   color: rgb(41, 41, 41);
   background-color: rgb(255, 142, 36);
+  padding-bottom: 0.5em;
 }
 .widget-darkred {
   color: rgb(255, 253, 253);
   background-color: rgb(255, 36, 36);
+  padding-bottom: 0.5em;
 }
 .cases {
   font-size: 3em;
@@ -129,5 +133,8 @@ export default {
 }
 .ampel {
   height: 2.8rem;
+}
+.info {
+  line-height: 1.25em;
 }
 </style>
