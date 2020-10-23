@@ -3,7 +3,9 @@
     <p>
       Wählen sie bitte den gewünschten Landkreis aus:
     </p>
-    <landkreise />
+    <p>
+      <landkreise />
+    </p>
     <p>
       <router-link to="/"><button> OK </button></router-link>
     </p>
@@ -20,3 +22,10 @@ export default {
   }
 }
 </script>
+<style scoped>
+button {
+  width: 120px;
+  height: 1.8rem;
+  margin: 0.8rem;
+}
+</style>

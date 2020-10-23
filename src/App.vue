@@ -29,8 +29,40 @@ export default {
 </script>
 
 <style>
+html,
 body {
+  font-size: 14px;
+  line-height: 2rem;
+  padding: 0;
   margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+small {
+  font-size: 0.9rem;
 }
 nav, .nav {
   color: rgb(248, 249, 250);

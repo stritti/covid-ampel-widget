@@ -1,7 +1,7 @@
 <template>
   <div>
     <form>
-    <select v-model="selectedValue" @change="onChange($event)">
+    <select class="select-lkr" v-model="selectedValue" @change="onChange($event)">
       <option  v-for="item in data" :key="item.attributes.OBJECTID" :value="item.attributes.OBJECTID">
         {{ item.attributes.GEN }} ({{ item.attributes.BEZ }})
         </option>
@@ -50,3 +50,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.select-lkr {
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  padding: 0.5rem;
+}
+</style>

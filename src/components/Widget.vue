@@ -10,13 +10,24 @@
       :object-id="item.attributes.OBJECTID"
       >
       <h3>{{ item.attributes.BEZ }} {{ item.attributes.GEN }}</h3>
-      <p class="cases"> {{ rounded(item.attributes.cases7_per_100k) }}</p>
-      <p><small>Fälle der letzten 7 Tage pro 100.000 Einwohner</small></p>
+      <p class="cases">
+        <img src="@/assets/coronaampel.png" class="ampel"/>
+        {{ rounded(item.attributes.cases7_per_100k) }}
+        </p>
       <p>
-        <small>Aktualisiert: {{ item.attributes.last_update }}</small>
+        <small>
+          Fälle der letzten 7 Tage pro 100.000 Einwohner
+        </small>
+
+        <small>
+          Aktualisiert: {{ item.attributes.last_update }},
+          Datenquelle:
+          <a :class="color(item.attributes.cases7_per_100k)"
+            target="_blank"
+            href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">Robert Koch-Institut</a>
+        </small>
       </p>
     </div>
-
   </div>
 </template>
 
@@ -97,7 +108,8 @@ export default {
   background-color: rgba(2, 156, 2, 0.705);
 }
 .widget-yellow {
-  background-color: rgb(255, 251, 0);
+  color: rgba(45, 45, 45, 0.99);
+  background-color: rgb(230, 200, 50);
 }
 .widget-red {
   color: rgb(248, 214, 186);
@@ -105,7 +117,7 @@ export default {
 }
 .widget-darkred {
   color: rgba(255, 253, 253, 0.89);
-  background-color: rgb(168, 4, 4);
+  background-color: rgb(200, 70, 60);;
 }
 .cases {
   font-size: 3em;
@@ -113,5 +125,8 @@ export default {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   text-align: center;
+}
+.ampel {
+  height: 2.8rem;
 }
 </style>
