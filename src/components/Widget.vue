@@ -107,22 +107,22 @@ export default {
 .widget-green {
   color: rgb(221, 221, 221);
   background-color: rgb(2, 156, 2);
-  padding-bottom: 0.5em;
+  padding-bottom: 0.8em;
 }
 .widget-yellow {
   color: rgba(45, 45, 45, 0.99);
   background-color: rgb(230, 200, 50);
-  padding-bottom: 0.5em;
+  padding-bottom: 0.8em;
 }
 .widget-red {
   color: rgb(41, 41, 41);
   background-color: rgb(255, 142, 36);
-  padding-bottom: 0.5em;
+  padding-bottom: 0.8em;
 }
 .widget-darkred {
   color: rgb(255, 253, 253);
   background-color: rgb(255, 36, 36);
-  padding-bottom: 0.5em;
+  padding-bottom: 0.8em;
 }
 .cases {
   font-size: 3em;
