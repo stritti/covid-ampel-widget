@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Über das Corona Ampel-Widget</h3>
+    <h3><router-link class="nav" to="/">◀</router-link> Über das Corona Ampel-Widget</h3>
     <h4>Datenquelle</h4>
     <p>
       Das Covid Ampel-Widget basiert auf den Zahlen, welche das

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Impressum</h3>
+    <h3><router-link class="nav" to="/">◀</router-link> Impressum</h3>
 
     <h4>Angaben gem&auml;&szlig; &sect; 5 TMG</h4>
     <p>

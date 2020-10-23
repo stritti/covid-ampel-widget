@@ -32,15 +32,17 @@ export default {
 body {
   margin: 0;
 }
-nav {
+nav, .nav {
   color: rgb(248, 249, 250);
   background-color: rgb(5, 164, 226);
   padding: 0.5em;
 }
-nav > a {
+nav > a, .nav {
   color: rgb(248, 249, 250);
   text-decoration: none;
 }
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
