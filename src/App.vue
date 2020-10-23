@@ -17,7 +17,7 @@ export default {
     home () {
       let route = '/'
       let selected = localStorage.getItem('landkreis')
-      if(selected == null) {
+      if (selected === null) {
         route = '/config'
       } else {
         route = '/lkr/' + selected
