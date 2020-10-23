@@ -1,4 +1,4 @@
-# Covid Ampel-Widget
+# Covid-19 Ampel-Widget
 
 This is HTML based widget to show the incidences of German Landkreise for SARS-CoV-2 (COVID-19) infections.
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
