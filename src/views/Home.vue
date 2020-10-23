@@ -7,6 +7,7 @@ import Widget from '@/components/Widget.vue'
 
 export default {
   name: 'Home',
+  props: ['id'],
   components: {
     Widget,
   },
@@ -16,7 +17,13 @@ export default {
     }
   },
   mounted() {
-    this.selected = localStorage.getItem('landkreis')
+    if(this.id) {
+      this.selected = this.id
+      localStorage.setItem('landkreis', this.selected)
+    } else {
+      this.selected = localStorage.getItem('landkreis')
+    }
+
     if(this.selected == null) {
       this.$router.push('/config')
     } else {
