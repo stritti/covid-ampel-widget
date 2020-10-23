@@ -11,10 +11,10 @@ const routes = [
   { path: '/:pathMatch(.*)', component: Home }
 ]
 
-// const publicPath = process.env.NODE_ENV === 'production' ? '/covid-ampel-widget/' : '/'
+const publicPath = process.env.NODE_ENV === 'production' ? '/covid-ampel-widget/' : '/'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(publicPath),
   routes: routes,
 })
 
