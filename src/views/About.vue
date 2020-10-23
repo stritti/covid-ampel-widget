@@ -1,11 +1,15 @@
 <template>
   <div>
     <h3>Über das Corona Ampel-Widget</h3>
+    <h4>Datenquelle</h4>
     <p>
-      Das Covid Ampel-Widget basiert auf den Zahlen, die das Robert-Koch-Institut (RKI) für die
-      Landkreise in Deutschland erfasst. Über die Einstellung kann ein Landkreis
+      Das Covid Ampel-Widget basiert auf den Zahlen, welche das
+      <a href="https://www.rki.de/">Robert-Koch-Institut (RKI)</a> aus den
+      Landkreisen in Deutschland erfasst. Für die Daten wird keine Haftung übernommen.<br />
+      Über die <router-link to="/config">Einstellungen</router-link> kann ein Landkreis
       ausgewählt werden, um die Corona-Ampel für diesen anzuzeigen.
     </p>
+    <h4>Das Projekt</h4>
     <p>
       Das Covid Ampel Widget ist quelloffen unter der
       <a href="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/LICENSE">MIT-Lizenz</a>
@@ -14,9 +18,3 @@
     </p>
   </div>
 </template>
-
-<script>
-export default {
-
-}
-</script>
