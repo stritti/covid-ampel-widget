@@ -18,13 +18,13 @@
         <small>
           Fälle der letzten 7 Tage pro 100.000 Einwohner
         </small>
-
+        <br />
         <small>
           Aktualisiert: {{ item.attributes.last_update }},
           Datenquelle:
           <a :class="color(item.attributes.cases7_per_100k)"
             target="_blank"
-            href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">Robert Koch-Institut</a>
+            href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">RKI</a>
         </small>
       </p>
     </div>

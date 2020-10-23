@@ -1,18 +1,25 @@
 <template>
   <div id="view">
     <router-view/>
-    <nav>
-        <router-link :to="home">🚦</router-link> |
-        <router-link to="/imprint">Impressum</router-link> |
-        <router-link to="/privacy">Datenschutz</router-link> |
-        <router-link to="/about">Über</router-link> |
-        <router-link to="/config">Einstellungen</router-link>
-    </nav>
+    <transition name="fade">
+      <nav v-if="showNavigation">
+          <router-link :to="home">🚦</router-link> |
+          <router-link to="/imprint">Impressum</router-link> |
+          <router-link to="/privacy">Datenschutz</router-link> |
+          <router-link to="/about">Über</router-link> |
+          <router-link to="/config">Einstellungen</router-link>
+      </nav>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      showNavigation: false
+    }
+  },
   computed: {
     home () {
       let route = '/'
@@ -23,6 +30,22 @@ export default {
         route = '/lkr/' + selected
       }
       return route
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+    document.addEventListener('touchmove', this.onScroll)
+    document.addEventListener('mousemove', this.onScroll)
+  },
+  beforeUnmount () {
+    window.removeEventListener('scroll', this.onScroll)
+    document.removeEventListener('touchmove', this.onScroll)
+    document.removeEventListener('mousemove', this.onScroll)
+  },
+  methods: {
+    onScroll () {
+      this.showNavigation = true
+      setTimeout(() => this.showNavigation = false, 5000)
     }
   }
 }
@@ -75,6 +98,13 @@ nav {
 nav > a {
   color: rgb(248, 249, 250);
   text-decoration: none;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 
 .button {
