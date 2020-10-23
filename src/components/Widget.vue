@@ -1,5 +1,7 @@
 <template>
   <div class="widget">
+    <div v-if="loading">Daten werden geladen ...</div>
+    <div v-if="error">{{ this.error }}</div>
     <div
       :class="color(item.attributes.cases7_per_100k)"
       v-for="(item, index) in data"
@@ -33,12 +35,15 @@ export default {
   },
   data() {
     return {
+      loading: true,
+      error: false,
       data: null,
     }
   },
   created() {
     this.getData().then((data) => {
       this.data = data
+      this.loaded = true
     })
   },
   methods: {
@@ -57,6 +62,9 @@ export default {
       const result = await httpClient.get()
       if (result.error) {
         console.error(result.error)
+        this.error = 'Fehler beim Laden der Daten vom RKI-Server'
+      } else {
+        this.loading = false
       }
       return result.data.features
     },

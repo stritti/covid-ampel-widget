@@ -4,27 +4,26 @@ import Home from '@/views/Home'
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    component: Home
+  },
+  {
+    path: '/lkr/:id',
     component: Home
   },
   {
     path: '/config',
-    name: 'Config',
     component: () => import(/* webpackChunkName: "config" */ '../views/Config.vue')
   },
   {
     path: '/about',
-    name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/imprint',
-    name: 'Imprint',
     component: () => import(/* webpackChunkName: "about" */ '../views/Imprint.vue')
   },
   {
     path: '/privacy',
-    name: 'Privacy',
     component: () => import(/* webpackChunkName: "about" */ '../views/Privacy.vue')
   }
 ]

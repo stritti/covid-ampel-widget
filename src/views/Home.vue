@@ -15,11 +15,12 @@ export default {
       selected: null
     }
   },
-  created() {
+  mounted() {
     this.selected = localStorage.getItem('landkreis')
-    console.log(this.selected)
     if(this.selected == null) {
       this.$router.push('/config')
+    } else {
+      this.$router.push('/lkr/' + this.selected)
     }
   }
 }

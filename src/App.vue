@@ -2,7 +2,7 @@
   <div>
     <router-view/>
     <nav>
-        <router-link to="/">🚦</router-link> |
+        <router-link :to="home">🚦</router-link> |
         <router-link to="/imprint">Impressum</router-link> |
         <router-link to="/privacy">Datenschutz</router-link> |
         <router-link to="/about">Über</router-link> |
@@ -12,9 +12,23 @@
 </template>
 
 <script>
+export default {
+  computed: {
+    home () {
+      let route = '/'
+      let selected = localStorage.getItem('landkreis')
+      if(selected == null) {
+        route = '/config'
+      } else {
+        route = '/lkr/' + selected
+      }
+      return route
+    }
+  }
+}
 </script>
 
-<style scoped>
+<style>
 body {
   margin: 0;
 }
