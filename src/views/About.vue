@@ -15,7 +15,7 @@
     <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS">Anleitung-iOS</a></p>
 
     <h4>Als Widget zu Android hinzufügen</h4>
-    <p>TODO</p>
+    <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android">Anleitung-iOS</a></p>
 
     <h4>Das Projekt</h4>
     <p>
