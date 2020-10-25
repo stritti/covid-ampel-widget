@@ -116,7 +116,7 @@ export default {
 }
 .widget-red {
   color: rgb(41, 41, 41);
-  background-color: rgb(255, 142, 36);
+  background-color: rgb(235, 64, 52);
   padding-bottom: 0.8em;
 }
 .widget-darkred {
