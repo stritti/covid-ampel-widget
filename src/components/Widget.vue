@@ -115,7 +115,7 @@ export default {
   padding-bottom: 0.8em;
 }
 .widget-red {
-  color: rgb(41, 41, 41);
+  color: rgb(240, 240, 240);
   background-color: rgb(235, 64, 52);
   padding-bottom: 0.8em;
 }
