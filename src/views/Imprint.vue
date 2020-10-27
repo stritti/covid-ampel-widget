@@ -29,7 +29,11 @@
 </template>
 
 <script>
-export default {
-
-}
+  export default {
+    name: 'ImprintView',
+    metaInfo: {
+      // title will be injected into parent titleTemplate
+      title: 'Impressum'
+    }
+  }
 </script>

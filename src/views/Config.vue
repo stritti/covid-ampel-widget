@@ -9,7 +9,10 @@
 import Config from '@/components/Config.vue'
 
 export default {
-
+  name: 'ConfigView',
+  metaInfo: {
+    title: 'Einstellungen'
+  },
   components: {
     Config
   }

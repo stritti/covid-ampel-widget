@@ -1,6 +1,8 @@
+import Widget from '@/components/Widget.vue';
 <template>
   <div>
     <h3 class="title"><router-link class="button" to="/">&lt;</router-link> Das Covid-19 Ampel-Widget</h3>
+    <p>Behalte den Inzidenzwert deines Landkreises im Blick, indem du diesen als Widget zu deinem Screen hinzufügst.</p>
 
     <h4>Datenquelle</h4>
     <p>
@@ -26,3 +28,13 @@
     </p>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'About',
+    metaInfo: {
+      // title will be injected into parent titleTemplate
+      title: 'Über Covid-19 Ampel-Widget'
+    }
+  }
+</script>

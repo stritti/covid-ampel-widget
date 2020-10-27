@@ -124,6 +124,11 @@ nav > a {
   border-radius: 5%;
   text-decoration: none;
 }
+.title > .button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
 .button:hover, .button:active {
   background-color: rgb(62, 200, 255);
 }

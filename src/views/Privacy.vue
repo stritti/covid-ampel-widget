@@ -13,8 +13,14 @@
   </div>
 </template>
 
-<script>
-export default {
 
-}
+<script>
+  export default {
+    name: 'PrivaceyView',
+    metaInfo: {
+      // title will be injected into parent titleTemplate
+      title: 'Datenschutz'
+    }
+  }
 </script>
+

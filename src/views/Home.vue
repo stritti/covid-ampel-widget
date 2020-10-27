@@ -9,6 +9,16 @@ import Config from '@/components/Config.vue'
 
 export default {
   name: 'Home',
+  metaInfo: {
+    title: 'Covid-19 Ampel-Widget',
+    meta: [
+      {
+        vmid: 'description',
+        name: 'description',
+        content: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.',
+      }
+    ]
+  },
   props: ['id'],
   components: {
     Widget, Config

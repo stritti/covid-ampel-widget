@@ -10,20 +10,32 @@ define levels for secure each other.
 
 This project is based on vue.js V3.
 
+Install initially all dependencies:
+
+``` sh
+npm install
+```
+
 ### Compiles and minifies for production
 
-```
+``` sh
 npm run build
 ```
 
 ### Lints and fixes files
 
-```
+``` sh
 npm run lint
 ```
+
+## Development Requirements
+
+* node.js
 
 ## Used Libraries and Tools
 
 * vue.js 3: <https://v3.vuejs.org/>
+* vue-meta: <https://vue-meta.nuxtjs.org/>
 * ArcGis REST-Service of RKI data: <https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0>
 * striped css background: <https://stripesgenerator.com/>
+* danymic font size on iOS respecting sysem settings: <https://ind.ie/labs/blog/dynamic-type-support/>
