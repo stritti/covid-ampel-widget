@@ -7,9 +7,6 @@
       <landkreise />
     </p>
     <p>
-      <router-link class="button" to="/"> OK </router-link>
-    </p>
-    <p>
       Diese Einstellung wird nur lokal im Browser gespeichert.
     </p>
   </div>
