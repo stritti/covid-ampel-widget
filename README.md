@@ -8,6 +8,8 @@ define levels for secure each other.
 
 ## Development: Project setup
 
+For development you have to install node.js initially.
+
 This project is based on vue.js V3.
 
 Install initially all dependencies:
