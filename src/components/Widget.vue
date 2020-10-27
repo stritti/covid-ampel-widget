@@ -129,8 +129,6 @@ export default {
 .cases {
   font-size: 3em;
   font-weight: 700;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   text-align: center;
 }
 .ampel {
