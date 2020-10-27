@@ -106,14 +106,17 @@ export default {
   padding: 0;
 }
 .widget-green {
+  height: 100vh;
   color: rgb(221, 221, 221);
   background-color: rgb(2, 156, 2);
 }
 .widget-yellow {
+  height: 100vh;
   color: rgba(45, 45, 45, 0.99);
   background: rgb(230, 200, 50);
 }
 .widget-red {
+  height: 100vh;
   color: rgb(240, 240, 240);
   background-color: rgb(235, 64, 52);
 }
