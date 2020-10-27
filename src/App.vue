@@ -54,7 +54,6 @@ export default {
 <style>
 html,
 body {
-  font-size: 14px;
   line-height: 2rem;
   padding: 0;
   margin: 0;
@@ -143,4 +142,52 @@ h3 > .button {
 #view {
   min-height:240px;
 }
+
+@supports (font: -apple-system-body)
+{
+  html
+  {
+    font: -apple-system-body;
+  }
+
+  /* default size of -apple-system-body here is 17px
+   using that as a default, scale text down to equivalent of 14px (14/17).
+  */
+  body
+  {
+    font-size: 0.94em;
+  }
+
+  @media only screen and (min-width: 28.78em)
+  {
+    html
+    {
+      font: -apple-system-body;
+    }
+
+    /* default size of -apple-system-body here is 17px
+     using that as a default, scale text down to equivalent of 16px (16/17).
+    */
+    body
+      {
+        font-size: 0.82em;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 33.4em)
+  {
+    html
+    {
+      font: -apple-system-body;
+    }
+
+    /* default size of -apple-system-body here is 17px
+     using that as a default, scale text down to equivalent of 18px (18/17)
+    */
+    body
+    {
+      font-size: 1.06em;
+    }
+  }
 </style>
