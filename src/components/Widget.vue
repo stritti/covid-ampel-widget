@@ -20,7 +20,7 @@
         </small>
         <br />
         <small>
-          Aktualisiert: {{ item.attributes.last_update }},
+          Stand: {{ item.attributes.last_update }},
           Datenquelle:
           <a :class="color(item.attributes.cases7_per_100k)"
             target="_blank"
