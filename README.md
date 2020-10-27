@@ -22,6 +22,8 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
+## Used Libraries and Tools
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* vue.js 3: <https://v3.vuejs.org/>
+* ArcGis REST-Service of RKI data: <https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0>
+* striped css background: <https://stripesgenerator.com/>
