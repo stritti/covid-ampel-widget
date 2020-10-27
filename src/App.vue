@@ -87,9 +87,16 @@ h4 {
 small {
   font-size: 0.9rem;
 }
+
+.title {
+  width: 100%;
+  color: rgb(248, 249, 250);
+  background-color: rgb(5, 164, 226);
+  padding: 0.5em;
+}
 nav {
   position: fixed;
-    width: 100%;
+  width: 100%;
   color: rgb(248, 249, 250);
   background-color: rgb(5, 164, 226);
   padding: 0.5em;

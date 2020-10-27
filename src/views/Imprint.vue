@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3><router-link class="button" to="/">◀</router-link> Impressum</h3>
+    <h3 class="title"><router-link class="button" to="/">&lt;</router-link> Impressum</h3>
 
     <h4>Angaben gem&auml;&szlig; &sect; 5 TMG</h4>
     <p>

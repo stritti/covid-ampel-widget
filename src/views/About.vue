@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3><router-link class="button" to="/">◀</router-link> Das Covid-19 Ampel-Widget</h3>
+    <h3 class="title"><router-link class="button" to="/">&lt;</router-link> Das Covid-19 Ampel-Widget</h3>
 
     <h4>Datenquelle</h4>
     <p>
