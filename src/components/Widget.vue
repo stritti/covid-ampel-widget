@@ -101,28 +101,27 @@ export default {
 
 <style lang="css" scoped>
 .widget {
+  height: 100vh;
   text-align: center;
   padding: 0;
 }
 .widget-green {
   color: rgb(221, 221, 221);
   background-color: rgb(2, 156, 2);
-  padding-bottom: 0.8em;
 }
 .widget-yellow {
   color: rgba(45, 45, 45, 0.99);
-  background-color: rgb(230, 200, 50);
-  padding-bottom: 0.8em;
+  background: rgb(230, 200, 50);
 }
 .widget-red {
   color: rgb(240, 240, 240);
   background-color: rgb(235, 64, 52);
-  padding-bottom: 0.8em;
 }
 .widget-darkred {
+  height: 100vh;
   color: rgb(255, 253, 253);
-  background-color: rgb(255, 36, 36);
-  padding-bottom: 0.8em;
+  background-image: linear-gradient(135deg, #fc0008 25%, #ff6200 25%, #ff6200 50%, #fc0008 50%, #fc0008 75%, #ff6200 75%, #ff6200 100%);
+  background-size: 56.57px 56.57px;
 }
 .cases {
   font-size: 3em;
