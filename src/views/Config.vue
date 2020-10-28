@@ -1,7 +1,12 @@
 <template>
   <div id="config-view">
-    <h3 class="title"><router-link class="button" to="/">&lt;</router-link> Einstellungen</h3>
-    <config />
+    <h3 class="title">
+      <router-link class="button" to="/">&lt;</router-link> Einstellungen
+    </h3>
+
+    <div class="container">
+      <config />
+    </div>
   </div>
 </template>
 

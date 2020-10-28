@@ -113,6 +113,14 @@ nav > a {
   opacity: 0;
 }
 
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .button {
   min-width: 120px;
   height: 1.8rem;
