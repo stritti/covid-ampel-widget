@@ -8,7 +8,7 @@ This is HTML based widget to show the incidences of German Landkreise for SARS-C
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
 define levels for secure each other.
 
-![Covid-19 Ampel-Widget](https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/IMG_6911.jpg)
+<img src="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/IMG_6911.jpg" width="400" alt="Covid-19 Ampel-Widget" />
 
 ## Development: Project setup
 
