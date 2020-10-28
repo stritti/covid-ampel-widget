@@ -40,3 +40,11 @@
     }
   }
 </script>
+
+<style scoped>
+p {
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-bottom: 1.5rem;
+}
+</style>

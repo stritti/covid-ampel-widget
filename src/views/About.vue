@@ -26,8 +26,8 @@ import Widget from '@/components/Widget.vue';
       <p>
         Das Covid Ampel Widget ist quelloffen unter der
         <a href="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/LICENSE">MIT-Lizenz</a>
-        verfügbar:
-        <a href="https://github.com/stritti/covid-ampel-widget">https://github.com/stritti/covid-ampel-widget</a>
+         auf
+        <a href="https://github.com/stritti/covid-ampel-widget">GitHub</a> verfügbar.
       </p>
     </div>
   </div>
@@ -42,3 +42,12 @@ import Widget from '@/components/Widget.vue';
     }
   }
 </script>
+
+
+<style scoped>
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+</style>

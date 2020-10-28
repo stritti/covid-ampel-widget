@@ -88,14 +88,14 @@ small {
 }
 
 .title {
-  width: 100%;
+  width: auto;
   color: rgb(248, 249, 250);
   background-color: rgb(5, 164, 226);
   padding: 0.5em;
 }
 nav {
   position: fixed;
-  width: 100%;
+  width: auto;
   color: rgb(248, 249, 250);
   background-color: rgb(5, 164, 226);
   padding: 0.5em;
@@ -114,9 +114,10 @@ nav > a {
 }
 
 .container {
-    width: 100%;
+    width: auto;
     padding-right: 15px;
     padding-left: 15px;
+    padding-bottom: 6rem;
     margin-right: auto;
     margin-left: auto;
 }
