@@ -18,6 +18,12 @@ Install initially all dependencies:
 npm install
 ```
 
+### Start development server with hot code replacement
+
+``` sh
+npm run serve
+```
+
 ### Compiles and minifies for production
 
 ``` sh
