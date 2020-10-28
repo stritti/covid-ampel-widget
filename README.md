@@ -1,5 +1,9 @@
 # Covid-19 Ampel-Widget
 
+![github pages deploy](https://github.com/stritti/covid-ampel-widget/workflows/github%20pages%20deploy/badge.svg)
+[![vue2](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://v3.vuejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 This is HTML based widget to show the incidences of German Landkreise for SARS-CoV-2 (COVID-19) infections.
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
 define levels for secure each other.
