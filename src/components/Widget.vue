@@ -148,11 +148,20 @@ export default {
   height: 2.8rem;
 }
 .info {
-  line-height: 1.25em;
+  line-height: 1.2rem;
 }
 
 /* small square widgets on iOS */
 @media only screen and (max-width: 200px) {
+  .info {
+    line-height: 0.8rem;
+  }
+  .ort {
+    font-size: 1.2rem;
+    line-height: 1rem;
+    line-break: none;
+    text-align: left;
+  }
   .cases {
     padding-right: 0.5rem;
     text-align: right;
