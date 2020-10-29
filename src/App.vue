@@ -2,7 +2,7 @@
   <div id="view">
     <router-view/>
     <transition name="fade">
-      <nav v-if="showNavigation">
+      <nav>
           <router-link :to="home">🚦</router-link> |
           <router-link to="/imprint">Impressum</router-link> |
           <router-link to="/privacy">Datenschutz</router-link> |
@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      showNavigation: false
+      showIntro: false
     }
   },
   computed: {
@@ -30,22 +30,6 @@ export default {
         route = '/lkr/' + selected
       }
       return route
-    }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
-    document.addEventListener('touchmove', this.onScroll)
-    document.addEventListener('mousemove', this.onScroll)
-  },
-  beforeUnmount () {
-    window.removeEventListener('scroll', this.onScroll)
-    document.removeEventListener('touchmove', this.onScroll)
-    document.removeEventListener('mousemove', this.onScroll)
-  },
-  methods: {
-    onScroll () {
-      this.showNavigation = true
-      setTimeout(() => this.showNavigation = false, 5000)
     }
   }
 }
@@ -145,6 +129,14 @@ nav > a {
 h3 > .button {
   margin-left: 0;
 }
+
+ @media only screen and (max-height: 360px) {
+   /* show no navigationbar in widget view */
+   nav {
+     display: none;
+   }
+
+ }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
