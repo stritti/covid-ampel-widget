@@ -9,22 +9,35 @@
       :name="index"
       :object-id="item.attributes.OBJECTID"
       >
-      <h3>{{ item.attributes.BEZ }} {{ item.attributes.GEN }}</h3>
+      <h3>
+        <span class="bez">{{ item.attributes.BEZ }}&nbsp;</span>
+        <span class="ort">{{ item.attributes.GEN }}</span>
+      </h3>
       <p class="cases">
         <img src="@/assets/coronaampel.png" class="ampel"/>
         {{ rounded(item.attributes.cases7_per_100k) }}
         </p>
       <div class="info">
         <small>
-          Fälle der letzten 7 Tage pro 100.000 Einwohner
+          <span class="inzidenz-short">Inzidenz</span>
+          <span class="inzidenz-detailled">
+            Fälle der letzten 7 Tage pro 100.000 Einwohner
+          </span>
         </small>
         <br />
         <small>
-          Stand: {{ item.attributes.last_update }},
-          Datenquelle:
-          <a :class="color(item.attributes.cases7_per_100k)"
-            target="_blank"
-            href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">RKI</a>
+          <span class="time">
+            <span class="label">Stand:</span>
+            <span class="data">{{ item.attributes.last_update }}</span>
+          </span>
+          <span class="source">,
+            <span class="label">Datenquelle:</span>
+            <span class="data">
+              <a :class="color(item.attributes.cases7_per_100k)"
+                target="_blank"
+                href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">RKI</a>
+            </span>
+          </span>
         </small>
       </div>
     </div>
@@ -136,5 +149,53 @@ export default {
 }
 .info {
   line-height: 1.25em;
+}
+
+/* small square widgets on iOS */
+@media only screen and (max-width: 200px) {
+  .cases {
+    padding-right: 0.5rem;
+    text-align: right;
+  }
+   .bez {
+     display: none;
+   }
+   .inzidenz-short {
+     display: none;
+   }
+   .inzidenz-detailled {
+     display: none;
+   }
+   .source {
+     display: none;
+   }
+   .time > .label {
+     display: none;
+   }
+ }
+
+/* full width widgets on iOS */
+@media only screen and (min-width: 200px) and (max-width: 360px) {
+   .bez {
+     display: none;
+   }
+   .info {
+     display: inherit;
+   }
+   .inzidenz-short {
+     display: inherit;
+   }
+   .inzidenz-detailled {
+     display: none;
+   }
+   .source {
+     display: none;
+   }
+ }
+
+@media only screen and (min-width: 360px) {
+  .inzidenz-short {
+    display: none;
+  }
 }
 </style>
