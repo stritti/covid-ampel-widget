@@ -79,9 +79,9 @@ small {
 }
 nav {
   position: fixed;
-  width: auto;
+  width: 100%;
   color: rgb(248, 249, 250);
-  background-color: rgb(5, 164, 226);
+  background-color: rgba(5, 164, 226, 0.7);
   padding: 0.5em;
   bottom: 0;
 }
