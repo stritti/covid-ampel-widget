@@ -27,11 +27,11 @@
         <br />
         <small>
           <span class="time">
-            <span class="label">Stand:</span>
+            <span class="label">Stand: </span>
             <span class="data">{{ item.attributes.last_update }}</span>
           </span>
           <span class="source">,
-            <span class="label">Datenquelle:</span>
+            <span class="label">Datenquelle: </span>
             <span class="data">
               <a :class="color(item.attributes.cases7_per_100k)"
                 target="_blank"
