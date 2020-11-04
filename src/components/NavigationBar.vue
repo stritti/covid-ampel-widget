@@ -1,0 +1,75 @@
+<template>
+ <van-sticky>
+      <van-action-bar>
+        <van-action-bar-icon :to="home" >
+          <slot name="icon">
+            <traffic-lights />
+          </slot>
+          <slot>Home</slot>
+        </van-action-bar-icon>
+        <van-action-bar-icon to="/about">
+          <slot name="icon">
+            <help />
+          </slot>
+          <slot>Hilfe</slot>
+        </van-action-bar-icon>
+        <van-action-bar-icon to="/config">
+          <slot name="icon">
+            <settings />
+          </slot>
+          <slot>Einstellungen</slot>
+        </van-action-bar-icon>
+        <van-action-bar-icon to="/more">
+          <slot name="icon">
+            <more />
+          </slot>
+          <slot>Mehr</slot>
+        </van-action-bar-icon>
+      </van-action-bar>
+    </van-sticky>
+</template>
+
+<script>
+import TrafficLights from '@/components/svg/TrafficLights'
+import Settings from '@/components/svg/Settings'
+import Help from '@/components/svg/Help'
+import More from '@/components/svg/More'
+
+export default {
+  name: 'NavigationBar',
+  components: { TrafficLights, Settings, Help, More },
+  computed: {
+    home () {
+      let route = '/'
+      let selected = localStorage.getItem('landkreis')
+      if (selected === null) {
+        route = '/config'
+      } else {
+        route = '/lkr/' + selected
+      }
+      return route
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+
+.van-action-bar {
+  .icon-tabler {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1.75rem;
+    height: 1.75rem;
+    stroke-width: 1.5;
+  }
+}
+
+@media only screen and (max-height: 360px) {
+  /* show no navigationbar in widget view */
+  .van-action-bar {
+    display: none;
+  }
+
+}
+</style>
