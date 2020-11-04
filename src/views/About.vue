@@ -2,7 +2,7 @@ import Widget from '@/components/Widget.vue';
 <template>
   <div>
     <van-sticky>
-      <van-nav-bar title="Hilfe" left-text="Zurück" left-arrow @click-left="onClickLeft"/>
+      <van-nav-bar title="Über" left-text="Zurück" left-arrow @click-left="onClickLeft"/>
     </van-sticky>
 
     <div class="container">
@@ -48,7 +48,7 @@ import Widget from '@/components/Widget.vue';
     },
     methods: {
       onClickLeft () {
-        this.$router.push('/')
+        this.$router.push('/more')
       }
     }
   }
