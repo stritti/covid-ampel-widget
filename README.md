@@ -58,3 +58,4 @@ npm run lint
 * striped css background: <https://stripesgenerator.com/>
 * danymic font size on iOS respecting sysem settings: <https://ind.ie/labs/blog/dynamic-type-support/>
 * some SVG icons of <https://github.com/tabler/tabler-icons>
+* Vant - Mobile UI Components built on Vue: <https://youzan.github.io/vant/next>
