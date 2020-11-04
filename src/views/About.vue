@@ -1,8 +1,12 @@
 import Widget from '@/components/Widget.vue';
 <template>
   <div>
-    <h3 class="title"><router-link class="button" to="/">&lt;</router-link> Das Covid-19 Ampel-Widget</h3>
+    <van-sticky>
+      <van-nav-bar title="Hilfe" left-text="Zurück" left-arrow @click-left="onClickLeft"/>
+    </van-sticky>
+
     <div class="container">
+      <h4>Das Covid-19 Ampel-Widget</h4>
       <p>Behalte den Inzidenzwert deines Landkreises im Blick,
         indem du diesen als Widget zu deinem Screen hinzufügst.
       </p>
@@ -11,7 +15,9 @@ import Widget from '@/components/Widget.vue';
       <p>
         Das Covid-19 Ampel-Widget basiert auf den Zahlen, welche das
         <a href="https://www.rki.de/">Robert-Koch-Institut (RKI)</a> aus den
-        Landkreisen in Deutschland erfasst. Für die Daten wird keine Haftung übernommen.<br />
+        Landkreisen in Deutschland erfasst und unter unter der
+        <a target="_blank" href="https://www.govdata.de/dl-de/by-2-0" >Open Data Datenlizenz Deutschland – Namensnennung – Version 2.0</a> zur Verfügung
+        gestellt. Für die Daten wird keine Haftung übernommen.<br />
         In den <router-link to="/config">Einstellungen</router-link> kann ein Landkreis
         ausgewählt werden, um die Corona-Ampel für diesen anzuzeigen.
       </p>
@@ -39,6 +45,11 @@ import Widget from '@/components/Widget.vue';
     metaInfo: {
       // title will be injected into parent titleTemplate
       title: 'Über Covid-19 Ampel-Widget'
+    },
+    methods: {
+      onClickLeft () {
+        this.$router.push('/')
+      }
     }
   }
 </script>
@@ -47,7 +58,5 @@ import Widget from '@/components/Widget.vue';
 <style scoped>
 p {
   font-size: 1rem;
-  line-height: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 </style>

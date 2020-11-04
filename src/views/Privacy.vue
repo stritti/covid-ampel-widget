@@ -1,8 +1,9 @@
 <template>
   <div  id="privacy-view">
-    <h3 class="title">
-      <router-link class="button" to="/">&lt;</router-link> Datenschutz
-      </h3>
+    <van-sticky>
+      <van-nav-bar title="Datenschutz" left-text="Zurück" left-arrow @click-left="onClickLeft"/>
+    </van-sticky>
+
     <div class="container">
       <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
       <p>Durch die Nutzung unserer Website erklären Sie sich mit der Erhebung, Verarbeitung und Nutzung von Daten gemäß der nachfolgenden Beschreibung einverstanden. Unsere Website kann grundsätzlich ohne Registrierung besucht werden. Dabei werden Daten wie beispielsweise aufgerufene Seiten bzw. Namen der abgerufenen Datei, Datum und Uhrzeit zu statistischen Zwecken auf dem Server gespeichert, ohne dass diese Daten unmittelbar auf Ihre Person bezogen werden. Personenbezogene Daten, insbesondere Name, Adresse oder E-Mail-Adresse werden soweit möglich auf freiwilliger Basis erhoben. Ohne Ihre Einwilligung erfolgt keine Weitergabe der Daten an Dritte.</p>
@@ -24,13 +25,16 @@
     metaInfo: {
       // title will be injected into parent titleTemplate
       title: 'Datenschutz'
+    },
+    methods: {
+      onClickLeft () {
+        this.$router.push('/more')
+      }
     }
   }
 </script>
 <style scoped>
 p {
   font-size: 0.8rem;
-  line-height: 1rem;
-  margin-bottom: 1.5rem;
 }
 </style>
