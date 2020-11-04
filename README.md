@@ -6,10 +6,10 @@
 
 This is HTML based widget to show the incidences of German Landkreise for SARS-CoV-2 (COVID-19) infections.
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
-define levels for secure each other. 
+define levels for secure each other.
 
-Using additiona Apps the Covid-19 Ampel-Widget could be integrated into 
-[iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and 
+Using additiona Apps the Covid-19 Ampel-Widget could be integrated into
+[iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and
 [Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
 
 <img src="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/IMG_6911.jpg" width="240" alt="Covid-19 Ampel-Widget" />
@@ -57,3 +57,4 @@ npm run lint
 * ArcGis REST-Service of RKI data: <https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0>
 * striped css background: <https://stripesgenerator.com/>
 * danymic font size on iOS respecting sysem settings: <https://ind.ie/labs/blog/dynamic-type-support/>
+* some SVG icons of <https://github.com/tabler/tabler-icons>
