@@ -75,7 +75,7 @@ export default {
       const url =
         'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=OBJECTID in (' +
         this.objectId +
-        ')&outFields=objectId,death_rate,cases,deaths,cases_per_100k,cases_per_population,last_update,cases7_per_100k,EWZ,BEZ,GEN&returnGeometry=false&f=json'
+        ')&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,GEN&returnGeometry=false&f=json'
       const httpClient = axios.create({
         baseURL: url,
         timeout: 10000, // indicates, 10000ms ie. 10 second
