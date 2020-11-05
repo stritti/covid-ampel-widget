@@ -22,12 +22,6 @@ import Widget from '@/components/Widget.vue';
         ausgewählt werden, um die Corona-Ampel für diesen anzuzeigen.
       </p>
 
-      <h4>Als Widget zu iOS 14 hinzufügen</h4>
-      <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS">Anleitung iOS</a></p>
-
-      <h4>Als Widget zu Android hinzufügen</h4>
-      <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android">Anleitung Android</a></p>
-
       <h4>Das Projekt</h4>
       <p>
         Das Covid Ampel Widget ist quelloffen unter der

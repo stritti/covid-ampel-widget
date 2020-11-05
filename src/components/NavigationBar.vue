@@ -7,7 +7,7 @@
           </slot>
           <slot>Home</slot>
         </van-action-bar-icon>
-        <van-action-bar-icon to="/about">
+        <van-action-bar-icon to="/help">
           <slot name="icon">
             <help />
           </slot>
@@ -59,8 +59,8 @@ export default {
   .icon-tabler {
     margin-left: auto;
     margin-right: auto;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2rem;
+    height: 2rem;
     stroke-width: 1.5;
   }
 }
