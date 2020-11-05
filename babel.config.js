@@ -3,9 +3,14 @@ module.exports = {
     '@vue/cli-plugin-babel/preset'
   ],
   plugins: [
-    ['import', {
-      libraryName: 'vant',
-      style: true
-    }, 'vant']
+    [
+      'import',
+      {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        // specify less file path
+        style: (name) => `${name}/style/less`,
+      }, 'vant',
+    ]
   ]
 }
