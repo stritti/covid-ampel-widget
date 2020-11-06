@@ -1,6 +1,6 @@
 <template>
   <div id="view">
-    <router-view/>
+    <router-view />
     <navigation-bar />
   </div>
 </template>
@@ -19,13 +19,10 @@ export default {
 </script>
 
 <style lang="scss">
-
-// Component Colors
-@text-color: #323233;
-@border-color: #ebedf0;
-@active-color: #f2f3f5;
-@background-color: #f7f8fa;
-@background-color-light: #fafafa;
+body {
+  background: var(--background-color);
+  color: var(--text);
+}
 
 .title {
   width: auto;
