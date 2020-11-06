@@ -34,13 +34,14 @@
           title="Anleitung Android"
           name="Android"
         >
-          <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android">Anleitung Android</a></p>
+          <HelpAndroid />
         </van-collapse-item>
       </van-collapse>
     </div>
   </div>
 </template>
 <script>
+import HelpAndroid from '@/components/help/HelpAndroid.vue'
 import HelpIOS from '@/components/help/HelpIOS.vue'
 
 export default {
@@ -49,7 +50,7 @@ export default {
     // title will be injected into parent titleTemplate
     title: 'Hilfe'
   },
-  components: { HelpIOS },
+  components: { HelpAndroid, HelpIOS },
   data() {
     return {
       activeName: '',
