@@ -1,8 +1,8 @@
 <template>
   <div id="config-view">
-    <h3 class="title">
-      <router-link class="button" to="/">&lt;</router-link> Einstellungen
-    </h3>
+    <van-sticky>
+      <van-nav-bar title="Einstellungen" left-text="Zurück" left-arrow @click-left="onClickLeft"/>
+    </van-sticky>
 
     <div class="container">
       <config />
@@ -20,6 +20,11 @@ export default {
   },
   components: {
     Config
+  },
+  methods: {
+    onClickLeft () {
+      this.$router.push('/')
+    }
   }
 }
 </script>

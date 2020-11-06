@@ -84,6 +84,7 @@ export default {
         },
       })
       const result = await httpClient.get()
+      console.log(JSON.stringify(result))
       if (result.error) {
         console.error(result.error)
         this.error = 'Fehler beim Laden der Daten vom RKI-Server'
@@ -112,43 +113,52 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .widget {
-  height: 100vh;
   text-align: center;
   padding: 0;
-}
-.widget-green {
-  height: 100vh;
-  color: rgb(221, 221, 221);
-  background-color: rgb(2, 156, 2);
-}
-.widget-yellow {
-  height: 100vh;
-  color: rgba(45, 45, 45, 0.99);
-  background: rgb(230, 200, 50);
-}
-.widget-red {
-  height: 100vh;
-  color: rgb(240, 240, 240);
-  background-color: rgb(235, 64, 52);
-}
-.widget-darkred {
-  height: 100vh;
-  color: rgb(255, 253, 253);
-  background-image: linear-gradient(135deg, #fc0008 25%, #ff6200 25%, #ff6200 50%, #fc0008 50%, #fc0008 75%, #ff6200 75%, #ff6200 100%);
-  background-size: 56.57px 56.57px;
-}
-.cases {
-  font-size: 3em;
-  font-weight: 700;
-  text-align: center;
-}
-.ampel {
-  height: 2.8rem;
-}
-.info {
-  line-height: 1.2rem;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .widget-green {
+    height: 100vh;
+    color: rgb(221, 221, 221);
+    background-color: rgb(2, 156, 2);
+  }
+  .widget-yellow {
+    height: 100vh;
+    color: rgba(45, 45, 45, 0.99);
+    background: rgb(230, 200, 50);
+  }
+  .widget-red {
+    height: 100vh;
+    color: rgb(240, 240, 240);
+    background-color: rgb(235, 64, 52);
+  }
+  .widget-darkred {
+    height: 100vh;
+    color: rgb(255, 253, 253);
+    background-image: linear-gradient(135deg, #fc0008 25%, #ff6200 25%, #ff6200 50%, #fc0008 50%, #fc0008 75%, #ff6200 75%, #ff6200 100%);
+    background-size: 56.57px 56.57px;
+  }
+  .cases {
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    .ampel {
+      height: 2.75rem;
+      vertical-align: middle;
+    }
+  }
+  .info {
+    line-height: 1.2rem;
+  }
 }
 
 /* small square widgets on iOS */

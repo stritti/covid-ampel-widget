@@ -1,74 +1,27 @@
 <template>
   <div id="view">
-    <router-view/>
-    <transition name="fade">
-      <nav>
-          <router-link :to="home">🚦</router-link> |
-          <router-link to="/imprint">Impressum</router-link> |
-          <router-link to="/privacy">Datenschutz</router-link> |
-          <router-link to="/about">Über</router-link> |
-          <router-link to="/config">Einstellungen</router-link>
-      </nav>
-    </transition>
+    <router-view />
+    <navigation-bar />
   </div>
 </template>
 
 <script>
+import NavigationBar from '@/components/NavigationBar'
+
 export default {
+  components: { NavigationBar },
   data() {
     return {
       showIntro: false
-    }
-  },
-  computed: {
-    home () {
-      let route = '/'
-      let selected = localStorage.getItem('landkreis')
-      if (selected === null) {
-        route = '/config'
-      } else {
-        route = '/lkr/' + selected
-      }
-      return route
     }
   }
 }
 </script>
 
-<style>
-html,
+<style lang="scss">
 body {
-  line-height: 2rem;
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-}
-
-h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  line-height: 3.2rem;
-  margin-bottom: 1.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-h4 {
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-}
-
-small {
-  font-size: 0.9rem;
+  background: var(--background-color);
+  color: var(--text);
 }
 
 .title {
@@ -77,122 +30,51 @@ small {
   background-color: rgb(5, 164, 226);
   padding: 0.5em;
 }
-nav {
-  position: fixed;
-  width: 100%;
-  color: rgb(248, 249, 250);
-  background-color: rgba(5, 164, 226, 0.7);
-  padding: 0.5em;
-  bottom: 0;
-}
-nav > a {
-  color: rgb(248, 249, 250);
-  text-decoration: none;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
 
 .container {
-    width: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 6rem;
-    margin-right: auto;
-    margin-left: auto;
+  width: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.button {
-  min-width: 120px;
-  height: 1.8rem;
-  color: rgb(248, 249, 250);
-  background-color: rgb(5, 164, 226);
-  margin: 1rem 0.5rem 1rem 0.5rem;
-  padding: 0.8rem;
-  border: 1px solid;
-  border-radius: 5%;
-  text-decoration: none;
-}
-.title > .button {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-.button:hover, .button:active {
-  background-color: rgb(62, 200, 255);
-}
-
-h3 > .button {
-  margin-left: 0;
-}
-
- @media only screen and (max-height: 360px) {
-   /* show no navigationbar in widget view */
-   nav {
-     display: none;
-   }
-
- }
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  margin: 0;
-}
-#view {
-  min-height:240px;
-}
-
-@supports (font: -apple-system-body)
-{
-  html
-  {
+@supports (font: -apple-system-body) {
+  html {
     font: -apple-system-body;
   }
 
   /* default size of -apple-system-body here is 17px
    using that as a default, scale text down to equivalent of 14px (14/17).
   */
-  body
-  {
+  body {
     font-size: 0.94em;
   }
 
-  @media only screen and (min-width: 28.78em)
-  {
-    html
-    {
+  @media only screen and (min-width: 28.78em) {
+    html {
       font: -apple-system-body;
     }
 
     /* default size of -apple-system-body here is 17px
      using that as a default, scale text down to equivalent of 16px (16/17).
     */
-    body
-      {
+    body {
         font-size: 0.82em;
       }
     }
   }
 
-  @media only screen and (min-width: 33.4em)
-  {
-    html
-    {
+  @media only screen and (min-width: 33.4em) {
+    html {
       font: -apple-system-body;
     }
 
     /* default size of -apple-system-body here is 17px
      using that as a default, scale text down to equivalent of 18px (18/17)
     */
-    body
-    {
+    body {
       font-size: 1.06em;
     }
   }
