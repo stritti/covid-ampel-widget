@@ -12,7 +12,7 @@
 
     <div class="container">
       <p>
-        Diese Web-App dienst zur schnellen und übersichtlichen Darstellung des aktuellen
+        Diese Web-App dient zur schnellen und übersichtlichen Darstellung des aktuellen
         Covid-19 Inzidenz-Wertes in einem Landkreis (Fälle der letzten 7 Tage pro 100.000 Einwohner).
       </p>
       <p>
