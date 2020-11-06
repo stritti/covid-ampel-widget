@@ -1,7 +1,13 @@
 <template>
   <div id="help-view">
     <van-sticky>
-      <van-nav-bar title="Hilfe" left-text="Zurück" left-arrow @click-left="onClickLeft" sticky/>
+      <van-nav-bar
+        title="Hilfe"
+        left-text="Zurück"
+        left-arrow
+        sticky
+        @click-left="onClickLeft"
+      />
     </van-sticky>
 
     <div class="container">
@@ -14,25 +20,36 @@
         des Smartphones bringen:
       </p>
 
-      <van-collapse v-model="activeName" accordion>
-          <van-collapse-item title="Anleitung iOS" name="iOS">
-            <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS">Anleitung iOS</a></p>
-          </van-collapse-item>
-          <van-collapse-item title="Anleitung Android" name="Android">
-            <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android">Anleitung Android</a></p>
-          </van-collapse-item>
-
-        </van-collapse>
+      <van-collapse
+        v-model="activeName"
+        accordion
+      >
+        <van-collapse-item
+          title="Anleitung iOS"
+          name="iOS"
+        >
+          <HelpIOS />
+        </van-collapse-item>
+        <van-collapse-item
+          title="Anleitung Android"
+          name="Android"
+        >
+          <p><a href="https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android">Anleitung Android</a></p>
+        </van-collapse-item>
+      </van-collapse>
     </div>
   </div>
 </template>
 <script>
+import HelpIOS from '@/components/help/HelpIOS.vue'
+
 export default {
   name: 'HelpView',
   metaInfo: {
     // title will be injected into parent titleTemplate
     title: 'Hilfe'
   },
+  components: { HelpIOS },
   data() {
     return {
       activeName: '',
