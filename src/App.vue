@@ -24,6 +24,9 @@ body {
   color: var(--text);
 }
 
+a {
+  color: var(--blue);
+}
 .title {
   width: auto;
   color: rgb(248, 249, 250);
