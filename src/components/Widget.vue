@@ -1,22 +1,29 @@
 <template>
   <div class="widget">
-    <div v-if="loading">Daten werden geladen ...</div>
-    <div v-if="error">{{ this.error }}</div>
+    <div v-if="loading">
+      Daten werden geladen ...
+    </div>
+    <div v-if="error">
+      {{ this.error }}
+    </div>
     <div
-      :class="color(item.attributes.cases7_per_100k)"
       v-for="(item, index) in data"
       :key="item.attributes.OBJECTID"
+      :class="color(item.attributes.cases7_per_100k)"
       :name="index"
       :object-id="item.attributes.OBJECTID"
-      >
+    >
       <h3>
         <span class="bez">{{ item.attributes.BEZ }}&nbsp;</span>
         <span class="ort">{{ item.attributes.GEN }}</span>
       </h3>
       <p class="cases">
-        <img src="@/assets/coronaampel.png" class="ampel"/>
+        <img
+          src="@/assets/coronaampel.png"
+          class="ampel"
+        >
         {{ rounded(item.attributes.cases7_per_100k) }}
-        </p>
+      </p>
       <div class="info">
         <small>
           <span class="inzidenz-short">Inzidenz</span>
@@ -24,7 +31,7 @@
             Fälle der letzten 7 Tage pro 100.000 Einwohner
           </span>
         </small>
-        <br />
+        <br>
         <small>
           <span class="time">
             <span class="label">Stand: </span>
@@ -33,9 +40,11 @@
           <span class="source">,
             <span class="label">Datenquelle: </span>
             <span class="data">
-              <a :class="color(item.attributes.cases7_per_100k)"
+              <a
+                :class="color(item.attributes.cases7_per_100k)"
                 target="_blank"
-                href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/">RKI</a>
+                href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+              >RKI</a>
             </span>
           </span>
         </small>
@@ -84,7 +93,7 @@ export default {
         },
       })
       const result = await httpClient.get()
-      console.log(JSON.stringify(result))
+      // console.log(JSON.stringify(result))
       if (result.error) {
         console.error(result.error)
         this.error = 'Fehler beim Laden der Daten vom RKI-Server'
