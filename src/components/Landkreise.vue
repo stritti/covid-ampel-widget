@@ -78,7 +78,6 @@ export default {
     },
     onChange(event) {
       localStorage.setItem('landkreis', event)
-      this.$router.go(0)
     }
   }
 }
