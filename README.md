@@ -16,6 +16,8 @@ Using additiona Apps the Covid-19 Ampel-Widget could be integrated into
 
 <img src="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/android-covid-19-ampel-widget.png" width=240/>
 
+[![stritti's github stats](https://github-readme-stats.vercel.app/api?username=stritti)](https://github.com/anuraghazra/github-readme-stats)
+
 ## Development: Project setup
 
 For development you have to install node.js initially.
@@ -53,9 +55,9 @@ npm run lint
 ## Used Libraries and Tools
 
 * vue.js 3: <https://v3.vuejs.org/>
-* vue-meta: <https://vue-meta.nuxtjs.org/>
+* Vant - Mobile UI Components built on Vue: <https://youzan.github.io/vant/next>
 * ArcGis REST-Service of RKI data: <https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0>
+* vue-meta: <https://vue-meta.nuxtjs.org/>
 * striped css background: <https://stripesgenerator.com/>
 * danymic font size on iOS respecting sysem settings: <https://ind.ie/labs/blog/dynamic-type-support/>
 * some SVG icons of <https://github.com/tabler/tabler-icons>
-* Vant - Mobile UI Components built on Vue: <https://youzan.github.io/vant/next>
