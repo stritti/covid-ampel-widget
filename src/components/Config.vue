@@ -4,11 +4,10 @@
       Wählen sie bitte den gewünschten Landkreis aus:
     </p>
     <p>
-      <landkreise />
-    </p>
-    <p>
       Diese Einstellung wird nur lokal im Browser gespeichert.
     </p>
+
+    <landkreise />
   </div>
 </template>
 

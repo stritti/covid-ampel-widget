@@ -1,32 +1,32 @@
 <template>
- <van-sticky>
-      <van-action-bar>
-        <van-action-bar-icon :to="home" >
-          <slot name="icon">
-            <traffic-lights />
-          </slot>
-          <slot>Home</slot>
-        </van-action-bar-icon>
-        <van-action-bar-icon to="/help">
-          <slot name="icon">
-            <help />
-          </slot>
-          <slot>Hilfe</slot>
-        </van-action-bar-icon>
-        <van-action-bar-icon to="/config">
-          <slot name="icon">
-            <settings />
-          </slot>
-          <slot>Einstellungen</slot>
-        </van-action-bar-icon>
-        <van-action-bar-icon to="/more">
-          <slot name="icon">
-            <more />
-          </slot>
-          <slot>Mehr</slot>
-        </van-action-bar-icon>
-      </van-action-bar>
-    </van-sticky>
+  <van-sticky>
+    <van-action-bar>
+      <van-action-bar-icon :to="home">
+        <slot name="icon">
+          <traffic-lights />
+        </slot>
+        <slot>Home</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon to="/help">
+        <slot name="icon">
+          <help />
+        </slot>
+        <slot>Hilfe</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon to="/config">
+        <slot name="icon">
+          <settings />
+        </slot>
+        <slot>Einstellungen</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon to="/more">
+        <slot name="icon">
+          <more />
+        </slot>
+        <slot>Mehr</slot>
+      </van-action-bar-icon>
+    </van-action-bar>
+  </van-sticky>
 </template>
 
 <script>
@@ -59,8 +59,8 @@ export default {
   .icon-tabler {
     margin-left: auto;
     margin-right: auto;
-    width: 2rem;
-    height: 2rem;
+    width: 2.25rem;
+    height: 2.25rem;
     stroke-width: 1.5;
   }
 }
