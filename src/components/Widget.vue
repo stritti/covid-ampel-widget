@@ -13,6 +13,7 @@
     >
       <h3>
         <span class="bez">{{ data.BEZ }}&nbsp;</span>
+        <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
         <span class="ort">{{ data.GEN }}</span>
       </h3>
       <p class="cases">
@@ -102,7 +103,7 @@ export default {
       const url =
         'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=OBJECTID in (' +
         this.objectId +
-        ')&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,GEN&returnGeometry=false&f=json'
+        ')&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,GEN,IBZ&returnGeometry=false&f=json'
       const httpClient = axios.create({
         baseURL: url,
         timeout: 10000, // indicates, 10000ms ie. 10 second
@@ -164,8 +165,22 @@ export default {
           this.indicator = result
           return result
         })
-
-
+    },
+    getBezShort(IBZ) {
+      switch (IBZ) {
+        case 40: // Kreisfreie Stadt
+          return 'KS'
+        case 41: // Stadtkreis
+          return 'SK'
+        case 42: // Kreis
+        case 46: // Sonderverband offiziel Kreis
+          return 'K'
+        case 43: // Landkreis
+        case 45: // Sonderverband offiziel Landkreis
+          return 'LK'
+        default:
+          return 'BZ' // Bezirk
+      }
     }
   }
 }
@@ -224,7 +239,7 @@ export default {
     }
 
     .icon-tabler {
-      stroke-width: 2;
+      stroke-width: 3.5;
     }
   }
   .info {
@@ -250,6 +265,9 @@ export default {
   .bez {
     display: none;
   }
+  .bez-short {
+    display: contents;
+  }
   .inzidenz-short {
     display: none;
   }
@@ -269,11 +287,14 @@ export default {
   .bez {
     display: none;
   }
+  .bez-short {
+    display: contents;
+  }
   .info {
-    display: inherit;
+    display: contents;
   }
   .inzidenz-short {
-    display: inherit;
+    display: contents;
   }
   .inzidenz-detailled {
     display: none;
@@ -284,6 +305,9 @@ export default {
 }
 
 @media only screen and (min-width: 360px) {
+  .bez-short {
+    display: none;
+  }
   .inzidenz-short {
     display: none;
   }
