@@ -27,12 +27,6 @@ body {
 a {
   color: var(--blue);
 }
-.title {
-  width: auto;
-  color: rgb(248, 249, 250);
-  background-color: rgb(5, 164, 226);
-  padding: 0.5em;
-}
 
 .container {
   width: auto;
@@ -64,21 +58,21 @@ a {
      using that as a default, scale text down to equivalent of 16px (16/17).
     */
     body {
-        font-size: 0.82em;
-      }
+      font-size: 0.82em;
     }
   }
+}
 
-  @media only screen and (min-width: 33.4em) {
-    html {
-      font: -apple-system-body;
-    }
+@media only screen and (min-width: 33.4em) {
+  html {
+    font: -apple-system-body;
+  }
 
-    /* default size of -apple-system-body here is 17px
+  /* default size of -apple-system-body here is 17px
      using that as a default, scale text down to equivalent of 18px (18/17)
     */
-    body {
-      font-size: 1.06em;
-    }
+  body {
+    font-size: 1.06em;
   }
+}
 </style>

@@ -6,9 +6,12 @@
       color="#1989fa"
       vertical
     >
-      Lade ...
+      Lade Daten ...
     </van-loading>
-    <van-index-bar @select="onChange">
+    <van-index-bar
+      class="landkreise"
+      @select="onChange"
+    >
       <span
         v-for="item in data"
         :key="item.OBJECTID"
@@ -82,15 +85,28 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.van-cell {
-  h4 {
-    margin-top: 0;
-    margin-bottom: 0;
+<style lang="scss">
+.landkreise {
+  .van-index-anchor {
+    color: var(--text);
+    background-color: var(--secondary-color);
   }
-  p {
-    margin-top: 0;
-    margin-bottom: 0;
+
+  .van-cell {
+    color: var(--text);
+    background-color: var(--background-color);
+
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  .van-cell__value--alone {
+    color: var(--text);
   }
 }
 </style>
