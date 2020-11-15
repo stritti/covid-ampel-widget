@@ -11,10 +11,10 @@
       :class="color(data.cases7_per_100k)"
       :object-id="data.OBJECTID"
     >
-      <h3>
+      <h3 class="ort">
         <span class="bez">{{ data.BEZ }}&nbsp;</span>
         <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
-        <span class="ort">{{ data.GEN }}</span>
+        <span class="name">{{ data.GEN }}</span>
       </h3>
       <p class="cases">
         <img
@@ -29,7 +29,7 @@
       <div class="info">
         <small>
           <span class="inzidenz-short">Inzidenz</span>
-          <span class="inzidenz-detailled">
+          <span class="inzidenz">
             Fälle der letzten 7 Tage pro 100.000 Einwohner
           </span>
         </small>
@@ -192,7 +192,7 @@ export default {
   padding: 0;
 
   h3 {
-    margin-top: 0;
+    margin-top: 2px;
     margin-bottom: 0.5rem;
   }
 
@@ -249,67 +249,101 @@ export default {
 
 /* small square widgets on iOS */
 @media only screen and (max-width: 200px) {
-  .info {
-    line-height: 0.8rem;
-  }
-  .ort {
-    font-size: 1.2rem;
-    line-height: 1rem;
-    line-break: none;
-    text-align: left;
-  }
-  .cases {
-    padding-right: 0.5rem;
-    text-align: right;
-  }
-  .bez {
-    display: none;
-  }
-  .bez-short {
-    display: contents;
-  }
-  .inzidenz-short {
-    display: none;
-  }
-  .inzidenz-detailled {
-    display: none;
-  }
-  .source {
-    display: none;
-  }
-  .time > .label {
-    display: none;
+  .widget {
+    .ort {
+      font-size: 1.2rem;
+      line-height: 1rem;
+      line-break: none;
+      text-align: left;
+
+      .bez {
+        display: none;
+      }
+      .bez-short {
+        display: inline;
+      }
+    }
+    .cases {
+      padding-right: 0.5rem;
+      font-size: 2em;
+      text-align: right;
+    }
+    .info {
+      line-height: 0.8rem;
+
+      .inzidenz {
+        display: none;
+      }
+      .inzidenz-short {
+        display: inline;
+      }
+      .source {
+        display: none;
+      }
+      .time > .label {
+        display: none;
+      }
+    }
   }
 }
 
 /* full width widgets on iOS */
 @media only screen and (min-width: 200px) and (max-width: 360px) {
-  .bez {
-    display: none;
-  }
-  .bez-short {
-    display: contents;
-  }
-  .info {
-    display: contents;
-  }
-  .inzidenz-short {
-    display: contents;
-  }
-  .inzidenz-detailled {
-    display: none;
-  }
-  .source {
-    display: none;
+  .widget {
+    .ort {
+      .bez {
+        display: none;
+      }
+      .bez-short {
+        display: inline;
+      }
+    }
+
+    .cases {
+      font-size: 2em;
+      padding-right: 0.5rem;
+      text-align: center;
+    }
+
+    .info {
+      .inzidenz {
+        display: none;
+      }
+      .inzidenz-short {
+        display: inline;
+      }
+      .source {
+        display: none;
+      }
+    }
   }
 }
 
 @media only screen and (min-width: 360px) {
-  .bez-short {
-    display: none;
-  }
-  .inzidenz-short {
-    display: none;
+  .widget {
+    .ort {
+      .bez {
+        display: inline;
+      }
+      .bez-short {
+        display: none;
+      }
+    }
+
+    .cases {
+      font-size: 3em;
+      padding-right: 0.5rem;
+      text-align: center;
+    }
+
+    .info {
+      .inzidenz {
+        display: inline;
+      }
+      .inzidenz-short {
+        display: none;
+      }
+    }
   }
 }
 </style>
