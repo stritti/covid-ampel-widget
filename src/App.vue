@@ -37,6 +37,14 @@ a {
   margin-left: auto;
 }
 
+.van-nav-bar {
+  color: var(--text);
+  background-color: var(--background-color);
+  .van-nav-bar__title {
+    color: var(--text);
+  }
+}
+
 @supports (font: -apple-system-body) {
   html {
     font: -apple-system-body;

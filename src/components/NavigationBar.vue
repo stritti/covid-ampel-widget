@@ -54,14 +54,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .van-action-bar {
+  color: var(--text);
+  background-color: var(--background-color);
+
   .icon-tabler {
     margin-left: auto;
     margin-right: auto;
     width: 2.25rem;
     height: 2.25rem;
     stroke-width: 1.5;
+  }
+
+  .van-action-bar-icon {
+    color: var(--text);
+    background-color: var(--background-color);
   }
 }
 
@@ -70,6 +77,5 @@ export default {
   .van-action-bar {
     display: none;
   }
-
 }
 </style>
