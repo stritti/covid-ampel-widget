@@ -20,7 +20,7 @@ import Widget from '@/components/Widget.vue';
       <h4>Datenquelle</h4>
       <p>
         Das Covid-19 Ampel-Widget basiert auf den Zahlen, welche das
-        <a href="https://www.rki.de/">Robert-Koch-Institut (RKI)</a> aus den
+        <a href="https://www.rki.de/">Robert Koch-Institut (RKI)</a> aus den
         Landkreisen in Deutschland erfasst und unter unter der
         <a
           target="_blank"
