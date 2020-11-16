@@ -1,11 +1,17 @@
 <template>
-  <widget :objectId="selected" v-if="selected != null"/>
-  <config v-else />
+  <div id="home-view">
+    <widget
+      v-if="selected != null"
+      :object-id="selected"
+    />
+    <div v-else>
+      Bitte einen Landkreis in den Einstellungen auswählen.
+    </div>
+  </div>
 </template>
 
 <script>
 import Widget from '@/components/Widget.vue'
-import Config from '@/components/Config.vue'
 
 export default {
   name: 'Home',
@@ -19,9 +25,15 @@ export default {
       }
     ]
   },
-  props: ['id'],
   components: {
-    Widget, Config
+    Widget
+  },
+  props: {
+    id: {
+      type: String,
+      required: false,
+      default: null
+    }
   },
   data() {
     return {
@@ -38,6 +50,8 @@ export default {
 
     if(this.selected) {
       this.$router.push('/lkr/' + this.selected)
+    } else {
+      this.$router.push('/config')
     }
   }
 }

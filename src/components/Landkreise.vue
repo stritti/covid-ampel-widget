@@ -8,10 +8,7 @@
     >
       Lade Daten ...
     </van-loading>
-    <van-index-bar
-      class="landkreise"
-      @select="onChange"
-    >
+    <van-index-bar class="landkreise">
       <span
         v-for="item in data"
         :key="item.OBJECTID"
@@ -25,7 +22,7 @@
           clickable
           is-link
           icon="location-o"
-          :to="'/lkr/' + item.OBJECTID"
+          @click="onClick(item.OBJECTID)"
         >
           <h4>{{ item.GEN }}</h4>
           <p>{{ item.BEZ }}</p>
@@ -79,8 +76,9 @@ export default {
       this.isLoading = false
       return result.data.features
     },
-    onChange(event) {
-      localStorage.setItem('landkreis', event)
+    onClick(id) {
+      localStorage.setItem('landkreis', id)
+      this.$router.push(`/lkr/${id}`)
     }
   }
 }

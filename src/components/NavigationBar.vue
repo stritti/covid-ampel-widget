@@ -38,16 +38,23 @@ import More from '@/components/svg/More'
 export default {
   name: 'NavigationBar',
   components: { TrafficLights, Settings, Help, More },
-  computed: {
-    home () {
-      let route = '/'
+  data() {
+    return {
+      home : '/',
+    }
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'home2lkr'
+  },
+  methods: {
+    home2lkr () {
+      this.home = '/'
       let selected = localStorage.getItem('landkreis')
-      if (selected === null) {
-        route = '/config'
-      } else {
-        route = '/lkr/' + selected
+      if (selected) {
+        this.home = '/lkr/' + selected
       }
-      return route
+      return this.home
     }
   }
 }

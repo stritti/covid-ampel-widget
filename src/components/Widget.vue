@@ -70,7 +70,6 @@ export default {
     IndicatorInc, IndicatorDec, IndicatorEq
   },
   props: {
-    // comma separated List of objectIds.
     // See: https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0
     objectId: {
       type: String,
