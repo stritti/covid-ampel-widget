@@ -13,10 +13,10 @@
     "dexie": "^3.0.2",
     "eslint-plugin-standard": "^4.1.0",
     "husky": "^4.3.0",
-    "vant": "^3.0.0-beta.6",
+    "vant": "^3.0.0-beta.8",
     "vue": "^3.0.0",
     "vue-meta": "^2.4.0",
-    "vue-router": "^4.0.0-rc.2"
+    "vue-router": "^4.0.0-rc.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
