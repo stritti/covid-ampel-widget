@@ -1,7 +1,12 @@
 <template>
   <div id="config-view">
     <van-sticky>
-      <van-nav-bar title="Einstellungen" left-text="Zurück" left-arrow @click-left="onClickLeft"/>
+      <van-nav-bar
+        title="Einstellungen"
+        left-text="Zurück"
+        left-arrow
+        @click-left="onClickLeft"
+      />
     </van-sticky>
 
     <div class="container">
