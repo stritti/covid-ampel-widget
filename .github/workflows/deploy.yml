@@ -14,9 +14,10 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Setup Node
-        uses: actions/setup-node@v2.1.0
+        uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+          check-latest: true
 
       - name: Cache dependencies
         uses: actions/cache@v2
