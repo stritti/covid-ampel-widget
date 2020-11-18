@@ -8,7 +8,7 @@ This is HTML based widget to show the incidences of German Landkreise for SARS-C
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
 define levels for secure each other.
 
-Using additiona Apps the Covid-19 Ampel-Widget could be integrated into
+Using additional Apps the Covid-19 Ampel-Widget could be integrated into
 [iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and
 [Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
 
@@ -18,7 +18,11 @@ Using additiona Apps the Covid-19 Ampel-Widget could be integrated into
 
 [![stritti's github stats](https://github-readme-stats.vercel.app/api?username=stritti)](https://github.com/anuraghazra/github-readme-stats)
 
-## Development: Project setup
+---
+
+## Development
+
+### Project setup
 
 For development you have to install node.js initially.
 
