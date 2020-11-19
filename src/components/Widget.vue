@@ -93,6 +93,7 @@ export default {
         database.add(data)
 
         this.getIndicator(this.data)
+        this.track(this.data)
       }
       this.loaded = true
     })
@@ -180,6 +181,12 @@ export default {
         default:
           return 'BZ' // Bezirk
       }
+    },
+    track (data) {
+      this.$gtag.event(`api_request`, {
+        'event_category' : 'inzidenz_load',
+        'event_label' : `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
+      })
     }
   }
 }
