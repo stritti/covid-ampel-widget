@@ -1,5 +1,7 @@
 <template>
   <div>
+    <doc-head :meta-info="metaInfo" />
+
     <van-sticky>
       <van-nav-bar
         title="Impressum"
@@ -91,18 +93,24 @@
 </template>
 
 <script>
-  export default {
-    name: 'ImprintView',
-    metaInfo: {
-      // title will be injected into parent titleTemplate
-      title: 'Impressum'
-    },
-    methods: {
-      onClickLeft () {
-        this.$router.push('/more')
+import DocHead from '@/components/DocHead.vue'
+
+export default {
+  name: 'ImprintView',
+  components: { DocHead },
+  data() {
+    return {
+      metaInfo: {
+        title: 'Impressum | Covid-19 Ampel-Widget',
       }
     }
+  },
+  methods: {
+    onClickLeft () {
+      this.$router.push('/more')
+    }
   }
+}
 </script>
 
 <style scoped>

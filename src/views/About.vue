@@ -1,6 +1,8 @@
 import Widget from '@/components/Widget.vue';
 <template>
   <div>
+    <doc-head :meta-info="metaInfo" />
+
     <van-sticky>
       <van-nav-bar
         title="Über"
@@ -48,18 +50,24 @@ import Widget from '@/components/Widget.vue';
 </template>
 
 <script>
-  export default {
-    name: 'About',
-    metaInfo: {
-      // title will be injected into parent titleTemplate
-      title: 'Über Covid-19 Ampel-Widget'
-    },
-    methods: {
-      onClickLeft () {
-        this.$router.push('/more')
+import DocHead from '@/components/DocHead.vue'
+
+export default {
+  name: 'About',
+  components: { DocHead },
+  data() {
+    return {
+      metaInfo: {
+        title: 'Über | Covid-19 Ampel-Widget',
       }
     }
+  },
+  methods: {
+    onClickLeft () {
+      this.$router.push('/more')
+    }
   }
+}
 </script>
 
 

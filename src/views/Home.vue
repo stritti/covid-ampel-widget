@@ -1,5 +1,7 @@
 <template>
   <div id="home-view">
+    <doc-head :meta-info="metaInfo" />
+
     <widget
       v-if="selected != null"
       :object-id="selected"
@@ -11,22 +13,13 @@
 </template>
 
 <script>
+import DocHead from '@/components/DocHead.vue'
 import Widget from '@/components/Widget.vue'
 
 export default {
   name: 'Home',
-  metaInfo: {
-    title: 'Covid-19 Ampel-Widget',
-    meta: [
-      {
-        vmid: 'description',
-        name: 'description',
-        content: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.',
-      }
-    ]
-  },
   components: {
-    Widget
+    Widget, DocHead
   },
   props: {
     id: {
@@ -37,6 +30,14 @@ export default {
   },
   data() {
     return {
+      metaInfo: {
+      title: 'Covid-19 Ampel-Widget',
+      meta: {
+        vmid: 'description',
+        name: 'description',
+        description: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.',
+      }
+    },
       selected: null
     }
   },

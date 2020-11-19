@@ -1,5 +1,7 @@
 <template>
   <div id="help-view">
+    <doc-head :meta-info="metaInfo" />
+
     <van-sticky>
       <van-nav-bar
         title="Hilfe"
@@ -42,6 +44,7 @@
   </div>
 </template>
 <script>
+import DocHead from '@/components/DocHead.vue'
 import HelpAndroid from '@/components/help/HelpAndroid.vue'
 import HelpIOS from '@/components/help/HelpIOS.vue'
 
@@ -51,9 +54,12 @@ export default {
     // title will be injected into parent titleTemplate
     title: 'Hilfe'
   },
-  components: { HelpAndroid, HelpIOS },
+  components: { DocHead, HelpAndroid, HelpIOS },
   data() {
     return {
+      metaInfo: {
+        title: 'Hilfe | Covid-19 Ampel-Widget',
+      },
       activeName: '',
     }
   },

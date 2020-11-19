@@ -1,5 +1,7 @@
 <template>
   <div id="config-view">
+    <doc-head :meta-info="metaInfo" />
+
     <van-sticky>
       <van-nav-bar
         title="Einstellungen"
@@ -16,15 +18,18 @@
 </template>
 
 <script>
+import DocHead from '@/components/DocHead.vue'
 import Config from '@/components/Config.vue'
 
 export default {
   name: 'ConfigView',
-  metaInfo: {
-    title: 'Einstellungen'
-  },
-  components: {
-    Config
+  components: { DocHead, Config },
+  data() {
+    return {
+      metaInfo: {
+        title: 'Einstellungen | Covid-19 Ampel-Widget',
+      }
+    }
   },
   methods: {
     onClickLeft () {

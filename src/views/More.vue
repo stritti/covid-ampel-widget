@@ -1,5 +1,7 @@
 <template>
   <div id="more-view">
+    <doc-head :meta-info="metaInfo" />
+
     <van-sticky>
       <van-nav-bar
         title="Mehr"
@@ -30,16 +32,22 @@
 </template>
 
 <script>
-  export default {
-    name: 'MoreView',
-    metaInfo: {
-      // title will be injected into parent titleTemplate
-      title: 'Mehr'
-    },
-    methods: {
-      onClickLeft () {
-        this.$router.push('/')
+import DocHead from '@/components/DocHead.vue'
+
+export default {
+  name: 'MoreView',
+  components: { DocHead },
+  data() {
+    return {
+      metaInfo: {
+        title: 'Mehr ... | Covid-19 Ampel-Widget',
       }
     }
+  },
+  methods: {
+    onClickLeft () {
+      this.$router.push('/')
+    }
   }
+}
 </script>

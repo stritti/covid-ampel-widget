@@ -1,5 +1,7 @@
 <template>
   <div id="privacy-view">
+    <doc-head :meta-info="metaInfo" />
+
     <van-sticky>
       <van-nav-bar
         title="Datenschutz"
@@ -186,20 +188,19 @@
         <a href="mailto:https://support.google.com/policies/contact/general_privacy_form">https://support.google.com/policies/contact/general_privacy_form</a>
       </p>
 
-
-
       <h5>
         Weitergabe an Drittländer
       </h5>
-
-      <p>Dieser Service kann die erfassten Daten an ein anderes Land weiterleiten. Bitte beachten Sie, dass dieser Service Daten außerhalb der Europäischen Union und des europäischen Wirtschaftsraums und in ein Land, welches kein angemessenes Datenschutzniveau bietet, übertragen kann. Falls die Daten in die USA übertragen werden, besteht das Risiko, dass Ihre Daten von US Behörden zu Kontroll- und Überwachungszwecken verarbeitet werden können, ohne dass Ihnen möglicherweise Rechtsbehelfsmöglichkeiten zustehen. Nachfolgend finden Sie eine Liste der Länder, in die die Daten übertragen werden. Dies kann für verschiedene Zwecke der Fall sein, z. B. zum Speichern oder Verarbeiten.</p>
-
       <p>
-        Weltweit
+        Dieser Service kann die erfassten Daten an ein anderes Land weiterleiten. Bitte beachten
+        Sie, dass dieser Service Daten außerhalb der Europäischen Union und des europäischen
+        Wirtschaftsraums und in ein Land, welches kein angemessenes Datenschutzniveau bietet,
+        übertragen kann. Falls die Daten in die USA übertragen werden, besteht das Risiko, dass
+        Ihre Daten von US Behörden zu Kontroll- und Überwachungszwecken verarbeitet werden können,
+        ohne dass Ihnen möglicherweise Rechtsbehelfsmöglichkeiten zustehen. Nachfolgend finden Sie
+        eine Liste der Länder, in die die Daten übertragen werden. Dies kann für verschiedene
+        Zwecke der Fall sein, z. B. zum Speichern oder Verarbeiten.
       </p>
-
-
-
       <p>
         <b>Klicken Sie hier, um die Datenschutzbestimmungen des Datenverarbeiters zu lesen</b> <a
           href="https://policies.google.com/privacy?hl=en"
@@ -229,18 +230,24 @@
 
 
 <script>
-  export default {
-    name: 'PrivaceyView',
-    metaInfo: {
-      // title will be injected into parent titleTemplate
-      title: 'Datenschutz'
-    },
-    methods: {
-      onClickLeft () {
-        this.$router.push('/more')
+import DocHead from '@/components/DocHead.vue'
+
+export default {
+  name: 'PrivaceyView',
+  components: { DocHead },
+  data() {
+    return {
+      metaInfo: {
+        title: 'Datenschutz | Covid-19 Ampel-Widget',
       }
     }
+  },
+  methods: {
+    onClickLeft () {
+      this.$router.push('/more')
+    }
   }
+}
 </script>
 <style lang="scss" scoped>
 p {
