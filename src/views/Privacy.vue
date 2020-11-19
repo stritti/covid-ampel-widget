@@ -55,6 +55,174 @@
         Ende Ihres Besuchs automatisch gelöscht. Cookies richten auf Ihrem
         Rechner keinen Schaden an und enthalten keine Viren.
       </p>
+
+      <h4>Google Analytics</h4>
+
+      <p>
+        Dies ist ein Webanalysedienst.
+      </p>
+      <h5>
+        Verarbeitendes Unternehmen
+      </h5>
+      <p>
+        Google Ireland Limited
+      </p>
+
+      <p>
+        Google Building Gordon House, 4 Barrow St, Dublin, D04 E5W5, Ireland
+      </p>
+
+      <h5>
+        Datenverarbeitungszwecke
+      </h5>
+
+      <p>
+        Diese Liste stellt die Zwecke der Datenerhebung und -verarbeitung dar. Eine Einwilligung gilt nur für die angegebenen Zwecke. Die gesammelten Daten können nicht für einen anderen als den unten aufgeführten Zweck verwendet oder gespeichert werden.
+      </p>
+
+
+      <h5>
+        Genutzte Technologien
+      </h5>
+      <ul>
+        <li>
+          Cookies zustimmen
+        </li><li>
+          Pixel-Tags
+        </li>
+      </ul>
+
+      <h5>
+        Erhobene Daten
+      </h5>
+
+      <p>
+        Diese Liste enthält alle (persönlichen) Daten, die von oder durch die Nutzung dieses Dienstes gesammelt werden.
+      </p>
+
+      <ul>
+        <li>
+          IP Addresse
+        </li><li>
+          Datum uns Uhrzeit des Besuchs
+        </li><li>
+          Nutzungsdaten
+        </li><li>
+          Klickpfad
+        </li><li>
+          App-Aktualisierungen
+        </li><li>
+          Browser Informationen
+        </li><li>
+          Geräte Informationen
+        </li><li>
+          JavaScript-Support
+        </li><li>
+          Besuchte Seiten
+        </li><li>
+          Referrer URL
+        </li><li>
+          Downloads
+        </li><li>
+          Flash-Version
+        </li><li>
+          Standortinformationen
+        </li><li>
+          Kaufaktivität
+        </li><li>
+          Widget-Interaktionen
+        </li>
+      </ul>
+
+      <h5>
+        Rechtsgrundlage
+      </h5>
+
+      <p>Im Folgenden wird die nach Art. 6 I 1 DSGVO geforderte Rechtsgrundlage für die Verarbeitung von personenbezogenen Daten genannt.</p>
+
+      <ul>
+        <li>
+          Art. 6 Abs. 1 s. 1 lit. a DSGVO
+        </li>
+      </ul>
+
+      <h5>
+        Ort der Verarbeitung
+      </h5>
+      <p>
+        Europäische Union
+      </p>
+      <h5>
+        Aufbewahrungsdauer
+      </h5>
+
+      <p>
+        Die Aufbewahrungsfrist ist die Zeitspanne, in der die gesammelten Daten für die Verarbeitung gespeichert werden. Die Daten müssen gelöscht werden, sobald sie für die angegebenen Verarbeitungszwecke nicht mehr benötigt werden.
+      </p>
+
+      Die Aufbewahrungsfrist hängt von der Art der gespeicherten Daten ab. Jeder Kunde kann festlegen, wie lange Google Analytics Daten aufbewahrt, bevor sie automatisch gelöscht werden.
+
+      <h5>
+        Datenempfänger
+      </h5>
+      <ul>
+        <li>
+          Alphabet Inc.
+        </li><li>
+          Google LLC
+        </li><li>
+          Google Ireland Limited
+        </li>
+      </ul>
+
+
+      <h5>
+        Datenschutzbeauftragter der verarbeitenden Firma
+      </h5>
+
+      <p>Nachfolgend finden Sie die E-Mail-Adresse des Datenschutzbeauftragten des verarbeitenden Unternehmens.</p>
+
+      <p>
+        <a href="mailto:https://support.google.com/policies/contact/general_privacy_form">https://support.google.com/policies/contact/general_privacy_form</a>
+      </p>
+
+
+
+      <h5>
+        Weitergabe an Drittländer
+      </h5>
+
+      <p>Dieser Service kann die erfassten Daten an ein anderes Land weiterleiten. Bitte beachten Sie, dass dieser Service Daten außerhalb der Europäischen Union und des europäischen Wirtschaftsraums und in ein Land, welches kein angemessenes Datenschutzniveau bietet, übertragen kann. Falls die Daten in die USA übertragen werden, besteht das Risiko, dass Ihre Daten von US Behörden zu Kontroll- und Überwachungszwecken verarbeitet werden können, ohne dass Ihnen möglicherweise Rechtsbehelfsmöglichkeiten zustehen. Nachfolgend finden Sie eine Liste der Länder, in die die Daten übertragen werden. Dies kann für verschiedene Zwecke der Fall sein, z. B. zum Speichern oder Verarbeiten.</p>
+
+      <p>
+        Weltweit
+      </p>
+
+
+
+      <p>
+        <b>Klicken Sie hier, um die Datenschutzbestimmungen des Datenverarbeiters zu lesen</b> <a
+          href="https://policies.google.com/privacy?hl=en"
+          target="_blank"
+          rel="nofollow"
+        >https://policies.google.com/privacy?hl=en</a>
+      </p>
+
+      <p>
+        <b>Klicken Sie hier, um auf allen Domains des verarbeitenden Unternehmens zu widersprechen</b> <a
+          href="https://tools.google.com/dlpage/gaoptout?hl=de"
+          target="_blank"
+          rel="nofollow"
+        >https://tools.google.com/dlpage/gaoptout?hl=de</a>
+      </p>
+
+      <p>
+        <b>Klicken Sie hier, um die Cookie-Richtlinie des Datenverarbeiters zu lesen</b> <a
+          href="https://policies.google.com/technologies/cookies?hl=en"
+          target="_blank"
+          rel="nofollow"
+        >https://policies.google.com/technologies/cookies?hl=en</a>
+      </p>
     </div>
   </div>
 </template>
@@ -74,8 +242,14 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 p {
   font-size: 0.8rem;
+}
+
+ul {
+  list-style-type: disc;
+  font-size: 0.8rem;
+  margin-left: 1rem;
 }
 </style>
