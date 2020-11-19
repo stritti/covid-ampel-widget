@@ -10,7 +10,7 @@ app.use(router)
 app.use(vantPlugin)
 app.use(VueGtag, {
   property: { id: 'G-GDDZX0T7FP' },
-  useDebugger: true
+  useDebugger: false
 })
 
 app.mount('#app')
