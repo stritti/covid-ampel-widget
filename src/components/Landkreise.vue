@@ -73,13 +73,28 @@ export default {
       if (result.error) {
         console.error(result.error)
       }
+      this.track()
       this.isLoading = false
       return result.data.features
     },
     onClick(id) {
       localStorage.setItem('landkreis', id)
+      this.trackSelection(id)
       this.$router.push(`/lkr/${id}`)
+    },
+    trackSelection (id) {
+      this.$gtag.event(`api_request`, {
+        event_category : 'lkr_select',
+        event_label : `${id}`
+      })
+    },
+    track () {
+      this.$gtag.event(`api_request`, {
+        'event_category' : 'lkr_load',
+        'event_label' : 'lkr_load'
+      })
     }
+
   }
 }
 </script>
