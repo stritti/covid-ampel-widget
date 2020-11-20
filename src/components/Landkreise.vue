@@ -102,7 +102,7 @@ export default {
 .landkreise {
   .van-index-anchor {
     color: var(--text);
-    background-color: var(--secondary-color);
+    background-color: var(--background-color-light);
   }
 
   .van-cell {

@@ -1,3 +1,4 @@
+
 // Color Palette
 @black: #000;
 @white: #fff;
@@ -16,14 +17,44 @@
 @orange-light: #fffbe8;
 @green: #07c160;
 
+:root {
+  --background-color: #f7f8fa;
+  --background-color-light: #fbfefb;
+  --text-dark: #101010;
+  --text: @text-color;
+  --text-light: #7b7b85;
+  --text-lighter: #ababab;
+  --blue: #3460db;
+  --green: #27ae60;
+  --yellow: #feca57;
+  --red: #c0392b;
+  --white: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: @text-color;
+    --background-color-light: #4d4d4d;
+    --text-dark: #ffffff;
+    --text: #fcfcfc;
+    --text-light: #7b7b85;
+    --text-lighter: #ababab;
+    --blue: #3498db;
+    --green: #27ae60;
+    --yellow: #feca57;
+    --red: #c0392b;
+    --white: #ffffff;
+  }
+}
+
 
 // Component Colors
 @text-color: @gray-8;
 @active-color: @gray-2;
 @active-opacity: 0.7;
 @disabled-opacity: 0.5;
-@background-color: @gray-1;
-@background-color-light: #fafafa;
+@background-color: var(--background-color);
+@background-color-light: var(--background-color-light);
 @text-link-color: #576b95;
 
 // Font
@@ -40,8 +71,7 @@
   Helvetica, Segoe UI, Arial, Roboto, sans-serif;
 
 // ActionBar
-@action-bar-background-color: rgba(5, 164, 226, 0.7);
-// @action-bar-background-color: @white;
+@action-bar-background-color: @white;
 @action-bar-height: 50px;
 @action-bar-icon-width: 48px;
 @action-bar-icon-height: 100%;
@@ -54,33 +84,70 @@
 @action-bar-button-warning-color: @gradient-orange;
 @action-bar-button-danger-color: @gradient-red;
 
+@supports (font: -apple-system-body) {
+  html {
+    font: -apple-system-body;
+  }
 
-:root {
-  --background-color: #f7f8fa;
-  --secondary-color: #fbfefb;
-  --text-dark: #101010;
-  --text: @text-color;
-  --text-light: #7b7b85;
-  --text-lighter: #ababab;
-  --blue: #3460db;
-  --green: #27ae60;
-  --yellow: #feca57;
-  --red: #c0392b;
-  --white: #ffffff;
+  /* default size of -apple-system-body here is 17px
+   using that as a default, scale text down to equivalent of 14px (14/17).
+  */
+  body {
+    font-size: 0.94em;
+  }
+
+  @media only screen and (min-width: 28.78em) {
+    html {
+      font: -apple-system-body;
+    }
+
+    /* default size of -apple-system-body here is 17px
+     using that as a default, scale text down to equivalent of 16px (16/17).
+    */
+    body {
+      font-size: 0.82em;
+    }
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: @text-color;
-    --secondary-color: #4d4d4d;
-    --text-dark: #101010;
-    --text: #fcfcfc;
-    --text-light: #7b7b85;
-    --text-lighter: #ababab;
-    --blue: #3498db;
-    --green: #27ae60;
-    --yellow: #feca57;
-    --red: #c0392b;
-    --white: #ffffff;
+@media only screen and (min-width: 33.4em) {
+  html {
+    font: -apple-system-body;
   }
+
+  /* default size of -apple-system-body here is 17px
+     using that as a default, scale text down to equivalent of 18px (18/17)
+    */
+  body {
+    font-size: 1.06em;
+  }
+}
+
+
+
+body {
+  background: var(--background-color);
+  color: var(--text);
+}
+
+a {
+  color: var(--blue);
+}
+
+.container {
+  width: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.van-nav-bar {
+  color: var(--text);
+  background-color: var(--background-color);
+}
+
+.van-nav-bar__title {
+  color: var(--text);
 }

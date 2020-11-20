@@ -64,6 +64,7 @@ export default {
 .van-action-bar {
   color: var(--text);
   background-color: var(--background-color);
+  padding: 8px;
 
   .icon-tabler {
     margin-left: auto;
