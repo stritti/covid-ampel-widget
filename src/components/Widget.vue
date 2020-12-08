@@ -95,6 +95,7 @@ export default {
         this.getIndicator(this.data)
         this.track(this.data)
       }
+      this.getPreviewImage()
       this.loaded = true
     })
   },
@@ -187,6 +188,16 @@ export default {
         'event_category' : 'inzidenz_load',
         'event_label' : `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
       })
+    },
+    async getPreviewImage() {
+      const el = this.$refs.homeView
+      // add option type to get the image version
+      // if not provided the promise will return
+      // the canvas.
+      const options = {
+        type: 'dataURL'
+      }
+      this.metaInfo.meta.image = await this.$html2canvas(el, options)
     }
   }
 }

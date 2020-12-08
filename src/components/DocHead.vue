@@ -4,17 +4,45 @@
     to="head"
   >
     <title>{{ metaInfo.title }}</title>
+
+    <meta
+      v-if="metaInfo.title"
+      property="og:title"
+      :content="metaInfo.title"
+    >
+    <meta
+      v-if="metaInfo.title"
+      property="twitter:title"
+      :content="metaInfo.title"
+    >
     <template v-if="metaInfo.meta">
+      <meta
+        v-if="metaInfo.meta.description"
+        property="description"
+        :content="metaInfo.meta.description"
+      >
       <meta
         v-if="metaInfo.meta.description"
         property="og:description"
         :content="metaInfo.meta.description"
       >
-
-      <template v-if="metaInfo.meta.img">
+      <meta
+        v-if="metaInfo.meta.description"
+        property="twitter:description"
+        :content="metaInfo.meta.description"
+      >
+      <template v-if="metaInfo.meta.image">
         <meta
-          property="og:image:url"
-          :content="metaInfo.meta.img.url"
+          property="og:image"
+          :content="metaInfo.meta.image"
+        >
+        <meta
+          property="twitter:image"
+          :content="metaInfo.meta.image"
+        >
+        <meta
+          property="twitter:card"
+          content="summary_large_image"
         >
       </template>
     </template>
