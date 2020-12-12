@@ -18,6 +18,7 @@
       </h3>
       <p class="cases">
         <img
+          alt="Corona-Ampel"
           src="@/assets/coronaampel.png"
           class="ampel"
         >
@@ -47,6 +48,7 @@
               <a
                 :class="color(data.cases7_per_100k)"
                 target="_blank"
+                rel="noreferrer"
                 href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
               >RKI</a>
             </span>
@@ -58,7 +60,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { rkiService } from '@/services/rki.service.js'
 import { database } from '@/services/database.js'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
@@ -88,50 +90,52 @@ export default {
     this.getData().then((data) => {
       this.data = data
       if (data) {
+        this.getIndicator(this.data)
+        this.track(this.data)
+
         data.last_update = this.getTimestamp(data.last_update)
         data.id = data.OBJECTID + '-' + this.formatDate(data.last_update)
         database.add(data)
-
-        this.getIndicator(this.data)
-        this.track(this.data)
       }
-      this.loaded = true
     })
   },
   methods: {
     async getData() {
-      const url =
-        'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=OBJECTID in (' +
-        this.objectId +
-        ')&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,GEN,IBZ&returnGeometry=false&f=json'
-      const httpClient = axios.create({
-        baseURL: url,
-        timeout: 10000, // indicates, 10000ms ie. 10 second
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      const result = await httpClient.get()
-      if (result.error) {
-        console.error(result.error)
-        this.error = 'Fehler beim Laden der Daten vom RKI-Server'
-      } else {
-        console.log(result)
-        this.loading = false
-      }
-      let data = result.data.features[0].attributes
-      return data
+      this.loading = true
+
+      rkiService.getIncidence( this.objectId )
+        .then(result => {
+          const data = result.data.features[0].attributes
+          if (data) {
+            this.data = data
+
+            data.last_update = this.getTimestamp(data.last_update)
+            data.id = data.OBJECTID + '-' + this.formatDate(data.last_update)
+            database.add(data)
+            this.getIndicator(this.data)
+            this.track(this.data)
+          }
+        })
+        .catch(error => {
+          console.error(error)
+          this.error = 'Fehler beim Laden der Daten vom RKI-Server'
+        })
+        .finally(() => {
+          this.loading = false
+        })
     },
     color(value) {
       let col = ""
       if (value < 35) {
         col = "widget-green"
       } else if (value >= 35 && value < 50) {
-        col = "widget-yellow"
+        col = "widget-35"
       } else if (value >= 50 && value < 100) {
-        col = "widget-red"
+        col = "widget-50"
       } else if (value >= 100) {
-        col = "widget-darkred"
+        col = "widget-100"
+      } else if (value >= 200) {
+        col = "widget-200"
       }
       return col
     },
@@ -207,17 +211,17 @@ export default {
     color: rgb(221, 221, 221);
     background-color: rgb(2, 156, 2);
   }
-  .widget-yellow {
+  .widget-35 {
     height: 100vh;
     color: rgba(45, 45, 45, 0.99);
     background: rgb(230, 200, 50);
   }
-  .widget-red {
+  .widget-50 {
     height: 100vh;
     color: rgb(240, 240, 240);
-    background-color: rgb(235, 64, 52);
+    background-color: #fc0008;
   }
-  .widget-darkred {
+  .widget-100 {
     height: 100vh;
     color: rgb(255, 253, 253);
     background-image: linear-gradient(
@@ -231,6 +235,21 @@ export default {
       #ff6200 100%
     );
     background-size: 56.57px 56.57px;
+  }
+  .widget-100 {
+    height: 100vh;
+    color: rgb(255, 253, 253);
+    background-image: linear-gradient(
+      135deg,
+      #e2040bc7 40%,
+      #fc0008 40%,
+      #fc0008 50%,
+      #e2040bc7 50%,
+      #e2040bc7 90%,
+      #fc0008 90%,
+      #fc0008 100%
+    );
+    background-size: 35.36px 35.36px;
   }
   .cases {
     font-size: 3em;
