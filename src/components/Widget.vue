@@ -8,7 +8,7 @@
     </div>
     <div
       v-if="data"
-      :class="color(data.cases7_per_100k)"
+      :class="widgetClass(data.cases7_per_100k)"
       :object-id="data.OBJECTID"
     >
       <h3 class="ort">
@@ -46,7 +46,7 @@
             <span class="label">Datenquelle: </span>
             <span class="data">
               <a
-                :class="color(data.cases7_per_100k)"
+                :class="widgetClass(data.cases7_per_100k)"
                 target="_blank"
                 rel="noreferrer"
                 href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
@@ -87,33 +87,20 @@ export default {
     }
   },
   mounted() {
-    this.getData().then((data) => {
-      this.data = data
-      if (data) {
-        this.getIndicator(this.data)
-        this.track(this.data)
-
-        data.last_update = this.getTimestamp(data.last_update)
-        data.id = data.OBJECTID + '-' + this.formatDate(data.last_update)
-        database.add(data)
-      }
-    })
+    this.getData()
   },
   methods: {
-    async getData() {
+    getData () {
       this.loading = true
 
       rkiService.getIncidence( this.objectId )
-        .then(result => {
-          const data = result.data.features[0].attributes
-          if (data) {
-            this.data = data
+        .then(data => {
+          const incidence = data.features[0].attributes
+          if (incidence) {
+            this.data = incidence
 
-            data.last_update = this.getTimestamp(data.last_update)
-            data.id = data.OBJECTID + '-' + this.formatDate(data.last_update)
-            database.add(data)
-            this.getIndicator(this.data)
-            this.track(this.data)
+            this.getIndicator(incidence)
+            database.add(incidence)
           }
         })
         .catch(error => {
@@ -121,10 +108,11 @@ export default {
           this.error = 'Fehler beim Laden der Daten vom RKI-Server'
         })
         .finally(() => {
+          this.track(this.data)
           this.loading = false
         })
     },
-    color(value) {
+    widgetClass (value) {
       let col = ""
       if (value < 35) {
         col = "widget-green"
@@ -139,19 +127,14 @@ export default {
       }
       return col
     },
-    rounded(value) {
+    rounded (value) {
       return Number(value.toFixed(1))
     },
-    getTimestamp(dateStr) {
-      const regex = /([\d]+)\.([\d]+)\.([\d]+), ([0-2]?[0-9]):([0-5][0-9])/g
-      let m = regex.exec(dateStr)
-      return new Date(m[3], m[2]-1, m[1], m[4], m[5]).getTime()
-    },
-    formatDate(value) {
+    formatDate (value) {
       let date = new Date(value)
       return date.toLocaleDateString("de-DE")
     },
-    getIndicator(today) {
+    getIndicator (today) {
       database.getData(today.OBJECTID, -1)
         .then((yesterday) => {
           let result
@@ -167,10 +150,9 @@ export default {
             result = null
           }
           this.indicator = result
-          return result
         })
     },
-    getBezShort(IBZ) {
+    getBezShort (IBZ) {
       switch (IBZ) {
         case 40: // Kreisfreie Stadt
           return 'KS'
@@ -236,7 +218,7 @@ export default {
     );
     background-size: 56.57px 56.57px;
   }
-  .widget-100 {
+  .widget-200 {
     height: 100vh;
     color: rgb(255, 253, 253);
     background-image: linear-gradient(

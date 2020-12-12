@@ -1,6 +1,6 @@
 import Dexie from 'dexie'
 
-  const db = new Dexie('inzidenz')
+const db = new Dexie('inzidenz')
 
 class Database {
 
@@ -11,6 +11,9 @@ class Database {
   }
 
   add(data) {
+    data.last_update = this.getTimestamp(data.last_update)
+    data.id = data.OBJECTID + '-' + this.formatDate(data.last_update)
+
     db.inzidenz.put(data, data.id)
   }
 
@@ -32,6 +35,16 @@ class Database {
       })
 
     return result
+  }
+
+  getTimestamp(dateStr) {
+    const regex = /([\d]+)\.([\d]+)\.([\d]+), ([0-2]?[0-9]):([0-5][0-9])/g
+    let m = regex.exec(dateStr)
+    return new Date(m[3], m[2]-1, m[1], m[4], m[5]).getTime()
+  }
+  formatDate(value) {
+    let date = new Date(value)
+    return date.toLocaleDateString("de-DE")
   }
 
 }

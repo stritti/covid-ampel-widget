@@ -32,7 +32,7 @@
   </div>
 </template>
 <script>
-import axios from 'axios'
+import { rkiService } from '@/services/rki.service.js'
 
 export default {
   name: 'Landkreise',
@@ -40,43 +40,34 @@ export default {
     return {
       isLoading : false,
       data: [],
+      selectedValue: null
     }
   },
   mounted () {
-    this.getData().then((data) => {
-      this.data = []
-      let index = null
-      data.forEach(item => {
-        if (item.attributes.GEN.charAt(0) !== index) {
-          index = item.attributes.GEN.charAt(0)
-          this.data.push({OBJECTID: index, index: true, label: index })
-        }
-        this.data.push(item.attributes)
+    this.isLoading = true
+
+    rkiService.getAreas()
+      .then((data) => {
+        this.data = []
+        let index = null
+        data.forEach(item => {
+          if (item.attributes.GEN.charAt(0) !== index) {
+            // add Item for alphabetical anchor
+            index = item.attributes.GEN.charAt(0)
+            this.data.push({OBJECTID: index, index: true, label: index })
+          }
+          this.data.push(item.attributes)
+        })
+
       })
-      this.selectedValue = localStorage.getItem('landkreis')
-    })
+      .finally(() => {
+        this.track()
+        this.isLoading = false
+      })
+    this.selectedValue = localStorage.getItem('landkreis')
   },
 
   methods: {
-    async getData() {
-      this.isLoading = true
-      const url =
-        'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&units=esriSRUnit_Meter&returnGeodetic=false&outFields=objectId%2CBEZ%2CGEN&returnGeometry=false&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=true&cacheHint=false&orderByFields=GEN&resultRecordCount=1000&returnZ=false&returnM=false&returnExceededLimitFeatures=false&quantizationParameters=&sqlFormat=none&f=pjson'
-      const httpClient = axios.create({
-        baseURL: url,
-        timeout: 10000, // indicates, 10000ms ie. 10 second
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      const result = await httpClient.get()
-      if (result.error) {
-        console.error(result.error)
-      }
-      this.track()
-      this.isLoading = false
-      return result.data.features
-    },
     onClick(id) {
       localStorage.setItem('landkreis', id)
       this.trackSelection(id)
