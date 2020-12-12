@@ -62,6 +62,7 @@
 <script>
 import { rkiService } from '@/services/rki.service.js'
 import { database } from '@/services/database.js'
+import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
@@ -71,6 +72,7 @@ export default {
   components: {
     IndicatorInc, IndicatorDec, IndicatorEq
   },
+  mixins: [crono],
   props: {
     // See: https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0
     objectId: {
@@ -86,8 +88,12 @@ export default {
       indicator: null
     }
   },
-  mounted() {
+  mounted () {
     this.getData()
+  },
+  cron: {
+    time: 5 * 60000, // minutes
+    method: 'getData'
   },
   methods: {
     getData () {
