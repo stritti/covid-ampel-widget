@@ -42,7 +42,7 @@ export default {
       data: [],
     }
   },
-  created() {
+  mounted () {
     this.getData().then((data) => {
       this.data = []
       let index = null
