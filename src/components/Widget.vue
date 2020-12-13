@@ -126,7 +126,7 @@ export default {
         col = "widget-35"
       } else if (value >= 50 && value < 100) {
         col = "widget-50"
-      } else if (value >= 100) {
+      } else if (value >= 100  && value < 200) {
         col = "widget-100"
       } else if (value >= 200) {
         col = "widget-200"
