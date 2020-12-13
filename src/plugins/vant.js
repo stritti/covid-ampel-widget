@@ -6,11 +6,15 @@ import { Collapse, CollapseItem } from 'vant'
 import { Image as VanImage } from 'vant'
 import { IndexBar, IndexAnchor } from 'vant'
 import { Loading } from 'vant'
+import { Locale } from 'vant'
 
 import 'vant/lib/index.css'
+import deDE from 'vant/es/locale/lang/de-DE'
 
 export default {
   install: (app) => {
+    Locale.use('de-DE', deDE)
+
     app.use(NavBar)
     app.use(Sticky)
     app.use(ActionBar)

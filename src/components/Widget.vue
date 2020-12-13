@@ -8,7 +8,7 @@
     </div>
     <div
       v-if="data"
-      :class="color(data.cases7_per_100k)"
+      :class="widgetClass(data.cases7_per_100k)"
       :object-id="data.OBJECTID"
     >
       <h3 class="ort">
@@ -18,6 +18,7 @@
       </h3>
       <p class="cases">
         <img
+          alt="Corona-Ampel"
           src="@/assets/coronaampel.png"
           class="ampel"
         >
@@ -45,8 +46,9 @@
             <span class="label">Datenquelle: </span>
             <span class="data">
               <a
-                :class="color(data.cases7_per_100k)"
+                :class="widgetClass(data.cases7_per_100k)"
                 target="_blank"
+                rel="noreferrer"
                 href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
               >RKI</a>
             </span>
@@ -58,8 +60,9 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { rkiService } from '@/services/rki.service.js'
 import { database } from '@/services/database.js'
+import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
@@ -69,6 +72,7 @@ export default {
   components: {
     IndicatorInc, IndicatorDec, IndicatorEq
   },
+  mixins: [crono],
   props: {
     // See: https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0
     objectId: {
@@ -84,70 +88,59 @@ export default {
       indicator: null
     }
   },
-  mounted() {
-    this.getData().then((data) => {
-      this.data = data
-      if (data) {
-        data.last_update = this.getTimestamp(data.last_update)
-        data.id = data.OBJECTID + '-' + this.formatDate(data.last_update)
-        database.add(data)
-
-        this.getIndicator(this.data)
-        this.track(this.data)
-      }
-      this.loaded = true
-    })
+  mounted () {
+    this.getData()
+  },
+  cron: {
+    time: 5 * 60000, // minutes
+    method: 'getData'
   },
   methods: {
-    async getData() {
-      const url =
-        'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=OBJECTID in (' +
-        this.objectId +
-        ')&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,GEN,IBZ&returnGeometry=false&f=json'
-      const httpClient = axios.create({
-        baseURL: url,
-        timeout: 10000, // indicates, 10000ms ie. 10 second
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      const result = await httpClient.get()
-      if (result.error) {
-        console.error(result.error)
-        this.error = 'Fehler beim Laden der Daten vom RKI-Server'
-      } else {
-        console.log(result)
-        this.loading = false
-      }
-      let data = result.data.features[0].attributes
-      return data
+    getData () {
+      this.loading = true
+
+      rkiService.getIncidence( this.objectId )
+        .then(data => {
+          const incidence = data.features[0].attributes
+          if (incidence) {
+            this.data = incidence
+
+            this.getIndicator(incidence)
+            database.add(incidence)
+          }
+        })
+        .catch(error => {
+          console.error(error)
+          this.error = 'Fehler beim Laden der Daten vom RKI-Server'
+        })
+        .finally(() => {
+          this.track(this.data)
+          this.loading = false
+        })
     },
-    color(value) {
+    widgetClass (value) {
       let col = ""
       if (value < 35) {
         col = "widget-green"
       } else if (value >= 35 && value < 50) {
-        col = "widget-yellow"
+        col = "widget-35"
       } else if (value >= 50 && value < 100) {
-        col = "widget-red"
+        col = "widget-50"
       } else if (value >= 100) {
-        col = "widget-darkred"
+        col = "widget-100"
+      } else if (value >= 200) {
+        col = "widget-200"
       }
       return col
     },
-    rounded(value) {
+    rounded (value) {
       return Number(value.toFixed(1))
     },
-    getTimestamp(dateStr) {
-      const regex = /([\d]+)\.([\d]+)\.([\d]+), ([0-2]?[0-9]):([0-5][0-9])/g
-      let m = regex.exec(dateStr)
-      return new Date(m[3], m[2]-1, m[1], m[4], m[5]).getTime()
-    },
-    formatDate(value) {
+    formatDate (value) {
       let date = new Date(value)
       return date.toLocaleDateString("de-DE")
     },
-    getIndicator(today) {
+    getIndicator (today) {
       database.getData(today.OBJECTID, -1)
         .then((yesterday) => {
           let result
@@ -163,10 +156,9 @@ export default {
             result = null
           }
           this.indicator = result
-          return result
         })
     },
-    getBezShort(IBZ) {
+    getBezShort (IBZ) {
       switch (IBZ) {
         case 40: // Kreisfreie Stadt
           return 'KS'
@@ -207,17 +199,17 @@ export default {
     color: rgb(221, 221, 221);
     background-color: rgb(2, 156, 2);
   }
-  .widget-yellow {
+  .widget-35 {
     height: 100vh;
     color: rgba(45, 45, 45, 0.99);
     background: rgb(230, 200, 50);
   }
-  .widget-red {
+  .widget-50 {
     height: 100vh;
     color: rgb(240, 240, 240);
-    background-color: rgb(235, 64, 52);
+    background-color: #fc0008;
   }
-  .widget-darkred {
+  .widget-100 {
     height: 100vh;
     color: rgb(255, 253, 253);
     background-image: linear-gradient(
@@ -231,6 +223,21 @@ export default {
       #ff6200 100%
     );
     background-size: 56.57px 56.57px;
+  }
+  .widget-200 {
+    height: 100vh;
+    color: rgb(255, 253, 253);
+    background-image: linear-gradient(
+      135deg,
+      #e2040bc7 40%,
+      #fc0008 40%,
+      #fc0008 50%,
+      #e2040bc7 50%,
+      #e2040bc7 90%,
+      #fc0008 90%,
+      #fc0008 100%
+    );
+    background-size: 35.36px 35.36px;
   }
   .cases {
     font-size: 3em;
