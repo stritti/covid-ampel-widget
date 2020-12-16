@@ -22,6 +22,7 @@
           clickable
           is-link
           icon="location-o"
+          :class="selectedClass(item.OBJECTID)"
           @click="onClick(item.OBJECTID)"
         >
           <h4>{{ item.GEN }}</h4>
@@ -47,10 +48,10 @@ export default {
     this.isLoading = true
 
     rkiService.getAreas()
-      .then((data) => {
+      .then((result) => {
         this.data = []
         let index = null
-        data.forEach(item => {
+        result.forEach(item => {
           if (item.attributes.GEN.charAt(0) !== index) {
             // add Item for alphabetical anchor
             index = item.attributes.GEN.charAt(0)
@@ -58,13 +59,12 @@ export default {
           }
           this.data.push(item.attributes)
         })
-
+        this.selectedValue = localStorage.getItem('landkreis')
       })
       .finally(() => {
         this.track()
         this.isLoading = false
       })
-    this.selectedValue = localStorage.getItem('landkreis')
   },
 
   methods: {
@@ -72,6 +72,13 @@ export default {
       localStorage.setItem('landkreis', id)
       this.trackSelection(id)
       this.$router.push(`/lkr/${id}`)
+    },
+    selectedClass (id) {
+      if(this.selectedValue == id) {
+        return 'van-cell--selected '
+      } else {
+        return ''
+      }
     },
     trackSelection (id) {
       this.$gtag.event(`api_request`, {
@@ -108,6 +115,9 @@ export default {
       margin-top: 0;
       margin-bottom: 0;
     }
+  }
+   .van-cell--selected {
+    background-color: var(--background-color-light);
   }
   .van-cell__value--alone {
     color: var(--text);
