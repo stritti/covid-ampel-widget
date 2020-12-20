@@ -13,13 +13,13 @@ import Widget from '@/components/Widget.vue';
     </van-sticky>
 
     <div class="container">
-      <h4>Das Covid-19 Ampel-Widget</h4>
+      <h3>Das Covid-19 Ampel-Widget</h3>
       <p>
         Behalte den Inzidenzwert deines Landkreises im Blick, indem du diesen
         als Widget zu deinem Screen hinzufügst.
       </p>
 
-      <h4>Datenquelle</h4>
+      <h3>Datenquelle</h3>
       <p>
         Das Covid-19 Ampel-Widget basiert auf den Zahlen, welche das
         <a href="https://www.rki.de/">Robert Koch-Institut (RKI)</a> aus den
@@ -28,14 +28,19 @@ import Widget from '@/components/Widget.vue';
           target="_blank"
           href="https://www.govdata.de/dl-de/by-2-0"
         >Open Data Datenlizenz Deutschland – Namensnennung – Version 2.0</a>
-        zur Verfügung gestellt. Für die Daten wird keine Haftung übernommen.<br>
+        zur Verfügung stellt.
+      </p>
+      <p>
+        Für die Daten wird keine Haftung übernommen.
+      </p>
+      <p>
         In den <router-link to="/config">
           Einstellungen
         </router-link> kann ein
         Landkreis ausgewählt werden, um die Corona-Ampel für diesen anzuzeigen.
       </p>
 
-      <h4>Das Projekt</h4>
+      <h3>Das Projekt</h3>
       <p>
         Das Covid Ampel Widget ist quelloffen unter der
         <a
