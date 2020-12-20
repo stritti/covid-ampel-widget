@@ -128,8 +128,10 @@ export default {
         col = "widget-50"
       } else if (value >= 100  && value < 200) {
         col = "widget-100"
-      } else if (value >= 200) {
+      } else if (value >= 200 && value < 500) {
         col = "widget-200"
+      } else if (value >= 500) {
+        col = "widget-500"
       }
       return col
     },
@@ -196,13 +198,13 @@ export default {
 
   .widget-green {
     height: 100vh;
-    color: rgb(221, 221, 221);
-    background-color: rgb(2, 156, 2);
+    color: rgba(45, 45, 45, 0.99);
+    background-color: rgb(255, 243, 128);
   }
   .widget-35 {
     height: 100vh;
     color: rgba(45, 45, 45, 0.99);
-    background: rgb(230, 200, 50);
+    background: rgb(255, 181, 52);
   }
   .widget-50 {
     height: 100vh;
@@ -229,13 +231,28 @@ export default {
     color: rgb(255, 253, 253);
     background-image: linear-gradient(
       135deg,
-      #e2040bc7 40%,
+      #661313 40%,
       #fc0008 40%,
       #fc0008 50%,
-      #e2040bc7 50%,
-      #e2040bc7 90%,
+      #661313 50%,
+      #661313 90%,
       #fc0008 90%,
       #fc0008 100%
+    );
+    background-size: 35.36px 35.36px;
+  }
+  .widget-500 {
+    height: 100vh;
+    color: rgb(255, 253, 253);
+    background-image: linear-gradient(
+      135deg,
+      rgb(221, 0, 133) 40%,
+      #e2040bc7 40%,
+      #e2040bc7 50%,
+      rgb(221, 0, 133) 50%,
+      rgb(221, 0, 133) 90%,
+      #e2040bc7 90%,
+      #e2040bc7 100%
     );
     background-size: 35.36px 35.36px;
   }
