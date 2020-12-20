@@ -25,8 +25,11 @@
           :class="selectedClass(item.OBJECTID)"
           @click="onClick(item.OBJECTID)"
         >
-          <h4>{{ item.GEN }}</h4>
-          <p>{{ item.BEZ }}</p>
+          <template #title>
+            <h4 class="custom-title">{{ item.GEN }}</h4>
+            <p>{{ item.BEZ }}</p>
+          </template>
+          <incidence-label :object-id="item.OBJECTID" />
         </van-cell>
       </span>
     </van-index-bar>
@@ -34,9 +37,13 @@
 </template>
 <script>
 import { rkiService } from '@/services/rki.service.js'
+import IncidenceLabel from '@/components/IncidenceLabel.vue'
 
 export default {
   name: 'Landkreise',
+  components: {
+    IncidenceLabel
+  },
   data() {
     return {
       isLoading : false,

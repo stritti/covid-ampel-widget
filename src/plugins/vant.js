@@ -7,6 +7,7 @@ import { Image as VanImage } from 'vant'
 import { IndexBar, IndexAnchor } from 'vant'
 import { Loading } from 'vant'
 import { Locale } from 'vant'
+import { Tag } from 'vant'
 
 import 'vant/lib/index.css'
 import deDE from 'vant/es/locale/lang/de-DE'
@@ -28,5 +29,6 @@ export default {
     app.use(IndexBar)
     app.use(IndexAnchor)
     app.use(Loading)
+    app.use(Tag)
   }
 }
