@@ -64,6 +64,19 @@
             >
               <template #title>
                 <a
+                  href="hhttps://www.intensivregister.de/#/intensivregister"
+                  target="_blank"
+                >
+                  DIVI-Intensivregister
+                </a>
+              </template>
+            </van-cell>
+            <van-cell
+              icon="bookmark"
+              is-link
+            >
+              <template #title>
+                <a
                   href="https://coronavis.dbvis.de/de/overview/map/bedcapacities"
                   target="_blank"
                 >
