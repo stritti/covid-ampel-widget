@@ -1,4 +1,3 @@
-import Widget from '@/components/Widget.vue';
 <template>
   <div>
     <doc-head :meta-info="metaInfo" />

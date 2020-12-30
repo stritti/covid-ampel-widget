@@ -39,6 +39,53 @@
         >
           <HelpAndroid />
         </van-collapse-item>
+        <van-collapse-item
+          title="Nützliche Links"
+          name="Links"
+        >
+          <p>Einige nützliche Links in Bezug auf die Inzidenz in Deutschland:</p>
+          <van-list>
+            <van-cell
+              icon="bookmark"
+              is-link
+            >
+              <template #title>
+                <a
+                  href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+                  target="_blank"
+                >
+                  Robert Koch-institut: COVID-19-Dashboard
+                </a>
+              </template>
+            </van-cell>
+            <van-cell
+              icon="bookmark"
+              is-link
+            >
+              <template #title>
+                <a
+                  href="https://coronavis.dbvis.de/de/overview/map/bedcapacities"
+                  target="_blank"
+                >
+                  CORONAVIS: Intensivbetten-Kapazitäten
+                </a>
+              </template>
+            </van-cell>
+            <van-cell
+              icon="bookmark"
+              is-link
+            >
+              <template #title>
+                <a
+                  href="https://pavelmayer.de/covid/risks/"
+                  target="_blank"
+                >
+                  COVID Risiko Deutschland nach Ländern und Kreisen
+                </a>
+              </template>
+            </van-cell>
+          </van-list>
+        </van-collapse-item>
       </van-collapse>
     </div>
   </div>
