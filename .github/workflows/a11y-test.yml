@@ -23,8 +23,7 @@ jobs:
       - name: Run a11y tests
         uses: omboo/a11y-action@v0.3-beta.1
         with:
-          urls: "http://localhost:3000"
+          urls: "https://stritti.github.io/covid-ampel-widget/lkr/211"
           fail-on-error: true
-          start-command: "npm start"
-          wait-on: "http://localhost:3000"
+          wait-on: "https://stritti.github.io/covid-ampel-widget/lkr/211"
           wait-on-timeout: 60
