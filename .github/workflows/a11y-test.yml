@@ -21,7 +21,7 @@ jobs:
       - name: Run build
         run: npm run build
       - name: Run a11y tests
-        uses: omboo/a11y-action@v0.3
+        uses: omboo/a11y-action@v0.3-beta.1
         with:
           urls: "http://localhost:3000"
           fail-on-error: true
