@@ -14,12 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Runs accessibility tests
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Install NPM dependencies
-        uses: bahmutov/npm-install@v1
-      - name: Run build
-        run: npm run build
       - name: Run a11y tests
         uses: omboo/a11y-action@v0.3-beta.1
         with:
