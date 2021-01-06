@@ -1,5 +1,8 @@
 name: a11y Tests
-on: [main, pull_request]
+on:
+  push:
+    branches:
+      - main
 jobs:
   accessibility_job:
     runs-on: ubuntu-latest
