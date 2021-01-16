@@ -12,7 +12,7 @@
     "core-js": "^3.8.2",
     "dexie": "^3.0.3",
     "eslint-plugin-standard": "^4.1.0",
-    "husky": "^4.3.7",
+    "husky": "^4.3.8",
     "vant": "^3.0.3",
     "vue": "^3.0.5",
     "vue-crono": "^2.0.9",

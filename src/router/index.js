@@ -15,7 +15,8 @@ const routes = [
   { path: '/:pathMatch(.*)', component: Home }
 ]
 
-const publicPath = process.env.NODE_ENV === 'production' ? '/covid-ampel-widget/' : '/'
+let publicPath = process.env.NODE_ENV === 'production' ? '/covid-ampel-widget/' : '/'
+publicPath = process.env.VUE_APP_BASE_PATH ? process.env.VUE_APP_BASE_PATH : publicPath
 
 const router = createRouter({
   history: createWebHistory(publicPath),
