@@ -27,8 +27,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VUE_APP_BASE_PATH: ${{ secrets.VUE_APP_BASE_PATH }}
       - run: cp ./dist/index.html ./dist/404.html
 
       - name: deploy
