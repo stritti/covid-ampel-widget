@@ -4,6 +4,8 @@
 [![vue2](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://v3.vuejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J33A8DT)
+
 This is HTML based widget to show the incidences of German Landkreise for SARS-CoV-2 (COVID-19) infections.
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
 define levels for secure each other.
