@@ -1,4 +1,4 @@
-name: Github Pages Deploy
+name: "Github Pages Deploy"
 
 on:
   push:
@@ -15,7 +15,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-          check-latest: true
 
       - name: Cache dependencies
         uses: actions/cache@v2
