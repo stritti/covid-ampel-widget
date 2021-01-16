@@ -8,6 +8,10 @@ This is HTML based widget to show the incidences of German Landkreise for SARS-C
 Cases of the last 7 days per 100,000 inhabitants are shown. These is used in Germany to
 define levels for secure each other.
 
+## Live App
+
+▶ [https://covid-ampel.vercel.app/](https://covid-ampel.vercel.app/)
+
 Using additional Apps the Covid-19 Ampel-Widget could be integrated into
 [iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and
 [Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
@@ -62,6 +66,6 @@ npm run lint
 * Vant - Mobile UI Components built on Vue: <https://youzan.github.io/vant/next>
 * ArcGis REST-Service of RKI data: <https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0>
 * striped css background: <https://stripesgenerator.com/>
-* danymic font size on iOS respecting sysem settings: <https://ind.ie/labs/blog/dynamic-type-support/>
+* danaymic font size on iOS respecting system settings: <https://ind.ie/labs/blog/dynamic-type-support/>
 * some SVG icons of <https://github.com/tabler/tabler-icons>
 * vue-crono: <https://github.com/BrianRosamilia/vue-crono>
