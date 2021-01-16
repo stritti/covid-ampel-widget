@@ -10,5 +10,7 @@ module.exports = {
       }
     }
   },
-  assetsDir: 'assets'
+  publicPath: process.env.VUE_APP_BASE_PATH
+    ? process.env.VUE_APP_BASE_PATH
+    : '/covid-ampel-widget/'
 }
