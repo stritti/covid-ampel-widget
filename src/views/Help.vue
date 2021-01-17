@@ -43,61 +43,29 @@
           title="Nützliche Links"
           name="Links"
         >
-          <p>Einige nützliche Links in Bezug auf die Inzidenz in Deutschland:</p>
-          <van-list>
-            <van-cell
-              icon="bookmark"
-              is-link
-            >
-              <template #title>
-                <a
-                  href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
-                  target="_blank"
-                >
-                  Robert Koch-institut: COVID-19-Dashboard
-                </a>
-              </template>
-            </van-cell>
-            <van-cell
-              icon="bookmark"
-              is-link
-            >
-              <template #title>
-                <a
-                  href="hhttps://www.intensivregister.de/#/intensivregister"
-                  target="_blank"
-                >
-                  DIVI-Intensivregister
-                </a>
-              </template>
-            </van-cell>
-            <van-cell
-              icon="bookmark"
-              is-link
-            >
-              <template #title>
-                <a
-                  href="https://coronavis.dbvis.de/de/overview/map/bedcapacities"
-                  target="_blank"
-                >
-                  CORONAVIS: Intensivbetten-Kapazitäten
-                </a>
-              </template>
-            </van-cell>
-            <van-cell
-              icon="bookmark"
-              is-link
-            >
-              <template #title>
-                <a
-                  href="https://pavelmayer.de/covid/risks/"
-                  target="_blank"
-                >
-                  COVID Risiko Deutschland nach Ländern und Kreisen
-                </a>
-              </template>
-            </van-cell>
-          </van-list>
+          <div
+            v-for="usefulLinkItem in usefulLinks"
+            :key="usefulLinkItem.headline"
+          >
+            <p>
+              {{ usefulLinkItem.headline }}
+            </p>
+            <van-list>
+              <a
+                v-for="link in usefulLinkItem.links"
+                :key="link.url"
+                :href="link.url"
+                target="_blank"
+                class="useful-link"
+              >
+                <van-cell
+                  icon="bookmark"
+                  is-link
+                  :title="link.title"
+                />
+              </a>
+            </van-list>
+          </div>
         </van-collapse-item>
       </van-collapse>
     </div>
@@ -121,6 +89,38 @@ export default {
         title: 'Hilfe | Covid-19 Ampel-Widget',
       },
       activeName: '',
+      usefulLinks: [
+        {
+          headline: "Einige nützliche Links in Bezug auf die Inzidenz in Deutschland:",
+          links: [
+            {
+              title: "Robert Koch-institut: COVID-19-Dashboard",
+              url: "https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+            },
+            {
+              title: "DIVI-Intensivregister",
+              url: "https://www.intensivregister.de/#/intensivregister"
+            },
+            {
+              title: "CORONAVIS: Intensivbetten-Kapazitäten",
+              url: "https://coronavis.dbvis.de/de/overview/map/bedcapacities"
+            },
+            {
+              title: "COVID Risiko Deutschland nach Ländern und Kreisen",
+              url: "https://pavelmayer.de/covid/risks/"
+            }
+          ]
+        },
+        {
+          headline: "Weltweite Informationen:",
+          links: [
+            {
+              title: "Weltweite Daten und Fakten rund um die Pandemie im Zeitverlauf",
+              url: "https://ourworldindata.org/coronavirus"
+            }
+          ]
+        }
+      ]
     }
   },
   methods: {
@@ -130,3 +130,9 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+.useful-link
+  .van-cell__title
+    color: var(--blue)
+</style>
