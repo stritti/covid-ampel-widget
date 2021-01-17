@@ -26,9 +26,7 @@
           class="ampel"
         >
         {{ rounded(data.cases7_per_100k) }}
-        <indicator-eq v-if="indicator === 0" />
-        <indicator-inc v-if="indicator === +1" />
-        <indicator-dec v-if="indicator === -1" />
+        <component :is="'indicator-' + indicatorComponentDirection" />
       </p>
       <div class="info">
         <small>
@@ -110,6 +108,9 @@ export default {
         return 'widget-200'
       }
       return 'widget-500'
+    },
+    indicatorComponentDirection () {
+      return this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
     }
   },
   mounted () {
