@@ -8,7 +8,7 @@
     </div>
     <div
       v-if="data"
-      :class="widgetClass(data.cases7_per_100k)"
+      :class="incidenceColor"
       :object-id="data.OBJECTID"
     >
       <h3 class="ort">
@@ -49,7 +49,7 @@
             <span class="label">Datenquelle: </span>
             <span class="data">
               <a
-                :class="widgetClass(data.cases7_per_100k)"
+                :class="incidenceColor"
                 target="_blank"
                 rel="noreferrer"
                 href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
@@ -91,6 +91,27 @@ export default {
       indicator: null
     }
   },
+  computed: {
+    incidenceColor () {
+      const currentDistrictIncidence = this.data.cases7_per_100k
+      if (currentDistrictIncidence < 35) {
+        return 'widget-green'
+      }
+      if (currentDistrictIncidence < 50) {
+        return 'widget-35'
+      }
+      if (currentDistrictIncidence < 100) {
+        return 'widget-50'
+      }
+      if (currentDistrictIncidence < 200) {
+        return 'widget-100'
+      }
+      if (currentDistrictIncidence < 500) {
+        return 'widget-200'
+      }
+      return 'widget-500'
+    }
+  },
   mounted () {
     this.getData()
   },
@@ -120,23 +141,6 @@ export default {
           this.track(this.data)
           this.loading = false
         })
-    },
-    widgetClass (value) {
-      let col = ""
-      if (value < 35) {
-        col = "widget-green"
-      } else if (value >= 35 && value < 50) {
-        col = "widget-35"
-      } else if (value >= 50 && value < 100) {
-        col = "widget-50"
-      } else if (value >= 100  && value < 200) {
-        col = "widget-100"
-      } else if (value >= 200 && value < 500) {
-        col = "widget-200"
-      } else if (value >= 500) {
-        col = "widget-500"
-      }
-      return col
     },
     rounded (value) {
       return Number(value.toFixed(1))
