@@ -16,7 +16,10 @@
         <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
         <span class="name">{{ data.GEN }}</span>
       </h3>
-      <p class="cases">
+      <p
+        class="cases"
+        @click="shareIncidenceForDistrict"
+      >
         <img
           alt="Corona-Ampel"
           src="@/assets/coronaampel.png"
@@ -181,6 +184,18 @@ export default {
         'event_category' : 'inzidenz_load',
         'event_label' : `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
       })
+    },
+    shareIncidenceForDistrict () {
+      if (!("share" in navigator)) {
+        return
+      }
+      const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
+      const data = {
+        title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
+        text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen ${this.rounded(incidence)} Menschen positiv auf das neuartige Coronavirus getestet.`,
+        url: window.location.href
+      }
+      navigator.share(data)
     }
   }
 }
