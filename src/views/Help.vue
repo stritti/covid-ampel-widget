@@ -97,6 +97,21 @@
                 </a>
               </template>
             </van-cell>
+          </van-list><p>Weltweite Informationen:</p>
+          <van-list>
+            <van-cell
+              icon="bookmark"
+              is-link
+            >
+              <template #title>
+                <a
+                  href="https://ourworldindata.org/coronavirus"
+                  target="_blank"
+                >
+                  Weltweite Daten und Fakten rund um die Pandemie im Zeitverlauf
+                </a>
+              </template>
+            </van-cell>
           </van-list>
         </van-collapse-item>
       </van-collapse>
