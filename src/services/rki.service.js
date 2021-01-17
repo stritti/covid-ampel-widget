@@ -28,6 +28,17 @@ class RkiService {
     }
   }
 
+  async getDistrictName ({ latitude, longitude }) {
+    const url = `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&outFields=RS,GEN,cases7_bl_per_100k,cases7_per_100k,BL&geometry=${longitude.toFixed(3)}%2C${latitude.toFixed(3)}&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelWithin&returnGeometry=false&outSR=4326&f=json`
+    const result = await axios.get(url)
+    if (result.error) {
+      console.error(result.error)
+    } else {
+      const { features } = result.data
+      return features.length > 0 ? features[0].attributes.GEN.toString() : null
+    }
+  }
+
 }
 
 export const rkiService = new RkiService()
