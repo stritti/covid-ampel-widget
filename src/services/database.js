@@ -39,8 +39,8 @@ class Database {
 
   getTimestamp(dateStr) {
     const regex = /([\d]+)\.([\d]+)\.([\d]+), ([0-2]?[0-9]):([0-5][0-9])/g
-    let m = regex.exec(dateStr)
-    return new Date(m[3], m[2]-1, m[1], m[4], m[5]).getTime()
+    const [, day, month, year, hours, minutes] = regex.exec(dateStr)
+    return new Date(year, month-1, day, hours, minutes).getTime()
   }
   formatDate(value) {
     let date = new Date(value)
