@@ -88,7 +88,7 @@ export default {
 
 
 <style scoped>
-p {
-  font-size: 1rem;
+.container {
+  margin-bottom: 1.5rem;
 }
 </style>
