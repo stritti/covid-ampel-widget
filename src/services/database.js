@@ -19,15 +19,15 @@ class Database {
 
   async getData(objectId, offset) {
     // console.log(`objectId: ${objectId}, offset: ${offset}`)
-    let date = new Date()
+    const date = new Date()
     date.setHours(0)
     date.setMinutes(0)
     date.setSeconds(0)
     date.setMilliseconds(0)
-    let dateOffset = new Date(date.setDate(date.getDate() + offset))
+    const dateOffset = new Date(date.setDate(date.getDate() + offset))
     // console.log(`DateOffset ${ dateOffset.toLocaleDateString("de-DE") } ${dateOffset.getTime()}`)
 
-    let result = await db.inzidenz
+    const result = await db.inzidenz
       .where({ OBJECTID: objectId, last_update: dateOffset.getTime() })
       .first()
       .catch(error => {
@@ -39,11 +39,11 @@ class Database {
 
   getTimestamp(dateStr) {
     const regex = /([\d]+)\.([\d]+)\.([\d]+), ([0-2]?[0-9]):([0-5][0-9])/g
-    let m = regex.exec(dateStr)
-    return new Date(m[3], m[2]-1, m[1], m[4], m[5]).getTime()
+    const [, day, month, year, hours, minutes] = regex.exec(dateStr)
+    return new Date(year, month-1, day, hours, minutes).getTime()
   }
   formatDate(value) {
-    let date = new Date(value)
+    const date = new Date(value)
     return date.toLocaleDateString("de-DE")
   }
 
