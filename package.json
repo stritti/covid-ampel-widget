@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-report": "vue-cli-service build --report"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -13,23 +14,25 @@
     "dexie": "^3.0.3",
     "eslint-plugin-standard": "^4.1.0",
     "husky": "^4.3.8",
-    "vant": "^3.0.4",
+    "vant": "^3.0.5",
     "vue": "^3.0.5",
     "vue-crono": "^2.0.9",
     "vue-gtag-next": "^1.14.0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.10",
-    "@vue/cli-plugin-eslint": "^4.5.10",
-    "@vue/cli-service": "^4.5.10",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "@fullhuman/vue-cli-plugin-purgecss": "~4.0.0",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-eslint": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
     "@vue/compiler-sfc": "^3.0.5",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.4.1",
+    "eslint-plugin-vue": "^7.5.0",
     "less": "^3.13.1",
-    "less-loader": "^7.2.1",
+    "less-loader": "^7.3.0",
     "lint-staged": "^10.5.3",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1"
@@ -53,6 +56,11 @@
       ]
     }
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -65,10 +73,5 @@
     "*.vue": [
       "npm run lint"
     ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }
