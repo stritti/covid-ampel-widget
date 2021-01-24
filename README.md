@@ -71,6 +71,7 @@ npm run lint
 * danaymic font size on iOS respecting system settings: <https://ind.ie/labs/blog/dynamic-type-support/>
 * some SVG icons of <https://github.com/tabler/tabler-icons>
 * vue-crono: <https://github.com/BrianRosamilia/vue-crono>
+* purgeCSS: <https://purgecss.com/guides/vue.html>
 
 ## Author
 
