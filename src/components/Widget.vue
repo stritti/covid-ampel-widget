@@ -1,10 +1,13 @@
 <template>
   <div class="widget">
     <div v-if="loading">
-      Daten werden geladen ...
+      Daten werden geladen &hellip;
     </div>
-    <div v-if="error">
-      {{ error }}
+    <div
+      v-if="error"
+      class="error"
+    >
+      <van-icon name="warning-o" /> {{ error }}
     </div>
     <div
       v-if="data"
@@ -274,6 +277,9 @@ export default {
   }
   .info {
     line-height: 1.2rem;
+  }
+  .error {
+    color: var(--red);
   }
 }
 

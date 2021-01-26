@@ -13,6 +13,8 @@ import 'vant/lib/collapse-item/index.less'
 import { Collapse, CollapseItem } from 'vant'
 import 'vant/lib/image/index.less'
 import { Image as VanImage } from 'vant'
+import 'vant/lib/icon/index.less'
+import { Icon } from 'vant'
 import 'vant/lib/index-bar/index.less'
 import 'vant/lib/index-anchor/index.less'
 import { IndexBar, IndexAnchor } from 'vant'
@@ -45,5 +47,6 @@ export default {
     app.use(Loading)
     app.use(Tag)
     app.use(List)
+    app.use(Icon)
   }
 }
