@@ -1,14 +1,10 @@
 <template>
-  <div
-    id="home-view"
-    ref="widget"
-  >
+  <div id="home-view">
     <doc-head :meta-info="metaInfo" />
 
     <widget
       v-if="hasSelectedDistrict"
       :object-id="selected"
-      :preview-image="metaInfo.meta.image"
     />
     <div v-else>
       Bitte einen Landkreis in den
