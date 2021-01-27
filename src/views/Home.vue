@@ -1,10 +1,14 @@
 <template>
-  <div id="home-view">
+  <div
+    id="home-view"
+    ref="widget"
+  >
     <doc-head :meta-info="metaInfo" />
 
     <widget
-      v-if="selected != null"
+      v-if="hasSelectedDistrict"
       :object-id="selected"
+      :preview-image="metaInfo.meta.image"
     />
     <div v-else>
       Bitte einen Landkreis in den
@@ -40,10 +44,15 @@ export default {
           vmid: 'description',
           name: 'description',
           description: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.',
-          imgage: null
+          image: null
         }
       },
       selected: null
+    }
+  },
+  computed: {
+    hasSelectedDistrict () {
+      return (this.selected !== null)
     }
   },
   async mounted () {

@@ -1,5 +1,8 @@
 <template>
-  <div class="widget">
+  <div
+    ref="widget"
+    class="widget"
+  >
     <div v-if="loading">
       Daten werden geladen ...
     </div>
@@ -67,6 +70,7 @@ import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
+import domtoimage from 'dom-to-image-more'
 
 export default {
   name: 'Widget',
@@ -107,8 +111,8 @@ export default {
             this.data = incidence
 
             this.getIndicator(incidence)
-            this.getPreviewImage()
             database.add(incidence)
+            this.setPreviewImage()
           }
         })
         .catch(error => {
@@ -184,16 +188,19 @@ export default {
         'event_label' : `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
       })
     },
-    async getPreviewImage() {
-      const el = this.$refs.homeView
-      // add option type to get the image version
-      // if not provided the promise will return
-      // the canvas.
-      const options = {
-        type: 'dataURL'
-      }
-      this.metaInfo.meta.image = await this.$html2canvas(el, options)
-    }
+    setPreviewImage() {
+      this.$nextTick(() => {
+        const capture = this.$refs.widget
+        domtoimage
+          .toPng(capture)
+          .then((dataUrl) => {
+            this.$parent.metaInfo.meta.image = dataUrl
+          })
+          .catch((error) => {
+            console.error(error)
+          })
+      })
+    },
   }
 }
 </script>
