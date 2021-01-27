@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: github pages deploy
+name: "Github Pages Deploy"
 
 on:
   push:
@@ -16,8 +14,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-          check-latest: true
+          node-version: '14.x'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -27,8 +24,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          VUE_APP_BASE_PATH: ${{ secrets.VUE_APP_BASE_PATH }}
       - run: cp ./dist/index.html ./dist/404.html
 
       - name: deploy

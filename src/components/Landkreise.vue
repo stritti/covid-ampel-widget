@@ -22,65 +22,70 @@
           clickable
           is-link
           icon="location-o"
+          :class="selectedClass(item.OBJECTID)"
           @click="onClick(item.OBJECTID)"
         >
-          <h4>{{ item.GEN }}</h4>
-          <p>{{ item.BEZ }}</p>
+          <template #title>
+            <h4 class="custom-title">{{ item.GEN }}</h4>
+            <p>{{ item.BEZ }}</p>
+          </template>
+          <incidence-label :object-id="item.OBJECTID" />
         </van-cell>
       </span>
     </van-index-bar>
   </div>
 </template>
 <script>
-import axios from 'axios'
+import { rkiService } from '@/services/rki.service.js'
+import IncidenceLabel from '@/components/IncidenceLabel.vue'
 
 export default {
   name: 'Landkreise',
+  components: {
+    IncidenceLabel
+  },
   data() {
     return {
       isLoading : false,
       data: [],
+      selectedValue: null
     }
   },
-  created() {
-    this.getData().then((data) => {
-      this.data = []
-      let index = null
-      data.forEach(item => {
-        if (item.attributes.GEN.charAt(0) !== index) {
-          index = item.attributes.GEN.charAt(0)
-          this.data.push({OBJECTID: index, index: true, label: index })
-        }
-        this.data.push(item.attributes)
+  mounted () {
+    this.isLoading = true
+
+    rkiService.getAreas()
+      .then((result) => {
+        this.data = []
+        let index = null
+        result.forEach(item => {
+          if (item.attributes.GEN.charAt(0) !== index) {
+            // add Item for alphabetical anchor
+            index = item.attributes.GEN.charAt(0)
+            this.data.push({OBJECTID: index, index: true, label: index })
+          }
+          this.data.push(item.attributes)
+        })
+        this.selectedValue = localStorage.getItem('landkreis')
       })
-      this.selectedValue = localStorage.getItem('landkreis')
-    })
+      .finally(() => {
+        this.track()
+        this.isLoading = false
+      })
   },
 
   methods: {
-    async getData() {
-      this.isLoading = true
-      const url =
-        'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/ArcGIS/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=1%3D1&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&units=esriSRUnit_Meter&returnGeodetic=false&outFields=objectId%2CBEZ%2CGEN&returnGeometry=false&returnCentroid=false&featureEncoding=esriDefault&multipatchOption=xyFootprint&maxAllowableOffset=&geometryPrecision=&outSR=&datumTransformation=&applyVCSProjection=false&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&returnQueryGeometry=false&returnDistinctValues=true&cacheHint=false&orderByFields=GEN&resultRecordCount=1000&returnZ=false&returnM=false&returnExceededLimitFeatures=false&quantizationParameters=&sqlFormat=none&f=pjson'
-      const httpClient = axios.create({
-        baseURL: url,
-        timeout: 10000, // indicates, 10000ms ie. 10 second
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      const result = await httpClient.get()
-      if (result.error) {
-        console.error(result.error)
-      }
-      this.track()
-      this.isLoading = false
-      return result.data.features
-    },
     onClick(id) {
       localStorage.setItem('landkreis', id)
       this.trackSelection(id)
       this.$router.push(`/lkr/${id}`)
+    },
+    selectedClass (id) {
+      if(this.selectedValue == id) {
+        return 'van-cell--selected '
+      } else {
+        return ''
+      }
     },
     trackSelection (id) {
       this.$gtag.event(`api_request`, {
@@ -117,6 +122,9 @@ export default {
       margin-top: 0;
       margin-bottom: 0;
     }
+  }
+   .van-cell--selected {
+    background-color: var(--background-color-light);
   }
   .van-cell__value--alone {
     color: var(--text);

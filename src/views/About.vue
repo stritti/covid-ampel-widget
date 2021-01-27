@@ -1,4 +1,3 @@
-import Widget from '@/components/Widget.vue';
 <template>
   <div>
     <doc-head :meta-info="metaInfo" />
@@ -13,13 +12,13 @@ import Widget from '@/components/Widget.vue';
     </van-sticky>
 
     <div class="container">
-      <h4>Das Covid-19 Ampel-Widget</h4>
+      <h3>Das Covid-19 Ampel-Widget</h3>
       <p>
         Behalte den Inzidenzwert deines Landkreises im Blick, indem du diesen
         als Widget zu deinem Screen hinzufügst.
       </p>
 
-      <h4>Datenquelle</h4>
+      <h3>Datenquelle</h3>
       <p>
         Das Covid-19 Ampel-Widget basiert auf den Zahlen, welche das
         <a href="https://www.rki.de/">Robert Koch-Institut (RKI)</a> aus den
@@ -28,14 +27,19 @@ import Widget from '@/components/Widget.vue';
           target="_blank"
           href="https://www.govdata.de/dl-de/by-2-0"
         >Open Data Datenlizenz Deutschland – Namensnennung – Version 2.0</a>
-        zur Verfügung gestellt. Für die Daten wird keine Haftung übernommen.<br>
+        zur Verfügung stellt.
+      </p>
+      <p>
+        Für die Daten wird keine Haftung übernommen.
+      </p>
+      <p>
         In den <router-link to="/config">
           Einstellungen
         </router-link> kann ein
         Landkreis ausgewählt werden, um die Corona-Ampel für diesen anzuzeigen.
       </p>
 
-      <h4>Das Projekt</h4>
+      <h3>Das Projekt</h3>
       <p>
         Das Covid Ampel Widget ist quelloffen unter der
         <a
@@ -44,6 +48,18 @@ import Widget from '@/components/Widget.vue';
         auf
         <a href="https://github.com/stritti/covid-ampel-widget">GitHub</a>
         verfügbar.
+      </p>
+      <p>
+        <a
+          href="https://ko-fi.com/J3J33A8DT"
+          target="_blank"
+        ><img
+          height="36"
+          style="border:0px;height:36px;"
+          src="https://cdn.ko-fi.com/cdn/kofi1.png?v=2"
+          border="0"
+          alt="Buy Me a Coffee at ko-fi.com"
+        ></a>
       </p>
     </div>
   </div>
@@ -72,7 +88,7 @@ export default {
 
 
 <style scoped>
-p {
-  font-size: 1rem;
+.container {
+  margin-bottom: 1.5rem;
 }
 </style>
