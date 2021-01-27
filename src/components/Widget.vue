@@ -190,7 +190,7 @@ export default {
       this.$nextTick(() => {
         const capture = this.$refs.widget
         domtoimage
-          .toPng(capture, { width: 1200, height: 628 })
+          .toPng(capture, { height: 400 })
           .then((dataUrl) => {
             this.$parent.metaInfo.meta.image = dataUrl
           })
