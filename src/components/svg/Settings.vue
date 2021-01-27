@@ -25,9 +25,3 @@
     />
   </svg>
 </template>
-
-<style lang="scss" scoped>
-.icon-tabler {
-  stroke-width: 1.25;
-}
-</style>

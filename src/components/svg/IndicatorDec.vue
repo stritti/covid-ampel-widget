@@ -26,9 +26,3 @@
     <polyline points="17 8 17 17 8 17" />
   </svg>
 </template>
-
-<style lang="scss" scoped>
-.icon-tabler {
-  stroke-width: 1.25;
-}
-</style>
