@@ -8,6 +8,7 @@
     </div>
     <div
       v-if="data"
+      class="wdg"
       :class="widgetClass(data.cases7_per_100k)"
       :object-id="data.OBJECTID"
     >
@@ -196,23 +197,24 @@ export default {
     margin-bottom: 0.5rem;
   }
 
-  .widget-green {
+  .wdg {
+    margin-top: -2px;
     height: 100vh;
+  }
+
+  .widget-green {
     color: rgba(45, 45, 45, 0.99);
     background-color: rgb(255, 243, 128);
   }
   .widget-35 {
-    height: 100vh;
     color: rgba(45, 45, 45, 0.99);
     background: rgb(255, 181, 52);
   }
   .widget-50 {
-    height: 100vh;
     color: rgb(240, 240, 240);
     background-color: #fc0008;
   }
   .widget-100 {
-    height: 100vh;
     color: rgb(255, 253, 253);
     background-image: linear-gradient(
       135deg,
@@ -227,7 +229,6 @@ export default {
     background-size: 56.57px 56.57px;
   }
   .widget-200 {
-    height: 100vh;
     color: rgb(255, 253, 253);
     background-image: linear-gradient(
       135deg,
@@ -242,7 +243,6 @@ export default {
     background-size: 35.36px 35.36px;
   }
   .widget-500 {
-    height: 100vh;
     color: rgb(255, 253, 253);
     background-image: linear-gradient(
       135deg,
@@ -264,8 +264,8 @@ export default {
     margin-top: 0;
 
     .ampel {
-      height: 2.75rem;
-      vertical-align: middle;
+      height: 2.5rem;
+      margin-bottom: -2px;
     }
 
     .icon-tabler {
