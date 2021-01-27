@@ -1,8 +1,5 @@
 <template>
-  <div
-    ref="widget"
-    class="widget"
-  >
+  <div class="widget">
     <div v-if="loading">
       Daten werden geladen ...
     </div>
@@ -11,6 +8,7 @@
     </div>
     <div
       v-if="data"
+      ref="widget"
       class="wdg"
       :class="widgetClass(data.cases7_per_100k)"
       :object-id="data.OBJECTID"
@@ -192,7 +190,7 @@ export default {
       this.$nextTick(() => {
         const capture = this.$refs.widget
         domtoimage
-          .toPng(capture)
+          .toPng(capture, { width: 1200, height: 628 })
           .then((dataUrl) => {
             this.$parent.metaInfo.meta.image = dataUrl
           })
