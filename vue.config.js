@@ -12,6 +12,7 @@ module.exports = {
       }
     }
   },
+
   configureWebpack: {
     plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
     optimization: {
@@ -35,7 +36,14 @@ module.exports = {
       }
     }
   },
+
   publicPath: process.env.VUE_APP_BASE_PATH
     ? process.env.VUE_APP_BASE_PATH
-    : '/covid-ampel-widget/'
+    : '/covid-ampel-widget/',
+
+  pwa: {
+    name: 'Covid Ampel',
+    themeColor: '#000000',
+    manifestCrossorigin: 'anonymous'
+  }
 }
