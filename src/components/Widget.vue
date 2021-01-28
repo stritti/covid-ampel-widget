@@ -3,6 +3,7 @@
     <van-pull-refresh
       v-model="isLoading"
       @refresh="getData"
+    >
       <div v-if="isLoading">
         Daten werden geladen &hellip;
       </div>
@@ -14,7 +15,7 @@
       </div>
       <div
         v-if="data"
-        class="wdg"        
+        class="wdg"
         :class="widgetClass(data.cases7_per_100k)"
         :object-id="data.OBJECTID"
       >
