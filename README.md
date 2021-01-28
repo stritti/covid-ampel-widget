@@ -62,16 +62,17 @@ npm run lint
 
 * node.js
 
-## Used Libraries and Tools
+## Libraries and Tools
 
 * vue.js 3: <https://v3.vuejs.org/>
 * Vant - Mobile UI Components built on Vue: <https://youzan.github.io/vant/next>
 * ArcGis REST-Service of RKI data: <https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0>
 * striped css background: <https://stripesgenerator.com/>
-* danaymic font size on iOS respecting system settings: <https://ind.ie/labs/blog/dynamic-type-support/>
+* daynamic font size on iOS respecting system settings: <https://ind.ie/labs/blog/dynamic-type-support/>
 * some SVG icons of <https://github.com/tabler/tabler-icons>
 * vue-crono: <https://github.com/BrianRosamilia/vue-crono>
 * purgeCSS: <https://purgecss.com/guides/vue.html>
+* dom-to-image-more: <https://github.com/1904labs/dom-to-image-more>
 
 ## Author
 
