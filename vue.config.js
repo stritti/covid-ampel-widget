@@ -42,8 +42,10 @@ module.exports = {
     : '/covid-ampel-widget/',
 
   pwa: {
-    name: 'Covid Ampel',
-    themeColor: '#000000',
-    manifestCrossorigin: 'anonymous'
+    themeColor: '#323232',
+    msTileColor: '#323232',
+    manifestOptions: {
+      background_color: '#323232'
+    }
   }
 }
