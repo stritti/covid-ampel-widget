@@ -15,7 +15,6 @@
     "dexie": "^3.0.3",
     "eslint-plugin-standard": "^4.1.0",
     "g": "^2.0.1",
-    "husky": "^4.3.8",
     "register-service-worker": "^1.7.1",
     "vant": "^3.0.5",
     "vue": "^3.0.5",
@@ -33,32 +32,18 @@
     "@vue/compiler-sfc": "^3.0.5",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
-    "eslint": "^6.7.2",
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^7.5.0",
+    "husky": "^4.3.8",
     "less": "^3.13.1",
     "less-loader": "^7.3.0",
     "lint-staged": "^10.5.3",
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/recommended",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "semi": [
-        "error",
-        "never"
-      ]
-    }
   },
   "browserslist": [
     "> 1%",

@@ -1,15 +1,6 @@
-import { NavBar } from 'vant'
-import { Sticky } from 'vant'
-import { ActionBar, ActionBarIcon, ActionBarButton } from 'vant'
-import { Cell, CellGroup } from 'vant'
-import { Collapse, CollapseItem } from 'vant'
-import { Image as VanImage } from 'vant'
-import { IndexBar, IndexAnchor } from 'vant'
-import { Loading } from 'vant'
-import { Locale } from 'vant'
-import { Tag } from 'vant'
+import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Image as VanImage, IndexBar, IndexAnchor, Loading, Locale, Tag, PullRefresh } from 'vant'
+
 import 'vant/lib/pull-refresh/index.less'
-import { PullRefresh } from 'vant'
 
 import 'vant/lib/index.css'
 import deDE from 'vant/es/locale/lang/de-DE'

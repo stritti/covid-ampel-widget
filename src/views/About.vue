@@ -71,10 +71,10 @@ import DocHead from '@/components/DocHead.vue'
 export default {
   name: 'About',
   components: { DocHead },
-  data() {
+  data () {
     return {
       metaInfo: {
-        title: 'Über | Covid-19 Ampel-Widget',
+        title: 'Über | Covid-19 Ampel-Widget'
       }
     }
   },
@@ -85,7 +85,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 .container {
