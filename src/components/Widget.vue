@@ -86,10 +86,10 @@ export default {
     // See: https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0
     objectId: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
-  data() {
+  data () {
     return {
       isLoading: true,
       error: false,
@@ -108,7 +108,7 @@ export default {
     getData () {
       this.isLoading = true
 
-      rkiService.getIncidence( this.objectId )
+      rkiService.getIncidence(this.objectId)
         .then(data => {
           const incidence = data.features[0].attributes
           if (incidence) {
@@ -128,19 +128,19 @@ export default {
         })
     },
     widgetClass (value) {
-      let col = ""
+      let col = ''
       if (value < 35) {
-        col = "widget-green"
+        col = 'widget-green'
       } else if (value >= 35 && value < 50) {
-        col = "widget-35"
+        col = 'widget-35'
       } else if (value >= 50 && value < 100) {
-        col = "widget-50"
-      } else if (value >= 100  && value < 200) {
-        col = "widget-100"
+        col = 'widget-50'
+      } else if (value >= 100 && value < 200) {
+        col = 'widget-100'
       } else if (value >= 200 && value < 500) {
-        col = "widget-200"
+        col = 'widget-200'
       } else if (value >= 500) {
-        col = "widget-500"
+        col = 'widget-500'
       }
       return col
     },
@@ -148,14 +148,14 @@ export default {
       return Number(value.toFixed(1))
     },
     formatDate (value) {
-      let date = new Date(value)
-      return date.toLocaleDateString("de-DE")
+      const date = new Date(value)
+      return date.toLocaleDateString('de-DE')
     },
     getIndicator (today) {
       database.getData(today.OBJECTID, -1)
         .then((yesterday) => {
           let result
-          if(yesterday) {
+          if (yesterday) {
             if (today.cases7_per_100k < yesterday.cases7_per_100k) {
               result = -1
             } else if (today.cases7_per_100k > yesterday.cases7_per_100k) {
@@ -186,9 +186,9 @@ export default {
       }
     },
     track (data) {
-      this.$gtag.event(`api_request`, {
-        'event_category' : 'inzidenz_load',
-        'event_label' : `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
+      this.$gtag.event('api_request', {
+        event_category: 'inzidenz_load',
+        event_label: `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
       })
     }
   }

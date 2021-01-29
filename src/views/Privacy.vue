@@ -82,7 +82,6 @@
         Diese Liste stellt die Zwecke der Datenerhebung und -verarbeitung dar. Eine Einwilligung gilt nur für die angegebenen Zwecke. Die gesammelten Daten können nicht für einen anderen als den unten aufgeführten Zweck verwendet oder gespeichert werden.
       </p>
 
-
       <h5>
         Genutzte Technologien
       </h5>
@@ -177,7 +176,6 @@
         </li>
       </ul>
 
-
       <h5>
         Datenschutzbeauftragter der verarbeitenden Firma
       </h5>
@@ -228,17 +226,16 @@
   </div>
 </template>
 
-
 <script>
 import DocHead from '@/components/DocHead.vue'
 
 export default {
   name: 'PrivaceyView',
   components: { DocHead },
-  data() {
+  data () {
     return {
       metaInfo: {
-        title: 'Datenschutz | Covid-19 Ampel-Widget',
+        title: 'Datenschutz | Covid-19 Ampel-Widget'
       }
     }
   },
