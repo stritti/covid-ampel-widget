@@ -44,8 +44,11 @@ module.exports = {
   pwa: {
     themeColor: '#323232',
     msTileColor: '#323232',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions: {
       background_color: '#323232'
-    }
+    },
+    name: 'Covid Ampel'
   }
 }
