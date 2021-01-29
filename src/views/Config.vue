@@ -31,10 +31,10 @@ import Landkreise from '@/components/Landkreise.vue'
 export default {
   name: 'ConfigView',
   components: { DocHead, Landkreise },
-  data() {
+  data () {
     return {
       metaInfo: {
-        title: 'Einstellungen | Covid-19 Ampel-Widget',
+        title: 'Einstellungen | Covid-19 Ampel-Widget'
       }
     }
   },

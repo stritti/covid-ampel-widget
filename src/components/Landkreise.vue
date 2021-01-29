@@ -53,7 +53,7 @@ export default {
   components: {
     IncidenceLabel
   },
-  data() {
+  data () {
     return {
       isLoading: false,
       error: null,
@@ -72,7 +72,7 @@ export default {
           if (item.attributes.GEN.charAt(0) !== index) {
             // add Item for alphabetical anchor
             index = item.attributes.GEN.charAt(0)
-            this.data.push({OBJECTID: index, index: true, label: index })
+            this.data.push({ OBJECTID: index, index: true, label: index })
           }
           this.data.push(item.attributes)
         })
@@ -89,28 +89,28 @@ export default {
   },
 
   methods: {
-    onClick(id) {
+    onClick (id) {
       localStorage.setItem('landkreis', id)
       this.trackSelection(id)
       this.$router.push(`/lkr/${id}`)
     },
     selectedClass (id) {
-      if(this.selectedValue == id) {
+      if (this.selectedValue === id) {
         return 'van-cell--selected '
       } else {
         return ''
       }
     },
     trackSelection (id) {
-      this.$gtag.event(`api_request`, {
-        event_category : 'lkr_select',
-        event_label : `${id}`
+      this.$gtag.event('api_request', {
+        event_category: 'lkr_select',
+        event_label: `${id}`
       })
     },
     track () {
-      this.$gtag.event(`api_request`, {
-        'event_category' : 'lkr_load',
-        'event_label' : 'lkr_load'
+      this.$gtag.event('api_request', {
+        event_category: 'lkr_load',
+        event_label: 'lkr_load'
       })
     }
 

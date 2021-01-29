@@ -1,14 +1,14 @@
-const IN_PRODUCTION = false //TODO disable because currently not working:  process.env.NODE_ENV === "production"
+const IN_PRODUCTION = false // TODO disable because currently not working:  process.env.NODE_ENV === "production"
 
 module.exports = {
   plugins: [
     IN_PRODUCTION &&
-      require("@fullhuman/postcss-purgecss")({
-        content: [`./public/**/*.html`, `./src/**/*.vue`],
-        defaultExtractor(content) {
+      require('@fullhuman/postcss-purgecss')({
+        content: ['./public/**/*.html', './src/**/*.vue'],
+        defaultExtractor (content) {
           const contentWithoutStyleBlocks = content.replace(
             /<style[^]+?<\/style>/gi,
-            ""
+            ''
           )
           return (
             contentWithoutStyleBlocks.match(
@@ -20,8 +20,8 @@ module.exports = {
           /-(leave|enter|appear)(|-(to|from|active))$/,
           /^(?!(|.*?:)cursor-move).+-move$/,
           /^router-link(|-exact)-active$/,
-          /data-v-.*/,
-        ],
-      }),
-  ],
+          /data-v-.*/
+        ]
+      })
+  ]
 }

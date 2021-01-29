@@ -10,7 +10,7 @@ import NavigationBar from '@/components/NavigationBar'
 
 export default {
   components: { NavigationBar },
-  data() {
+  data () {
     return {
       showIntro: false
     }
