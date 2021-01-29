@@ -38,19 +38,19 @@ import More from '@/components/svg/More'
 export default {
   name: 'NavigationBar',
   components: { TrafficLights, Settings, Help, More },
-  data() {
+  data () {
     return {
-      home : '/',
+      home: '/'
     }
   },
   watch: {
     // call again the method if the route changes
-    '$route': 'home2lkr'
+    $route: 'home2lkr'
   },
   methods: {
     home2lkr () {
       this.home = '/'
-      let selected = localStorage.getItem('landkreis')
+      const selected = localStorage.getItem('landkreis')
       if (selected) {
         this.home = '/lkr/' + selected
       }

@@ -83,40 +83,40 @@ export default {
     title: 'Hilfe'
   },
   components: { DocHead, HelpAndroid, HelpIOS },
-  data() {
+  data () {
     return {
       metaInfo: {
-        title: 'Hilfe | Covid-19 Ampel-Widget',
+        title: 'Hilfe | Covid-19 Ampel-Widget'
       },
       activeName: '',
       usefulLinks: [
         {
-          headline: "Einige nützliche Links in Bezug auf die Inzidenz in Deutschland:",
+          headline: 'Einige nützliche Links in Bezug auf die Inzidenz in Deutschland:',
           links: [
             {
-              title: "Robert Koch-institut: COVID-19-Dashboard",
-              url: "https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+              title: 'Robert Koch-institut: COVID-19-Dashboard',
+              url: 'https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/'
             },
             {
-              title: "DIVI-Intensivregister",
-              url: "https://www.intensivregister.de/#/intensivregister"
+              title: 'DIVI-Intensivregister',
+              url: 'https://www.intensivregister.de/#/intensivregister'
             },
             {
-              title: "CORONAVIS: Intensivbetten-Kapazitäten",
-              url: "https://coronavis.dbvis.de/de/overview/map/bedcapacities"
+              title: 'CORONAVIS: Intensivbetten-Kapazitäten',
+              url: 'https://coronavis.dbvis.de/de/overview/map/bedcapacities'
             },
             {
-              title: "COVID Risiko Deutschland nach Ländern und Kreisen",
-              url: "https://pavelmayer.de/covid/risks/"
+              title: 'COVID Risiko Deutschland nach Ländern und Kreisen',
+              url: 'https://pavelmayer.de/covid/risks/'
             }
           ]
         },
         {
-          headline: "Weltweite Informationen:",
+          headline: 'Weltweite Informationen:',
           links: [
             {
-              title: "Weltweite Daten und Fakten rund um die Pandemie im Zeitverlauf",
-              url: "https://ourworldindata.org/coronavirus"
+              title: 'Weltweite Daten und Fakten rund um die Pandemie im Zeitverlauf',
+              url: 'https://ourworldindata.org/coronavirus'
             }
           ]
         }

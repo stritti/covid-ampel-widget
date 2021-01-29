@@ -1,4 +1,4 @@
-const webpack = require("webpack")
+const webpack = require('webpack')
 
 module.exports = {
   css: {
@@ -15,20 +15,20 @@ module.exports = {
   configureWebpack: {
     plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
     optimization: {
-      runtimeChunk: "single",
+      runtimeChunk: 'single',
       splitChunks: {
-        chunks: "all",
+        chunks: 'all',
         maxInitialRequests: Infinity,
         minSize: 0,
         maxSize: 200000,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
-            name(module) {
+            name (module) {
               const packageName = module.context.match(
                 /[\\/]node_modules[\\/](.*?)([\\/]|$)/
               )[1]
-              return `npm.${packageName.replace("@", "")}`
+              return `npm.${packageName.replace('@', '')}`
             }
           }
         }
