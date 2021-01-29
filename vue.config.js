@@ -42,13 +42,15 @@ module.exports = {
     : '/covid-ampel-widget/',
 
   pwa: {
+    name: 'Covid Ampel',
     themeColor: '#323232',
     msTileColor: '#323232',
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions: {
+      name: 'Covid Ampel',
+      short_name: 'Covid Ampel',
       background_color: '#323232'
-    },
-    name: 'Covid Ampel'
+    }
   }
 }
