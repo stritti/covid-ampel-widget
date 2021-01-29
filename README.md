@@ -3,6 +3,7 @@
 [![github pages deploy](https://github.com/stritti/covid-ampel-widget/workflows/Github%20Pages%20Deploy/badge.svg)](https://github.com/stritti/covid-ampel-widget/actions?query=workflow%3A%22Github+Pages+Deploy%22)
 [![CodeQL](https://github.com/stritti/covid-ampel-widget/workflows/CodeQL/badge.svg)](https://github.com/stritti/covid-ampel-widget/actions?query=workflow%3ACodeQL)
 [![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://v3.vuejs.org/)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J33A8DT)

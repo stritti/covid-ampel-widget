@@ -1,63 +1,70 @@
 <template>
   <div class="widget">
-    <div v-if="loading">
-      Daten werden geladen ...
-    </div>
-    <div v-if="error">
-      {{ error }}
-    </div>
-    <div
-      v-if="data"
-      ref="widget"
-      class="wdg"
-      :class="widgetClass(data.cases7_per_100k)"
-      :object-id="data.OBJECTID"
+    <van-pull-refresh
+      v-model="isLoading"
+      @refresh="getData"
     >
-      <h3 class="ort">
-        <span class="bez">{{ data.BEZ }}&nbsp;</span>
-        <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
-        <span class="name">{{ data.GEN }}</span>
-      </h3>
-      <p class="cases">
-        <img
-          alt="Corona-Ampel"
-          src="@/assets/coronaampel.png"
-          class="ampel"
-        >
-        {{ rounded(data.cases7_per_100k) }}
-        <indicator-eq v-if="indicator === 0" />
-        <indicator-inc v-if="indicator === +1" />
-        <indicator-dec v-if="indicator === -1" />
-      </p>
-      <div class="info">
-        <small>
-          <span class="inzidenz-short">Inzidenz</span>
-          <span class="inzidenz">
-            Fälle der letzten 7 Tage pro 100.000 Einwohner
-          </span>
-        </small>
-        <br>
-        <small>
-          <span class="time">
-            <span class="label">Stand: </span>
-            <span class="data">{{ formatDate(data.last_update) }}</span>
-          </span>
-          <span
-            class="source"
-          >,
-            <span class="label">Datenquelle: </span>
-            <span class="data">
-              <a
-                :class="widgetClass(data.cases7_per_100k)"
-                target="_blank"
-                rel="noreferrer"
-                href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
-              >RKI</a>
-            </span>
-          </span>
-        </small>
+      <div v-if="isLoading">
+        Daten werden geladen &hellip;
       </div>
-    </div>
+      <div
+        v-if="error"
+        class="error"
+      >
+        <van-icon name="warning-o" /> {{ error }}
+      </div>
+      <div
+        v-if="data"
+        class="wdg"
+        :class="widgetClass(data.cases7_per_100k)"
+        :object-id="data.OBJECTID"
+      >
+        <h3 class="ort">
+          <span class="bez">{{ data.BEZ }}&nbsp;</span>
+          <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
+          <span class="name">{{ data.GEN }}</span>
+        </h3>
+        <p class="cases">
+          <img
+            alt="Corona-Ampel"
+            src="@/assets/coronaampel.png"
+            class="ampel"
+          >
+          {{ rounded(data.cases7_per_100k) }}
+          <indicator-eq v-if="indicator === 0" />
+          <indicator-inc v-if="indicator === +1" />
+          <indicator-dec v-if="indicator === -1" />
+        </p>
+        <div class="info">
+          <small>
+            <span class="inzidenz-short">Inzidenz</span>
+            <span class="inzidenz">
+              Fälle der letzten 7 Tage pro 100.000 Einwohner
+            </span>
+          </small>
+          <br>
+          <small>
+            <span class="time">
+              <span class="label">Stand: </span>
+              <span class="data">{{ formatDate(data.last_update) }}</span>
+            </span>
+            <span
+              class="source"
+            >,
+              <span class="label">Datenquelle: </span>
+              <span class="data">
+                <a
+                  :class="widgetClass(data.cases7_per_100k)"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+                >RKI</a>
+              </span>
+            </span>
+          </small>
+        </div>
+      </div>
+    </van-pull-refresh>
   </div>
 </template>
 
@@ -80,12 +87,12 @@ export default {
     // See: https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0
     objectId: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
-  data() {
+  data () {
     return {
-      loading: true,
+      isLoading: true,
       error: false,
       data: null,
       indicator: null
@@ -100,9 +107,9 @@ export default {
   },
   methods: {
     getData () {
-      this.loading = true
+      this.isLoading = true
 
-      rkiService.getIncidence( this.objectId )
+      rkiService.getIncidence(this.objectId)
         .then(data => {
           const incidence = data.features[0].attributes
           if (incidence) {
@@ -118,24 +125,24 @@ export default {
           this.error = 'Fehler beim Laden der Daten vom RKI-Server'
         })
         .finally(() => {
+          this.isLoading = false
           this.track(this.data)
-          this.loading = false
         })
     },
     widgetClass (value) {
-      let col = ""
+      let col = ''
       if (value < 35) {
-        col = "widget-green"
+        col = 'widget-green'
       } else if (value >= 35 && value < 50) {
-        col = "widget-35"
+        col = 'widget-35'
       } else if (value >= 50 && value < 100) {
-        col = "widget-50"
-      } else if (value >= 100  && value < 200) {
-        col = "widget-100"
+        col = 'widget-50'
+      } else if (value >= 100 && value < 200) {
+        col = 'widget-100'
       } else if (value >= 200 && value < 500) {
-        col = "widget-200"
+        col = 'widget-200'
       } else if (value >= 500) {
-        col = "widget-500"
+        col = 'widget-500'
       }
       return col
     },
@@ -143,14 +150,14 @@ export default {
       return Number(value.toFixed(1))
     },
     formatDate (value) {
-      let date = new Date(value)
-      return date.toLocaleDateString("de-DE")
+      const date = new Date(value)
+      return date.toLocaleDateString('de-DE')
     },
     getIndicator (today) {
       database.getData(today.OBJECTID, -1)
         .then((yesterday) => {
           let result
-          if(yesterday) {
+          if (yesterday) {
             if (today.cases7_per_100k < yesterday.cases7_per_100k) {
               result = -1
             } else if (today.cases7_per_100k > yesterday.cases7_per_100k) {
@@ -181,12 +188,12 @@ export default {
       }
     },
     track (data) {
-      this.$gtag.event(`api_request`, {
-        'event_category' : 'inzidenz_load',
-        'event_label' : `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
+      this.$gtag.event('api_request', {
+        event_category: 'inzidenz_load',
+        event_label: `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
       })
     },
-    setPreviewImage() {
+    setPreviewImage () {
       this.$nextTick(() => {
         const capture = this.$refs.widget
         domtoimage
@@ -198,7 +205,7 @@ export default {
             console.error(error)
           })
       })
-    },
+    }
   }
 }
 </script>

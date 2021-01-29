@@ -16,13 +16,13 @@ export default {
     // See: https://npgeo-corona-npgeo-de.hub.arcgis.com/datasets/917fc37a709542548cc3be077a786c17_0
     objectId: {
       type: Number,
-      required: true,
-    },
+      required: true
+    }
   },
-  data() {
+  data () {
     return {
       error: false,
-      incidence: null,
+      incidence: null
     }
   },
   mounted () {
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getData () {
-      rkiService.getIncidence( this.objectId )
+      rkiService.getIncidence(this.objectId)
         .then(data => {
           const attribute = data.features[0].attributes
           this.incidence = attribute.cases7_per_100k

@@ -98,10 +98,10 @@ import DocHead from '@/components/DocHead.vue'
 export default {
   name: 'ImprintView',
   components: { DocHead },
-  data() {
+  data () {
     return {
       metaInfo: {
-        title: 'Impressum | Covid-19 Ampel-Widget',
+        title: 'Impressum | Covid-19 Ampel-Widget'
       }
     }
   },
