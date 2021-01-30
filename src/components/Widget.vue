@@ -24,7 +24,7 @@
           <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
           <span class="name">{{ data.GEN }}</span>
         </h3>
-        <p 
+        <p
           class="cases"
           @click="shareIncidenceForDistrict"
         >
@@ -200,7 +200,7 @@ export default {
       })
     },
     shareIncidenceForDistrict () {
-      if (!("share" in navigator)) {
+      if (!('share' in navigator)) {
         return
       }
       const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
