@@ -16,7 +16,7 @@
       <div
         v-if="data"
         class="wdg"
-        :class="widgetClass(data.cases7_per_100k)"
+        :class="incidenceColor"
         :object-id="data.OBJECTID"
       >
         <h3 class="ort">
