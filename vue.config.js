@@ -48,11 +48,11 @@ module.exports = {
     appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black',
     manifestOptions: {
-      workboxPluginMode: 'InjectManifest',
       name: 'Covid Ampel',
       short_name: 'Covid Ampel',
       background_color: '#323232'
     },
+    workboxPluginMode: 'InjectManifest',
     workboxOptions: {
       swSrc: './src/sw.js',
       swDest: 'service-worker.js'
