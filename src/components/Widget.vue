@@ -36,7 +36,6 @@
           {{ rounded(data.cases7_per_100k) }}
           <component
             :is="'indicator-' + indicatorComponentDirection"
-            class="indicator"
           />
         </p>
         <div class="info">
@@ -86,12 +85,13 @@ import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
+import IndicatorUnknown from '@/components/svg/IndicatorUnknown.vue'
 import Share from '@/components/svg/Share.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq, Share
+    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share
   },
   mixins: [crono],
   props: {
@@ -130,7 +130,18 @@ export default {
       return 'widget-500'
     },
     indicatorComponentDirection () {
-      return this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
+      let dir = 'unknown'
+      if (this.indicator) {
+        dir = this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
+      }
+      return dir
+    },
+    indicatorEmoji () {
+      let indicatorEmoji = ''
+      if (this.indicator) {
+        indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
+      }
+      return indicatorEmoji
     },
     isShareable () {
       return (this.data && ('share' in navigator))
@@ -217,10 +228,12 @@ export default {
       if (!this.isShareable) {
         return
       }
-      const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
+      const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence, last_update: today } = this.data
       const data = {
         title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
-        text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen ${this.rounded(incidence)} Menschen positiv auf das neuartige Coronavirus getestet.`,
+        text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
+${this.rounded(incidence)} ${this.indicatorEmoji} Menschen
+von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet (${this.formatDate(today)}):`,
         url: window.location.href
       }
       navigator.share(data)
@@ -318,7 +331,7 @@ export default {
     line-height: 1.2rem;
   }
   .share {
-    margin-top: 340px;
+    margin-top: 300px;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5rem;
