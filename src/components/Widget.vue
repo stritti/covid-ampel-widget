@@ -214,7 +214,7 @@ export default {
       })
     },
     shareIncidenceForDistrict () {
-      if (!this.isShareable()) {
+      if (!this.isShareable) {
         return
       }
       const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
@@ -242,6 +242,7 @@ export default {
 
   .wdg {
     height: 100vh;
+    overflow: hidden;
   }
 
   .widget-green {
@@ -319,16 +320,16 @@ export default {
   .share {
     margin-top: 340px;
     margin-left: auto;
-    padding: 0.25rem;
     margin-right: auto;
-    font-size: 1.75rem;
+    padding: 0.5rem;
+    font-size: 1rem;
     text-align: center;
     background-color: rgba(45, 45, 45, 0.2);
     border-radius: 5px;
     .icon-tabler-share {
-      width: 1.5rem;
-      height: 1.5rem;
-      stroke-width: 2;
+      width: 1rem;
+      height: 1rem;
+      stroke-width: 2.5;
     }
   }
 }
