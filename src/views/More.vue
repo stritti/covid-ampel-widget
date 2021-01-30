@@ -37,10 +37,10 @@ import DocHead from '@/components/DocHead.vue'
 export default {
   name: 'MoreView',
   components: { DocHead },
-  data() {
+  data () {
     return {
       metaInfo: {
-        title: 'Mehr ... | Covid-19 Ampel-Widget',
+        title: 'Mehr ... | Covid-19 Ampel-Widget'
       }
     }
   },

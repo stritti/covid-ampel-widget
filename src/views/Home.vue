@@ -29,16 +29,16 @@ export default {
       default: null
     }
   },
-  data() {
+  data () {
     return {
       metaInfo: {
-      title: 'Covid-19 Ampel-Widget',
-      meta: {
-        vmid: 'description',
-        name: 'description',
-        description: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.',
-      }
-    },
+        title: 'Covid-19 Ampel-Widget',
+        meta: {
+          vmid: 'description',
+          name: 'description',
+          description: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.'
+        }
+      },
       selected: null
     }
   },
@@ -54,7 +54,7 @@ export default {
       this.routeToDistrictSpecificAmpelWidget()
       return
     }
-    if (!("geolocation" in navigator)) {
+    if (!('geolocation' in navigator)) {
       this.routeToConfigPage()
       return
     }
@@ -69,7 +69,7 @@ export default {
           return false
         }
         return area.attributes.GEN === districtName
-        }
+      }
       ).attributes.OBJECTID
       this.persistDistrict()
       this.routeToDistrictSpecificAmpelWidget()
@@ -78,13 +78,13 @@ export default {
     })
   },
   methods: {
-    persistDistrict() {
+    persistDistrict () {
       localStorage.setItem('landkreis', this.selected)
     },
-    routeToDistrictSpecificAmpelWidget() {
+    routeToDistrictSpecificAmpelWidget () {
       this.$router.push('/lkr/' + this.selected)
     },
-    routeToConfigPage() {
+    routeToConfigPage () {
       this.$router.push('/config')
     }
   }

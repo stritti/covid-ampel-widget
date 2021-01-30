@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 class RkiService {
-
   async getIncidence (objectId) {
     const url =
       'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RKI_Landkreisdaten/FeatureServer/0/query?where=OBJECTID in (' +
@@ -38,7 +37,6 @@ class RkiService {
       return features.length > 0 ? features[0].attributes.GEN.toString() : null
     }
   }
-
 }
 
 export const rkiService = new RkiService()

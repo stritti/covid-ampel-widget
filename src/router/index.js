@@ -21,7 +21,7 @@ const publicPath = process.env.VUE_APP_BASE_PATH
 
 const router = createRouter({
   history: createWebHistory(publicPath),
-  routes: routes,
+  routes: routes
 })
 
 trackRouter(router)
