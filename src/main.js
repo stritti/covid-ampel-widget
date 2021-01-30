@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import vantPlugin from './plugins/vant'
 import VueGtag from 'vue-gtag-next'
+import './registerServiceWorker'
 
 const app = createApp(App)
 
