@@ -221,7 +221,7 @@ export default {
       if (!this.isShareable) {
         return
       }
-      const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
+      const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence, last_update: today } = this.data
 
       let indicatorEmoji = ''
       if (this.indicator) {
@@ -232,7 +232,7 @@ export default {
         title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
         text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
 ${this.rounded(incidence)} ${indicatorEmoji} Menschen
-von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet:`,
+von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet (${this.formatDate(today)}):`,
         url: window.location.href
       }
       navigator.share(data)
