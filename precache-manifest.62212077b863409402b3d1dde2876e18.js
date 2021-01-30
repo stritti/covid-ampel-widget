@@ -1,22 +1,22 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d986cd4a28630e8f6eb",
+    "revision": "97b8699b7e648cea4632",
     "url": "/covid-ampel-widget/css/about~33d48c78.6b398eaf.css"
   },
   {
-    "revision": "c049efe45ad829f68334",
-    "url": "/covid-ampel-widget/css/app~d0ae3f07.ac59fdd7.css"
+    "revision": "438736a4a9f2b0676113",
+    "url": "/covid-ampel-widget/css/app~d0ae3f07.6837e19b.css"
   },
   {
-    "revision": "8625adc849a6195906fb",
+    "revision": "f3a4f444ce66ed3ea7e2",
     "url": "/covid-ampel-widget/css/config~21833f8f.f858318d.css"
   },
   {
-    "revision": "a66e24ea7819d5e551ef",
+    "revision": "14b9a409a95642df91f7",
     "url": "/covid-ampel-widget/css/help~f71cff67.33b79095.css"
   },
   {
-    "revision": "e0def45df3ddb83cb9d9",
+    "revision": "9aefb0024e23f3c2a98c",
     "url": "/covid-ampel-widget/css/npm.vant~253ae210.73e07480.css"
   },
   {
@@ -104,24 +104,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "4dfe748c95c3ad11f03db9a3480a6e9a",
+    "revision": "826c460a16ac101597f7120a9bfdf88a",
     "url": "/covid-ampel-widget/index.html"
   },
   {
-    "revision": "6d986cd4a28630e8f6eb",
-    "url": "/covid-ampel-widget/js/about~33d48c78.062d99a6.js"
+    "revision": "97b8699b7e648cea4632",
+    "url": "/covid-ampel-widget/js/about~33d48c78.9f6f4f15.js"
   },
   {
-    "revision": "c049efe45ad829f68334",
-    "url": "/covid-ampel-widget/js/app~d0ae3f07.7075f6bf.js"
+    "revision": "438736a4a9f2b0676113",
+    "url": "/covid-ampel-widget/js/app~d0ae3f07.3c55074b.js"
   },
   {
-    "revision": "8625adc849a6195906fb",
-    "url": "/covid-ampel-widget/js/config~21833f8f.54890323.js"
+    "revision": "f3a4f444ce66ed3ea7e2",
+    "url": "/covid-ampel-widget/js/config~21833f8f.a3ea84e1.js"
   },
   {
-    "revision": "a66e24ea7819d5e551ef",
-    "url": "/covid-ampel-widget/js/help~f71cff67.e40fac58.js"
+    "revision": "14b9a409a95642df91f7",
+    "url": "/covid-ampel-widget/js/help~f71cff67.32beea2d.js"
   },
   {
     "revision": "ced5bc723e64c5fe254a",
@@ -156,8 +156,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.register-service-worker~7fc74268.fded5507.js"
   },
   {
-    "revision": "e0def45df3ddb83cb9d9",
-    "url": "/covid-ampel-widget/js/npm.vant~253ae210.9216cfb2.js"
+    "revision": "9aefb0024e23f3c2a98c",
+    "url": "/covid-ampel-widget/js/npm.vant~253ae210.83476839.js"
   },
   {
     "revision": "3cfb01be9c9a5d17bca1",
@@ -168,28 +168,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.vue-crono~d63dbf10.74635a58.js"
   },
   {
-    "revision": "d09e96a8754182e0a72b",
-    "url": "/covid-ampel-widget/js/npm.vue-gtag-next~2584efac.acff979a.js"
+    "revision": "003fadc968f97f5ad314",
+    "url": "/covid-ampel-widget/js/npm.vue-gtag-next~2584efac.599a9c3e.js"
   },
   {
-    "revision": "88ef32f06b16df0fa402",
-    "url": "/covid-ampel-widget/js/npm.vue-router~aacd4aef.e3b30a2f.js"
+    "revision": "c3f0955f49b0e42c900f",
+    "url": "/covid-ampel-widget/js/npm.vue-router~aacd4aef.774793a2.js"
   },
   {
-    "revision": "00f4632f4c9e9ede09f8",
-    "url": "/covid-ampel-widget/js/npm.vue~253ae210.5ae5acf1.js"
+    "revision": "0b9cba211ba11a2ce6d6",
+    "url": "/covid-ampel-widget/js/npm.vue~253ae210.4a9fddd6.js"
   },
   {
-    "revision": "0da17f5f4eba93b86315",
-    "url": "/covid-ampel-widget/js/npm.vue~5ea1a303.fb144ba9.js"
+    "revision": "b2a4dc7892c82d3439b9",
+    "url": "/covid-ampel-widget/js/npm.vue~5ea1a303.c8054f9e.js"
   },
   {
     "revision": "96d3a4861a458ef090a7",
     "url": "/covid-ampel-widget/js/npm.webpack~0faa04c6.d445adad.js"
   },
   {
-    "revision": "1075627d8323d3188605",
-    "url": "/covid-ampel-widget/js/runtime.1f43ea02.js"
+    "revision": "0266c9bcf0c3cc8ca741",
+    "url": "/covid-ampel-widget/js/runtime.a6439720.js"
   },
   {
     "revision": "8e181fa90eb053ba50d4e3423c892fa2",
