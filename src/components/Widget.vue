@@ -36,7 +36,6 @@
           {{ rounded(data.cases7_per_100k) }}
           <component
             :is="'indicator-' + indicatorComponentDirection"
-            class="indicator"
           />
         </p>
         <div class="info">
@@ -86,12 +85,13 @@ import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
+import IndicatorUnknown from '@/components/svg/IndicatorUnknown.vue'
 import Share from '@/components/svg/Share.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq, Share
+    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share
   },
   mixins: [crono],
   props: {
@@ -130,7 +130,11 @@ export default {
       return 'widget-500'
     },
     indicatorComponentDirection () {
-      return this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
+      let dir = 'unknown'
+      if (this.indicator) {
+        dir = this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
+      }
+      return dir
     },
     isShareable () {
       return (this.data && ('share' in navigator))
@@ -218,7 +222,12 @@ export default {
         return
       }
       const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
-      const indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
+
+      let indicatorEmoji = ''
+      if (this.indicator) {
+        indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
+      }
+
       const data = {
         title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
         text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
