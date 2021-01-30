@@ -34,7 +34,10 @@
             class="ampel"
           >
           {{ rounded(data.cases7_per_100k) }}
-          <component :is="'indicator-' + indicatorComponentDirection" />
+          <component
+            :is="'indicator-' + indicatorComponentDirection"
+            class="indicator"
+          />
         </p>
         <div class="info">
           <small>
@@ -64,6 +67,13 @@
             </span>
           </small>
         </div>
+        <div
+          v-if="isShareable"
+          class="share"
+          @click="shareIncidenceForDistrict"
+        >
+          <share /> Inzidenz teilen &hellip;
+        </div>
       </div>
     </van-pull-refresh>
   </div>
@@ -76,11 +86,12 @@ import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
+import Share from '@/components/svg/Share.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq
+    IndicatorInc, IndicatorDec, IndicatorEq, Share
   },
   mixins: [crono],
   props: {
@@ -120,6 +131,9 @@ export default {
     },
     indicatorComponentDirection () {
       return this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
+    },
+    isShareable () {
+      return (this.data && ('share' in navigator))
     }
   },
   mounted () {
@@ -200,7 +214,7 @@ export default {
       })
     },
     shareIncidenceForDistrict () {
-      if (!('share' in navigator)) {
+      if (!this.isShareable()) {
         return
       }
       const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence } = this.data
@@ -221,12 +235,12 @@ export default {
   padding: 0;
 
   h3 {
-    margin-top: 2px;
+    margin-top: 0;
+    padding-top: 2px;
     margin-bottom: 0.5rem;
   }
 
   .wdg {
-    margin-top: -2px;
     height: 100vh;
   }
 
@@ -295,13 +309,27 @@ export default {
       height: 2.5rem;
       margin-bottom: -2px;
     }
-
     .icon-tabler {
       stroke-width: 3.5;
     }
   }
   .info {
     line-height: 1.2rem;
+  }
+  .share {
+    margin-top: 340px;
+    margin-left: auto;
+    padding: 0.25rem;
+    margin-right: auto;
+    font-size: 1.75rem;
+    text-align: center;
+    background-color: rgba(45, 45, 45, 0.2);
+    border-radius: 5px;
+    .icon-tabler-share {
+      width: 1.5rem;
+      height: 1.5rem;
+      stroke-width: 2;
+    }
   }
 }
 
