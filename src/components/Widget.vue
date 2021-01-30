@@ -136,6 +136,13 @@ export default {
       }
       return dir
     },
+    indicatorEmoji () {
+      let indicatorEmoji = ''
+      if (this.indicator) {
+        indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
+      }
+      return indicatorEmoji
+    },
     isShareable () {
       return (this.data && ('share' in navigator))
     }
@@ -222,16 +229,10 @@ export default {
         return
       }
       const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence, last_update: today } = this.data
-
-      let indicatorEmoji = ''
-      if (this.indicator) {
-        indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
-      }
-
       const data = {
         title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
         text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
-${this.rounded(incidence)} ${indicatorEmoji} Menschen
+${this.rounded(incidence)} ${this.indicatorEmoji} Menschen
 von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet (${this.formatDate(today)}):`,
         url: window.location.href
       }
