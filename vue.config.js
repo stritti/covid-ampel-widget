@@ -12,6 +12,7 @@ module.exports = {
       }
     }
   },
+
   configureWebpack: {
     plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
     optimization: {
@@ -35,7 +36,26 @@ module.exports = {
       }
     }
   },
+
   publicPath: process.env.VUE_APP_BASE_PATH
     ? process.env.VUE_APP_BASE_PATH
-    : '/covid-ampel-widget/'
+    : '/covid-ampel-widget/',
+
+  pwa: {
+    name: 'Covid Ampel',
+    themeColor: '#323232',
+    msTileColor: '#323232',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black',
+    manifestOptions: {
+      name: 'Covid Ampel',
+      short_name: 'Covid Ampel',
+      background_color: '#323232'
+    },
+    workboxPluginMode: 'InjectManifest',
+    workboxOptions: {
+      swSrc: './src/sw.js',
+      swDest: 'service-worker.js'
+    }
+  }
 }
