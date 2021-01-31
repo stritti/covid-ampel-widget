@@ -231,9 +231,10 @@ export default {
       const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence, last_update: today } = this.data
       const data = {
         title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
-        text: `In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
-${this.rounded(incidence)} ${this.indicatorEmoji} Menschen
-von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet (${this.formatDate(today)}):`,
+        text: `Aktuelle 7-Tage Inzidenz:
+In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
+     ${this.rounded(incidence)} ${this.indicatorEmoji} Menschen
+von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(today)}):`,
         url: window.location.href
       }
       navigator.share(data)
