@@ -359,6 +359,10 @@ von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet (${th
 /* small square widgets on iOS */
 @media only screen and (max-width: 200px) {
   .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
     .ort {
       font-size: 1.2rem;
       line-height: 1rem;
@@ -399,6 +403,10 @@ von 100.000 Einwohnern positiv auf das neuartige 🦠 Coronavirus getestet (${th
 /* full width widgets on iOS */
 @media only screen and (min-width: 200px) and (max-width: 360px) {
   .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
     .ort {
       .bez {
         display: none;
