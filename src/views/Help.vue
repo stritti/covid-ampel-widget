@@ -86,7 +86,7 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Hilfe | Covid-19 Ampel-Widget'
+        title: 'Hilfe | Covid-19 Ampel'
       },
       activeName: '',
       usefulLinks: [

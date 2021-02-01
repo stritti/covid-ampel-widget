@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      Mit dieser Anleitung lässt sich das Covid-19 Ampel-Widget ab iOS 14 auf
+      Mit dieser Anleitung lässt sich die Covid-19 Ampel als Widget ab iOS 14 auf
       dem Homescreen installieren:
     </p>
     <ul>
@@ -26,7 +26,7 @@
           target="_blank"
           href="https://stritti.github.io/covid-ampel-widget/"
         >
-          Covid-19 Ampel-Widget
+          Covid-19 Ampel
         </a>
         öffnen.
       </li>
