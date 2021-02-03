@@ -346,6 +346,9 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
       stroke-width: 2.5;
     }
   }
+  .error {
+    color: var(--red);
+  }
 }
 
 /* small square widgets on iOS */
