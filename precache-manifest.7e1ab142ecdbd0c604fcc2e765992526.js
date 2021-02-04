@@ -1,18 +1,38 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2691c555dacb4aa571c9",
-    "url": "/covid-ampel-widget/css/about~33d48c78.6b398eaf.css"
+    "revision": "ad8ecd393660bfe7ab7f5b70278a4b93",
+    "url": "/covid-ampel-widget/apple-touch-icon-180x180-precomposed.png"
   },
   {
-    "revision": "a3c94d74ea600d28946c",
+    "revision": "82df2022ab237ebfc8e1c8dced5d7092",
+    "url": "/covid-ampel-widget/apple-touch-icon-180x180.png"
+  },
+  {
+    "revision": "9d916dbe308d38ab1d1738a30218ce00",
+    "url": "/covid-ampel-widget/apple-touch-icon-precomposed.png"
+  },
+  {
+    "revision": "82df2022ab237ebfc8e1c8dced5d7092",
+    "url": "/covid-ampel-widget/apple-touch-icon.png"
+  },
+  {
+    "revision": "47567df77cb0c34606bf4c855cba68cb",
+    "url": "/covid-ampel-widget/browserconfig.xml"
+  },
+  {
+    "revision": "744cb1cba82bf6ec8b1c",
+    "url": "/covid-ampel-widget/css/about~33d48c78.51f3a297.css"
+  },
+  {
+    "revision": "21ce14af2e97715dc208",
     "url": "/covid-ampel-widget/css/app~d0ae3f07.4d7d8884.css"
   },
   {
-    "revision": "84033e4484a78d22cdb1",
+    "revision": "db254972d7d0a89eb450",
     "url": "/covid-ampel-widget/css/config~21833f8f.83a2ca4d.css"
   },
   {
-    "revision": "de767a6b5247b500f877",
+    "revision": "bc4ad4a356d6773fd3cc",
     "url": "/covid-ampel-widget/css/help~f71cff67.33b79095.css"
   },
   {
@@ -104,24 +124,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "aa0a70051eaca0438b1ab2047370f62e",
+    "revision": "eb357f294775afbb267399d932757c5c",
     "url": "/covid-ampel-widget/index.html"
   },
   {
-    "revision": "2691c555dacb4aa571c9",
-    "url": "/covid-ampel-widget/js/about~33d48c78.150df1ba.js"
+    "revision": "744cb1cba82bf6ec8b1c",
+    "url": "/covid-ampel-widget/js/about~33d48c78.96700798.js"
   },
   {
-    "revision": "a3c94d74ea600d28946c",
-    "url": "/covid-ampel-widget/js/app~d0ae3f07.e89fc219.js"
+    "revision": "21ce14af2e97715dc208",
+    "url": "/covid-ampel-widget/js/app~d0ae3f07.842a948e.js"
   },
   {
-    "revision": "84033e4484a78d22cdb1",
-    "url": "/covid-ampel-widget/js/config~21833f8f.fb8e4d9f.js"
+    "revision": "db254972d7d0a89eb450",
+    "url": "/covid-ampel-widget/js/config~21833f8f.23bde602.js"
   },
   {
-    "revision": "de767a6b5247b500f877",
-    "url": "/covid-ampel-widget/js/help~f71cff67.26ce309f.js"
+    "revision": "bc4ad4a356d6773fd3cc",
+    "url": "/covid-ampel-widget/js/help~f71cff67.bfed000c.js"
   },
   {
     "revision": "ced5bc723e64c5fe254a",
@@ -192,11 +212,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.webpack~0faa04c6.d445adad.js"
   },
   {
-    "revision": "ae0260e295f67f2a1a7c",
-    "url": "/covid-ampel-widget/js/runtime.131047a6.js"
+    "revision": "15aa796d006deef81171",
+    "url": "/covid-ampel-widget/js/runtime.de72aaf5.js"
   },
   {
-    "revision": "8e181fa90eb053ba50d4e3423c892fa2",
+    "revision": "263ae87dc0f50891fbc76e8c1e629f0a",
     "url": "/covid-ampel-widget/manifest.json"
   },
   {
@@ -206,6 +226,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/covid-ampel-widget/robots.txt"
+  },
+  {
+    "revision": "3e43b84f82b8d964c40ba63016e59269",
+    "url": "/covid-ampel-widget/site.webmanifest"
   },
   {
     "revision": "3fd2db0cf2ad23d3d61e5a10f9182b40",
