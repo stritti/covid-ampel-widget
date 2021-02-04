@@ -32,11 +32,11 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Covid-19 Ampel-Widget',
+        title: 'Covid-19 Ampel',
         meta: {
           vmid: 'description',
           name: 'description',
-          description: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.'
+          description: 'Covid-19 Ampel: Behalte den Inzidenzwert deines Landkreises im Blick.'
         }
       },
       selected: null

@@ -13,7 +13,7 @@
     </van-sticky>
     <van-cell-group>
       <van-cell
-        title="Über das Covid-19 Ampel-Widget"
+        title="Über die Covid-19 Ampel"
         is-link
         to="/about"
       />
@@ -40,7 +40,7 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Mehr ... | Covid-19 Ampel-Widget'
+        title: 'Mehr ... | Covid-19 Ampel'
       }
     }
   },
