@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ad8ecd393660bfe7ab7f5b70278a4b93",
+    "revision": "882d44c1158aad7c26190818517c3735",
     "url": "/covid-ampel-widget/apple-touch-icon-180x180-precomposed.png"
   },
   {
-    "revision": "82df2022ab237ebfc8e1c8dced5d7092",
+    "revision": "7a4f79fa82731c3dfa1ca2f7dd2d7ddd",
     "url": "/covid-ampel-widget/apple-touch-icon-180x180.png"
   },
   {
-    "revision": "9d916dbe308d38ab1d1738a30218ce00",
+    "revision": "882d44c1158aad7c26190818517c3735",
     "url": "/covid-ampel-widget/apple-touch-icon-precomposed.png"
   },
   {
-    "revision": "82df2022ab237ebfc8e1c8dced5d7092",
+    "revision": "ea001489141b83721599b91f1456c2b7",
     "url": "/covid-ampel-widget/apple-touch-icon.png"
   },
   {
