@@ -1,4 +1,4 @@
-# Covid-19 Ampel-Widget
+# Covid-19 Ampel
 
 [![github pages deploy](https://github.com/stritti/covid-ampel-widget/workflows/Github%20Pages%20Deploy/badge.svg)](https://github.com/stritti/covid-ampel-widget/actions?query=workflow%3A%22Github+Pages+Deploy%22)
 [![CodeQL](https://github.com/stritti/covid-ampel-widget/workflows/CodeQL/badge.svg)](https://github.com/stritti/covid-ampel-widget/actions?query=workflow%3ACodeQL)
