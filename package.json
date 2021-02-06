@@ -1,6 +1,6 @@
 {
   "name": "covid-ampel-widget",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.8.3",
     "dexie": "^3.0.3",
+    "dom-to-image-more": "^2.8.0",
     "eslint-plugin-standard": "^4.1.0",
     "g": "^2.0.1",
     "register-service-worker": "^1.7.1",
@@ -34,6 +35,7 @@
     "babel-plugin-import": "^1.13.3",
     "eslint": "^7.18.0",
     "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-standard": "^4.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",

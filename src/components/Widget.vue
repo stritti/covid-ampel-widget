@@ -82,6 +82,7 @@
 import { rkiService } from '@/services/rki.service.js'
 import { database } from '@/services/database.js'
 import { crono } from 'vue-crono'
+import domtoimage from 'dom-to-image-more'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
@@ -166,6 +167,7 @@ export default {
 
             this.getIndicator(incidence)
             database.add(incidence)
+            this.setPreviewImage()
           }
         })
         .catch(error => {
@@ -222,6 +224,19 @@ export default {
       this.$gtag.event('api_request', {
         event_category: 'inzidenz_load',
         event_label: `${data.BEZ} ${data.GEN} (${data.OBJECTID})`
+      })
+    },
+    setPreviewImage () {
+      this.$nextTick(() => {
+        const capture = this.$refs.widget
+        domtoimage
+          .toPng(capture, { height: 400 })
+          .then((dataUrl) => {
+            this.$parent.metaInfo.meta.image = dataUrl
+          })
+          .catch((error) => {
+            console.error(error)
+          })
       })
     },
     shareIncidenceForDistrict () {

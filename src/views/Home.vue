@@ -3,11 +3,14 @@
     <doc-head :meta-info="metaInfo" />
 
     <widget
-      v-if="selected != null"
+      v-if="hasSelectedDistrict"
       :object-id="selected"
     />
     <div v-else>
-      Bitte einen Landkreis in den Einstellungen auswählen.
+      Bitte einen Landkreis in den
+      <router-link to="/config">
+        Einstellungen
+      </router-link> auswählen.
     </div>
   </div>
 </template>
@@ -36,10 +39,16 @@ export default {
         meta: {
           vmid: 'description',
           name: 'description',
-          description: 'Covid-19 Ampel: Behalte den Inzidenzwert deines Landkreises im Blick.'
+          description: 'Das Covid-19 Ampel-Widget für iOS und Android. Behalte den Inzidenzwert deines Landkreises im Blick.',
+          image: null
         }
       },
       selected: null
+    }
+  },
+  computed: {
+    hasSelectedDistrict () {
+      return (this.selected !== null)
     }
   },
   async mounted () {
