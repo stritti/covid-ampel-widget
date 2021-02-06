@@ -249,13 +249,17 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
   padding: 0;
 
   h3 {
+    font-size: clamp(1.15rem, -1.15rem + 8.333vw, 3rem);
+    margin-bottom: 2vh;
     margin-top: 0;
     padding-top: 2px;
-    margin-bottom: 0.5rem;
   }
 
   .wdg {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 66px);
+    justify-content: center;
     overflow: hidden;
   }
 
@@ -314,15 +318,20 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
     background-size: 35.36px 35.36px;
   }
   .cases {
-    font-size: 3em;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(2.5rem, -0.4925rem + 13.33vw, 6.5rem);
     font-weight: 700;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 1vh;
     margin-top: 0;
 
     .ampel {
-      height: 2.5rem;
+      height: clamp(2.5rem, 0.25rem + 10vw, 5.5rem);
       margin-bottom: -2px;
+      margin-right: .5vw;
     }
     .icon-tabler {
       stroke-width: 3.5;
@@ -354,6 +363,10 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
 /* small square widgets on iOS */
 @media only screen and (max-width: 200px) {
   .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
     .ort {
       font-size: 1.2rem;
       line-height: 1rem;
@@ -394,6 +407,10 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
 /* full width widgets on iOS */
 @media only screen and (min-width: 200px) and (max-width: 360px) {
   .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
     .ort {
       .bez {
         display: none;
@@ -404,7 +421,6 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
     }
 
     .cases {
-      font-size: 2em;
       padding-right: 0.5rem;
       text-align: center;
     }
@@ -435,7 +451,6 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
     }
 
     .cases {
-      font-size: 3em;
       padding-right: 0.5rem;
       text-align: center;
     }
