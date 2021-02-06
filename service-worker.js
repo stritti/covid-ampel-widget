@@ -1,4 +1,4 @@
-importScripts("/covid-ampel-widget/precache-manifest.a8174d59d0e2151b2ddb546bae7090c3.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/covid-ampel-widget/precache-manifest.63cf3aa2c9fb292f11a194182914b792.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* eslint-disable no-undef, no-underscore-dangle, no-restricted-globals */
 
