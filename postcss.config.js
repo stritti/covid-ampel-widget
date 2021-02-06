@@ -1,4 +1,4 @@
-const IN_PRODUCTION = false // process.env.NODE_ENV === "production"
+const IN_PRODUCTION = false // TODO disable because currently not working:  process.env.NODE_ENV === "production"
 
 module.exports = {
   plugins: [

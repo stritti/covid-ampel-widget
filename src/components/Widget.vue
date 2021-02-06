@@ -16,7 +16,7 @@
       <div
         v-if="data"
         class="wdg"
-        :class="widgetClass(data.cases7_per_100k)"
+        :class="incidenceColor"
         :object-id="data.OBJECTID"
       >
         <h3 class="ort">
@@ -24,16 +24,19 @@
           <span class="bez-short">{{ getBezShort(data.IBZ) }}&nbsp;</span>
           <span class="name">{{ data.GEN }}</span>
         </h3>
-        <p class="cases">
+        <p
+          class="cases"
+          @click="shareIncidenceForDistrict"
+        >
           <img
             alt="Corona-Ampel"
             src="@/assets/coronaampel.png"
             class="ampel"
           >
           {{ rounded(data.cases7_per_100k) }}
-          <indicator-eq v-if="indicator === 0" />
-          <indicator-inc v-if="indicator === +1" />
-          <indicator-dec v-if="indicator === -1" />
+          <component
+            :is="'indicator-' + indicatorComponentDirection"
+          />
         </p>
         <div class="info">
           <small>
@@ -54,7 +57,7 @@
               <span class="label">Datenquelle: </span>
               <span class="data">
                 <a
-                  :class="widgetClass(data.cases7_per_100k)"
+                  :class="incidenceColor"
                   target="_blank"
                   rel="noreferrer"
                   href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
@@ -62,6 +65,13 @@
               </span>
             </span>
           </small>
+        </div>
+        <div
+          v-if="isShareable"
+          class="share"
+          @click="shareIncidenceForDistrict"
+        >
+          <share /> Inzidenz teilen &hellip;
         </div>
       </div>
     </van-pull-refresh>
@@ -72,15 +82,17 @@
 import { rkiService } from '@/services/rki.service.js'
 import { database } from '@/services/database.js'
 import { crono } from 'vue-crono'
+import domtoimage from 'dom-to-image-more'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
-import domtoimage from 'dom-to-image-more'
+import IndicatorUnknown from '@/components/svg/IndicatorUnknown.vue'
+import Share from '@/components/svg/Share.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq
+    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share
   },
   mixins: [crono],
   props: {
@@ -96,6 +108,44 @@ export default {
       error: false,
       data: null,
       indicator: null
+    }
+  },
+  computed: {
+    incidenceColor () {
+      const currentDistrictIncidence = this.data.cases7_per_100k
+      if (currentDistrictIncidence < 35) {
+        return 'widget-green'
+      }
+      if (currentDistrictIncidence < 50) {
+        return 'widget-35'
+      }
+      if (currentDistrictIncidence < 100) {
+        return 'widget-50'
+      }
+      if (currentDistrictIncidence < 200) {
+        return 'widget-100'
+      }
+      if (currentDistrictIncidence < 500) {
+        return 'widget-200'
+      }
+      return 'widget-500'
+    },
+    indicatorComponentDirection () {
+      let dir = 'unknown'
+      if (this.indicator) {
+        dir = this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
+      }
+      return dir
+    },
+    indicatorEmoji () {
+      let indicatorEmoji = ''
+      if (this.indicator) {
+        indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
+      }
+      return indicatorEmoji
+    },
+    isShareable () {
+      return (this.data && ('share' in navigator))
     }
   },
   mounted () {
@@ -128,23 +178,6 @@ export default {
           this.isLoading = false
           this.track(this.data)
         })
-    },
-    widgetClass (value) {
-      let col = ''
-      if (value < 35) {
-        col = 'widget-green'
-      } else if (value >= 35 && value < 50) {
-        col = 'widget-35'
-      } else if (value >= 50 && value < 100) {
-        col = 'widget-50'
-      } else if (value >= 100 && value < 200) {
-        col = 'widget-100'
-      } else if (value >= 200 && value < 500) {
-        col = 'widget-200'
-      } else if (value >= 500) {
-        col = 'widget-500'
-      }
-      return col
     },
     rounded (value) {
       return Number(value.toFixed(1))
@@ -205,6 +238,21 @@ export default {
             console.error(error)
           })
       })
+    },
+    shareIncidenceForDistrict () {
+      if (!this.isShareable) {
+        return
+      }
+      const { GEN: districtName, BEZ: districtCategory, cases7_per_100k: incidence, last_update: today } = this.data
+      const data = {
+        title: `Aktuelle 7-Tage Inzidenz in ${districtName}`,
+        text: `Aktuelle 7-Tage Inzidenz:
+In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
+     ${this.rounded(incidence)} ${this.indicatorEmoji} Menschen
+von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(today)}):`,
+        url: window.location.href
+      }
+      navigator.share(data)
     }
   }
 }
@@ -216,13 +264,18 @@ export default {
   padding: 0;
 
   h3 {
-    margin-top: 2px;
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.15rem, -1.15rem + 8.333vw, 3rem);
+    margin-bottom: 2vh;
+    margin-top: 0;
+    padding-top: 2px;
   }
 
   .wdg {
-    margin-top: -2px;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 66px);
+    justify-content: center;
+    overflow: hidden;
   }
 
   .widget-green {
@@ -280,17 +333,21 @@ export default {
     background-size: 35.36px 35.36px;
   }
   .cases {
-    font-size: 3em;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: clamp(2.5rem, -0.4925rem + 13.33vw, 6.5rem);
     font-weight: 700;
+    justify-content: center;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 1vh;
     margin-top: 0;
 
     .ampel {
-      height: 2.5rem;
+      height: clamp(2.5rem, 0.25rem + 10vw, 5.5rem);
       margin-bottom: -2px;
+      margin-right: .5vw;
     }
-
     .icon-tabler {
       stroke-width: 3.5;
     }
@@ -298,11 +355,33 @@ export default {
   .info {
     line-height: 1.2rem;
   }
+  .share {
+    margin-top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgba(45, 45, 45, 0.2);
+    border-radius: 5px;
+    .icon-tabler-share {
+      width: 1rem;
+      height: 1rem;
+      stroke-width: 2.5;
+    }
+  }
+  .error {
+    color: var(--red);
+  }
 }
 
 /* small square widgets on iOS */
 @media only screen and (max-width: 200px) {
   .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
     .ort {
       font-size: 1.2rem;
       line-height: 1rem;
@@ -343,6 +422,10 @@ export default {
 /* full width widgets on iOS */
 @media only screen and (min-width: 200px) and (max-width: 360px) {
   .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
     .ort {
       .bez {
         display: none;
@@ -353,7 +436,6 @@ export default {
     }
 
     .cases {
-      font-size: 2em;
       padding-right: 0.5rem;
       text-align: center;
     }
@@ -384,7 +466,6 @@ export default {
     }
 
     .cases {
-      font-size: 3em;
       padding-right: 0.5rem;
       text-align: center;
     }

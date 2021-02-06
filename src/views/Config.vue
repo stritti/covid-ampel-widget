@@ -34,7 +34,7 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Einstellungen | Covid-19 Ampel-Widget'
+        title: 'Einstellungen | Covid-19 Ampel'
       }
     }
   },

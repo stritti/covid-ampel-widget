@@ -6,9 +6,18 @@
       color="#1989fa"
       vertical
     >
-      Lade Daten ...
+      Lade Daten &hellip;
     </van-loading>
-    <van-index-bar class="landkreise">
+    <div
+      v-if="error"
+      class="error"
+    >
+      <van-icon name="warning-o" /> {{ error }}
+    </div>
+    <van-index-bar
+      v-else
+      class="landkreise"
+    >
       <span
         v-for="item in data"
         :key="item.OBJECTID"
@@ -47,6 +56,7 @@ export default {
   data () {
     return {
       isLoading: false,
+      error: null,
       data: [],
       selectedValue: null
     }
@@ -67,6 +77,10 @@ export default {
           this.data.push(item.attributes)
         })
         this.selectedValue = localStorage.getItem('landkreis')
+      })
+      .catch((error) => {
+        console.log(error)
+        this.error = 'Fehler beim Laden der Daten vom RKI-Server'
       })
       .finally(() => {
         this.track()
@@ -128,6 +142,9 @@ export default {
   }
   .van-cell__value--alone {
     color: var(--text);
+  }
+  .error {
+    color: var(--red);
   }
 }
 </style>

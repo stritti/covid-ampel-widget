@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Covid-19 Ampel-Widget',
+        title: 'Covid-19 Ampel',
         meta: {
           vmid: 'description',
           name: 'description',
