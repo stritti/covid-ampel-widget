@@ -20,7 +20,7 @@ Use "Add to Homescreen" to add the app to the homescreen of your smartphone.
 
 Using additional Apps the Covid-19 Ampel could also be integrated as widget into
 
-* [iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and
+* [iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS) and
 * [Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
 
 <img src="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/IMG_6911.jpg" width="240" alt="Covid-19 Ampel-Widget" />
