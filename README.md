@@ -16,7 +16,9 @@ define levels for secure each other.
 
 ▶ [https://covid-ampel.vercel.app/](https://covid-ampel.vercel.app/)
 
-Using additional Apps the Covid-19 Ampel could be integrated as widget into
+Use "Add to Homescreen" to add the app to the homescreen of your smartphone.
+
+Using additional Apps the Covid-19 Ampel could also be integrated as widget into
 
 * [iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and
 * [Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
