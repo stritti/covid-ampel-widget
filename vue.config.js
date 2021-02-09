@@ -46,7 +46,7 @@ module.exports = {
     themeColor: '#323232',
     msTileColor: '#323232',
     appleMobileWebAppCapable: 'yes',
-    appleMobileWebAppStatusBarStyle: 'black',
+    appleMobileWebAppStatusBarStyle: 'black-translucent',
     manifestOptions: {
       name: 'Covid Ampel',
       short_name: 'Covid Ampel',
