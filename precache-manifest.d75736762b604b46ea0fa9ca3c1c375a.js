@@ -124,7 +124,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "cf0d3ff020b2a0621df6ae3ef2833495",
+    "revision": "7c7701c1ba50579c490376207d1c4a23",
     "url": "/covid-ampel-widget/index.html"
   },
   {
