@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss">
 #view {
-  min-height: 100%
+  min-height: 100%;
 }
 .van-nav-bar {
   // Browsers which partially support CSS Environment variables (iOS 11.0-11.2).
