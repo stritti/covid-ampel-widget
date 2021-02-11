@@ -22,8 +22,11 @@ export default {
 </script>
 
 <style lang="scss">
-  .van-nav-bar {
-// Browsers which partially support CSS Environment variables (iOS 11.0-11.2).
+#view {
+  min-height: 100%
+}
+.van-nav-bar {
+  // Browsers which partially support CSS Environment variables (iOS 11.0-11.2).
   @supports (padding-top: env(safe-area-inset-top)) {
     --safe-area-inset-top: env(safe-area-inset-bottom);
     padding-top: calc(var(--safe-area-inset-top));
@@ -33,5 +36,5 @@ export default {
     --safe-area-inset-top: constant(safe-area-inset-top);
     padding-top: calc(var(--safe-area-inset-top) );
   }
-  }
+}
 </style>

@@ -1,6 +1,6 @@
 {
-  "name": "covid-ampel-widget",
-  "version": "0.1.0",
+  "name": "covid-ampel",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,7 +16,7 @@
     "eslint-plugin-standard": "^4.1.0",
     "g": "^2.0.1",
     "register-service-worker": "^1.7.1",
-    "vant": "^3.0.5",
+    "vant": "^3.0.6",
     "vue": "^3.0.5",
     "vue-crono": "^2.0.9",
     "vue-gtag-next": "^1.14.0",
@@ -32,7 +32,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -41,8 +41,8 @@
     "husky": "^4.3.8",
     "less": "^3.13.1",
     "less-loader": "^7.3.0",
-    "lint-staged": "^10.5.3",
-    "sass": "^1.32.5",
+    "lint-staged": "^10.5.4",
+    "sass": "^1.32.7",
     "sass-loader": "^10.1.1"
   },
   "browserslist": [

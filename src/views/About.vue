@@ -12,7 +12,7 @@
     </van-sticky>
 
     <div class="container">
-      <h3>Das Covid-19 Ampel-Widget</h3>
+      <h3>Covid-19 Ampel</h3>
       <p>
         Behalte den Inzidenzwert deines Landkreises im Blick, indem du diesen
         als Widget zu deinem Screen hinzufügst.
@@ -20,7 +20,7 @@
 
       <h3>Datenquelle</h3>
       <p>
-        Das Covid-19 Ampel-Widget basiert auf den Zahlen, welche das
+        Die Covid-19 Ampel basiert auf den Zahlen, welche das
         <a href="https://www.rki.de/">Robert Koch-Institut (RKI)</a> aus den
         Landkreisen in Deutschland erfasst und unter der
         <a
@@ -74,7 +74,7 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Über | Covid-19 Ampel-Widget'
+        title: 'Über | Covid-19 Ampel'
       }
     }
   },

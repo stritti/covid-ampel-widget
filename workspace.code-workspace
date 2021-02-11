@@ -5,6 +5,6 @@
         }
     ],
     "settings": {
-        "deepscan.ignoreConfirmWarning": true
+        "deepscan.enable": true
     }
 }

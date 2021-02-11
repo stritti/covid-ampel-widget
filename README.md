@@ -1,4 +1,4 @@
-# Covid-19 Ampel-Widget
+# Covid-19 Ampel
 
 [![github pages deploy](https://github.com/stritti/covid-ampel-widget/workflows/Github%20Pages%20Deploy/badge.svg)](https://github.com/stritti/covid-ampel-widget/actions?query=workflow%3A%22Github+Pages+Deploy%22)
 [![CodeQL](https://github.com/stritti/covid-ampel-widget/workflows/CodeQL/badge.svg)](https://github.com/stritti/covid-ampel-widget/actions?query=workflow%3ACodeQL)
@@ -16,14 +16,16 @@ define levels for secure each other.
 
 ▶ [https://covid-ampel.vercel.app/](https://covid-ampel.vercel.app/)
 
-Using additional Apps the Covid-19 Ampel-Widget could be integrated into
-[iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS)) and
-[Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
+Use "Add to Homescreen" to add the app to the homescreen of your smartphone.
+
+Using additional Apps the Covid-19 Ampel could also be integrated as widget into
+
+* [iOS](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-iOS) and
+* [Android](https://github.com/stritti/covid-ampel-widget/wiki/Anleitung-Android):
 
 <img src="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/IMG_6911.jpg" width="240" alt="Covid-19 Ampel-Widget" />
 
 <img src="https://raw.githubusercontent.com/stritti/covid-ampel-widget/main/public/help/android-covid-19-ampel-widget.png" width=240/>
-
 
 ---
 
@@ -73,6 +75,7 @@ npm run lint
 * some SVG icons of <https://github.com/tabler/tabler-icons>
 * vue-crono: <https://github.com/BrianRosamilia/vue-crono>
 * purgeCSS: <https://purgecss.com/guides/vue.html>
+* vue-pwa-asset-generator: <https://github.com/jcalixte/vue-pwa-asset-generator#readme>
 
 ## Author
 

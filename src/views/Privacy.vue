@@ -235,7 +235,7 @@ export default {
   data () {
     return {
       metaInfo: {
-        title: 'Datenschutz | Covid-19 Ampel-Widget'
+        title: 'Datenschutz | Covid-19 Ampel'
       }
     }
   },

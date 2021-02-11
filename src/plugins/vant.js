@@ -1,8 +1,31 @@
-import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Image as VanImage, IndexBar, IndexAnchor, Loading, Locale, Tag, PullRefresh } from 'vant'
+import 'vant/lib/nav-bar/index.less'
+import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Image as VanImage, Icon, IndexBar, IndexAnchor, Loading, Locale, Tag, List, PullRefresh } from 'vant'
+import 'vant/lib/sticky/index.less'
+
+import 'vant/lib/action-bar/index.less'
+import 'vant/lib/action-bar-button/index.less'
+import 'vant/lib/action-bar-icon/index.less'
+
+import 'vant/lib/cell/index.less'
+import 'vant/lib/cell-group/index.less'
+
+import 'vant/lib/collapse-item/index.less'
+
+import 'vant/lib/image/index.less'
+
+import 'vant/lib/icon/index.less'
+
+import 'vant/lib/index-bar/index.less'
+import 'vant/lib/index-anchor/index.less'
+
+import 'vant/lib/loading/index.less'
+
+import 'vant/lib/tag/index.less'
+
+import 'vant/lib/list/index.less'
 
 import 'vant/lib/pull-refresh/index.less'
 
-import 'vant/lib/index.css'
 import deDE from 'vant/es/locale/lang/de-DE'
 
 export default {
@@ -24,5 +47,7 @@ export default {
     app.use(Loading)
     app.use(Tag)
     app.use(PullRefresh)
+    app.use(List)
+    app.use(Icon)
   }
 }
