@@ -439,6 +439,41 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
   }
 }
 
+/* horizontal smartphone */
+@media only screen and (min-width: 550px) and (max-height: 450px) {
+  .widget {
+    .wdg {
+      height: 100vh;
+      justify-content: flex-start;
+    }
+    .ort {
+      .bez {
+        display: none;
+      }
+      .bez-short {
+        display: inline;
+      }
+    }
+
+    .cases {
+      padding-right: 0.5rem;
+      text-align: center;
+    }
+
+    .info {
+      .inzidenz {
+        display: none;
+      }
+      .inzidenz-short {
+        display: inline;
+      }
+      .source {
+        display: none;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 360px) {
   .widget {
     .ort {
