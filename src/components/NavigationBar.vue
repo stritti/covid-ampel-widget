@@ -65,16 +65,6 @@ export default {
   color: var(--text);
   background-color: var(--background-color);
   padding: 8px;
-  // Browsers which partially support CSS Environment variables (iOS 11.0-11.2).
-  @supports (padding-bottom: env(safe-area-inset-bottom)) {
-    --safe-area-inset-bottom: env(safe-area-inset-bottom);
-    padding-bottom: calc(var(--safe-area-inset-bottom) + 8px);
-  }
-  // Browsers which fully support CSS Environment variables (iOS 11.2+).
-  @supports (padding-bottom: constant(safe-area-inset-bottom)) {
-    --safe-area-inset-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: calc(var(--safe-area-inset-bottom) + 8px);
-  }
 
   .icon-tabler {
     margin-left: auto;
@@ -90,7 +80,7 @@ export default {
   }
 }
 
-@media only screen and (max-height: 360px) {
+@media only screen and (max-height: 376px) {
   /* show no navigationbar in widget view */
   .van-action-bar {
     display: none;
