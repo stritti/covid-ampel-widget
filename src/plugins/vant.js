@@ -11,7 +11,7 @@ import 'vant/lib/cell-group/index.less'
 
 import 'vant/lib/collapse-item/index.less'
 
-import 'vant/lib/dialog/index'
+import 'vant/lib/dialog/index.less'
 
 import 'vant/lib/image/index.less'
 
