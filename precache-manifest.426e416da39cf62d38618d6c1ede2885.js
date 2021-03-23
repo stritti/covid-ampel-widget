@@ -24,11 +24,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/about~33d48c78.51f3a297.css"
   },
   {
-    "revision": "b286cb549e50b0d98266",
-    "url": "/covid-ampel-widget/css/app~d0ae3f07.f15096e5.css"
+    "revision": "6114355fde59f95f5ffb",
+    "url": "/covid-ampel-widget/css/app~d0ae3f07.bbcfecdd.css"
   },
   {
-    "revision": "db254972d7d0a89eb450",
+    "revision": "cc20bda199074fd365e7",
     "url": "/covid-ampel-widget/css/config~21833f8f.83a2ca4d.css"
   },
   {
@@ -36,12 +36,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/help~f71cff67.33b79095.css"
   },
   {
-    "revision": "f8d63dcd41039f91cd05",
-    "url": "/covid-ampel-widget/css/npm.vant~8546d4a7.0af9e467.css"
+    "revision": "66c90fff5d59a4b1c213",
+    "url": "/covid-ampel-widget/css/npm.vant~8546d4a7.fafacae9.css"
   },
   {
-    "revision": "018a48c35fc2026131c6",
-    "url": "/covid-ampel-widget/css/npm.vant~e7d38024.df31b62b.css"
+    "revision": "be7d1f34284c8b4a2871",
+    "url": "/covid-ampel-widget/css/npm.vant~e7d38024.4c0392af.css"
   },
   {
     "revision": "a39924373c67176712f25013acca2318",
@@ -124,7 +124,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "d4d4c3c1d8d2521d0e0c0b27726d616c",
+    "revision": "a62eecfdffe3a4d9c35e835fc8d800df",
     "url": "/covid-ampel-widget/index.html"
   },
   {
@@ -132,12 +132,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/about~33d48c78.96700798.js"
   },
   {
-    "revision": "b286cb549e50b0d98266",
-    "url": "/covid-ampel-widget/js/app~d0ae3f07.59c99e2d.js"
+    "revision": "6114355fde59f95f5ffb",
+    "url": "/covid-ampel-widget/js/app~d0ae3f07.a5697f06.js"
   },
   {
-    "revision": "db254972d7d0a89eb450",
-    "url": "/covid-ampel-widget/js/config~21833f8f.23bde602.js"
+    "revision": "cc20bda199074fd365e7",
+    "url": "/covid-ampel-widget/js/config~21833f8f.49c36f38.js"
   },
   {
     "revision": "bc4ad4a356d6773fd3cc",
@@ -148,12 +148,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.axios~e4173fa2.95f2a477.js"
   },
   {
-    "revision": "53b85a19beac5ae7c8f2",
-    "url": "/covid-ampel-widget/js/npm.babel~f269b12e.da9a45d0.js"
+    "revision": "29b6ba7a4b89129508be",
+    "url": "/covid-ampel-widget/js/npm.babel~f269b12e.a1d2524c.js"
   },
   {
-    "revision": "e83b03c988692157fe4c",
-    "url": "/covid-ampel-widget/js/npm.core-js~987e6011.e928bd66.js"
+    "revision": "7940883570d6e3335240",
+    "url": "/covid-ampel-widget/js/npm.core-js~987e6011.c4dbc390.js"
   },
   {
     "revision": "664fdbed51117cba6b05",
@@ -176,16 +176,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.register-service-worker~7fc74268.fded5507.js"
   },
   {
-    "revision": "f8d63dcd41039f91cd05",
-    "url": "/covid-ampel-widget/js/npm.vant~8546d4a7.ed61c10f.js"
+    "revision": "66c90fff5d59a4b1c213",
+    "url": "/covid-ampel-widget/js/npm.vant~8546d4a7.c306360f.js"
   },
   {
-    "revision": "5924e2b8e830e74a4f5c",
-    "url": "/covid-ampel-widget/js/npm.vant~c5145fe1.516825c7.js"
+    "revision": "80f9a0187bc4fd0a66af",
+    "url": "/covid-ampel-widget/js/npm.vant~c5145fe1.c913825b.js"
   },
   {
-    "revision": "018a48c35fc2026131c6",
-    "url": "/covid-ampel-widget/js/npm.vant~e7d38024.ae2db0a6.js"
+    "revision": "be7d1f34284c8b4a2871",
+    "url": "/covid-ampel-widget/js/npm.vant~e7d38024.2d6d66d9.js"
   },
   {
     "revision": "9249332accef789d3b8c",
@@ -200,8 +200,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.vue-router~aacd4aef.54791f5e.js"
   },
   {
-    "revision": "fe060f51d121f8e4bf73",
-    "url": "/covid-ampel-widget/js/npm.vue~253ae210.548d7396.js"
+    "revision": "19742f573825f43ce065",
+    "url": "/covid-ampel-widget/js/npm.vue~253ae210.e3d757da.js"
   },
   {
     "revision": "e9f2e0ee3f7adef7d333",
@@ -212,8 +212,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.webpack~0faa04c6.d445adad.js"
   },
   {
-    "revision": "15aa796d006deef81171",
-    "url": "/covid-ampel-widget/js/runtime.de72aaf5.js"
+    "revision": "f39f591e460d1afb3bb6",
+    "url": "/covid-ampel-widget/js/runtime.12f1e70c.js"
   },
   {
     "revision": "263ae87dc0f50891fbc76e8c1e629f0a",
