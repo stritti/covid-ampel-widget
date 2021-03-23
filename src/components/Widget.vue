@@ -36,6 +36,7 @@
           {{ rounded(data.cases7_per_100k) }}
           <component
             :is="'indicator-' + indicatorComponentDirection"
+            class="indicator"
           />
         </p>
         <div class="info">
@@ -199,7 +200,8 @@ export default {
           } else {
             result = null
           }
-          this.indicator = result
+          console.log(result)
+          this.indicator = +1 // result
         })
     },
     getBezShort (IBZ) {
@@ -335,6 +337,8 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
     }
     .icon-tabler {
       stroke-width: 3.5;
+      height: clamp(0.75rem, -0.4925rem + 13.33vw, 4rem);
+      width: clamp(0.75rem, -0.4925rem + 13.33vw, 4rem);
     }
   }
   .info {
