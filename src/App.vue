@@ -2,6 +2,12 @@
   <div id="view">
     <router-view />
     <navigation-bar />
+    <van-dialog
+      v-model="updateExists"
+      title="Neue Version"
+      :confirm="refreshApp"
+      message="App aktualisieren &hellip;"
+    />
   </div>
 </template>
 
@@ -11,13 +17,7 @@ import update from './mixins/update'
 
 export default {
   components: { NavigationBar },
-  mixins: [update],
-  mounted () {
-    // refresh automatically
-    if (this.updateExists) {
-      this.refreshApp()
-    }
-  }
+  mixins: [update]
 }
 </script>
 

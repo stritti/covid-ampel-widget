@@ -1,5 +1,5 @@
 import 'vant/lib/nav-bar/index.less'
-import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Image as VanImage, Icon, IndexBar, IndexAnchor, Loading, Locale, Tag, List, PullRefresh } from 'vant'
+import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Dialog, Image as VanImage, Icon, IndexBar, IndexAnchor, Loading, Locale, Tag, List, PullRefresh } from 'vant'
 import 'vant/lib/sticky/index.less'
 
 import 'vant/lib/action-bar/index.less'
@@ -10,6 +10,8 @@ import 'vant/lib/cell/index.less'
 import 'vant/lib/cell-group/index.less'
 
 import 'vant/lib/collapse-item/index.less'
+
+import 'vant/lib/dialog/index'
 
 import 'vant/lib/image/index.less'
 
@@ -41,6 +43,7 @@ export default {
     app.use(CellGroup)
     app.use(Collapse)
     app.use(CollapseItem)
+    app.use(Dialog)
     app.use(VanImage)
     app.use(IndexBar)
     app.use(IndexAnchor)
