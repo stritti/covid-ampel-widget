@@ -5,6 +5,7 @@
     <van-dialog
       v-model="updateExists"
       title="Neue Version"
+      confirm-button-text="OK"
       :confirm="refreshApp"
       message="App aktualisieren &hellip;"
     />
