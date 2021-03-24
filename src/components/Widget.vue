@@ -351,6 +351,7 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
     padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
+    cursor: pointer;
     background-color: rgba(45, 45, 45, 0.2);
     border-radius: 5px;
     .icon-tabler-share {
