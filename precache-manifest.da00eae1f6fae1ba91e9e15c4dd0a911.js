@@ -24,19 +24,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/about~33d48c78.51f3a297.css"
   },
   {
-    "revision": "e09b271b1c16240a8f4d",
-    "url": "/covid-ampel-widget/css/app~d0ae3f07.9eafc11b.css"
+    "revision": "e0bf83a0afd14acfe0e7",
+    "url": "/covid-ampel-widget/css/app~d0ae3f07.a17f0703.css"
   },
   {
-    "revision": "cc20bda199074fd365e7",
+    "revision": "65ba07a9e2440eebb1aa",
     "url": "/covid-ampel-widget/css/config~21833f8f.83a2ca4d.css"
   },
   {
-    "revision": "bc4ad4a356d6773fd3cc",
+    "revision": "b55c218f8a32f63c7747",
     "url": "/covid-ampel-widget/css/help~f71cff67.33b79095.css"
   },
   {
-    "revision": "66c90fff5d59a4b1c213",
+    "revision": "fe1cef33b0db10d4e220",
     "url": "/covid-ampel-widget/css/npm.vant~8546d4a7.fafacae9.css"
   },
   {
@@ -124,7 +124,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "595b3cf48882977228e27a4551d7f082",
+    "revision": "0ee0cff4fccd2dd3a26173981cc84e39",
     "url": "/covid-ampel-widget/index.html"
   },
   {
@@ -132,16 +132,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/about~33d48c78.96700798.js"
   },
   {
-    "revision": "e09b271b1c16240a8f4d",
-    "url": "/covid-ampel-widget/js/app~d0ae3f07.a6f8e14b.js"
+    "revision": "e0bf83a0afd14acfe0e7",
+    "url": "/covid-ampel-widget/js/app~d0ae3f07.66b30c88.js"
   },
   {
-    "revision": "cc20bda199074fd365e7",
-    "url": "/covid-ampel-widget/js/config~21833f8f.49c36f38.js"
+    "revision": "65ba07a9e2440eebb1aa",
+    "url": "/covid-ampel-widget/js/config~21833f8f.3637480a.js"
   },
   {
-    "revision": "bc4ad4a356d6773fd3cc",
-    "url": "/covid-ampel-widget/js/help~f71cff67.bfed000c.js"
+    "revision": "b55c218f8a32f63c7747",
+    "url": "/covid-ampel-widget/js/help~f71cff67.4871341b.js"
   },
   {
     "revision": "ced5bc723e64c5fe254a",
@@ -152,8 +152,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.babel~f269b12e.a1d2524c.js"
   },
   {
-    "revision": "7940883570d6e3335240",
-    "url": "/covid-ampel-widget/js/npm.core-js~987e6011.c4dbc390.js"
+    "revision": "4cee509d2a7b6fcadf11",
+    "url": "/covid-ampel-widget/js/npm.core-js~987e6011.88581920.js"
   },
   {
     "revision": "664fdbed51117cba6b05",
@@ -176,8 +176,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.register-service-worker~7fc74268.fded5507.js"
   },
   {
-    "revision": "66c90fff5d59a4b1c213",
-    "url": "/covid-ampel-widget/js/npm.vant~8546d4a7.c306360f.js"
+    "revision": "fe1cef33b0db10d4e220",
+    "url": "/covid-ampel-widget/js/npm.vant~8546d4a7.0df8bbba.js"
   },
   {
     "revision": "80f9a0187bc4fd0a66af",
@@ -200,20 +200,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.vue-router~aacd4aef.54791f5e.js"
   },
   {
-    "revision": "19742f573825f43ce065",
-    "url": "/covid-ampel-widget/js/npm.vue~253ae210.e3d757da.js"
+    "revision": "1edee0f93f30cf6890d9",
+    "url": "/covid-ampel-widget/js/npm.vue~253ae210.6db8c01f.js"
   },
   {
-    "revision": "e9f2e0ee3f7adef7d333",
-    "url": "/covid-ampel-widget/js/npm.vue~5ea1a303.1dc5936d.js"
+    "revision": "91fb2af52337fc61fcc7",
+    "url": "/covid-ampel-widget/js/npm.vue~5ea1a303.3696b0e8.js"
   },
   {
     "revision": "96d3a4861a458ef090a7",
     "url": "/covid-ampel-widget/js/npm.webpack~0faa04c6.d445adad.js"
   },
   {
-    "revision": "f39f591e460d1afb3bb6",
-    "url": "/covid-ampel-widget/js/runtime.12f1e70c.js"
+    "revision": "82ba24bcfcaf4f0ba2ba",
+    "url": "/covid-ampel-widget/js/runtime.900aa921.js"
   },
   {
     "revision": "263ae87dc0f50891fbc76e8c1e629f0a",
