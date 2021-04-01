@@ -91,7 +91,7 @@ export default {
       activeName: '',
       usefulLinks: [
         {
-          headline: 'Einige nützliche Links in Bezug auf die Inzidenz in Deutschland:',
+          headline: 'Einige nützliche Links in Bezug auf Covid-19 und die Inzidenz in Deutschland:',
           links: [
             {
               title: 'Robert Koch-institut: COVID-19-Dashboard',
@@ -108,6 +108,10 @@ export default {
             {
               title: 'COVID Risiko Deutschland nach Ländern und Kreisen',
               url: 'https://pavelmayer.de/covid/risks/'
+            },
+            {
+              title: '💉 116117 - Impftermin Service',
+              url: 'https://www.impfterminservice.de/'
             }
           ]
         },
