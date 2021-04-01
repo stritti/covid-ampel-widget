@@ -7,6 +7,15 @@
         </slot>
         <slot>Home</slot>
       </van-action-bar-icon>
+      <van-action-bar-icon
+        url="https://www.impfterminservice.de/"
+        target="_blank"
+      >
+        <slot name="icon">
+          <vaccine />
+        </slot>
+        <slot>Impfservice</slot>
+      </van-action-bar-icon>
       <van-action-bar-icon to="/help">
         <slot name="icon">
           <help />
@@ -33,11 +42,12 @@
 import TrafficLights from '@/components/svg/TrafficLights'
 import Settings from '@/components/svg/Settings'
 import Help from '@/components/svg/Help'
+import Vaccine from '@/components/svg/Vaccine'
 import More from '@/components/svg/More'
 
 export default {
   name: 'NavigationBar',
-  components: { TrafficLights, Settings, Help, More },
+  components: { TrafficLights, Settings, Help, Vaccine, More },
   data () {
     return {
       home: '/'
