@@ -200,8 +200,7 @@ export default {
           } else {
             result = null
           }
-          console.log(result)
-          this.indicator = +1 // result
+          this.indicator = result
         })
     },
     getBezShort (IBZ) {
