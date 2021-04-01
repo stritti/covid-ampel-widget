@@ -129,10 +129,7 @@ module.exports = {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
       swSrc: './src/sw.js',
-      swDest: 'service-worker.js',
-      // https://github.com/yyx990803/register-service-worker/issues/14
-      // https://stackoverflow.com/questions/54145735/vue-pwa-not-getting-new-content-after-refresh
-      skipWaiting: true
+      swDest: 'service-worker.js'
     }
   }
 }
