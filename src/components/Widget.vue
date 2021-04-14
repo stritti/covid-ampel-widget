@@ -67,6 +67,7 @@
             </span>
           </small>
         </div>
+        <vaccination />
         <div
           v-if="isShareable"
           class="share"
@@ -88,11 +89,12 @@ import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
 import IndicatorUnknown from '@/components/svg/IndicatorUnknown.vue'
 import Share from '@/components/svg/Share.vue'
+import Vaccination from './Vaccination.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share
+    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share, Vaccination
   },
   mixins: [crono],
   props: {
