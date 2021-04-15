@@ -62,7 +62,7 @@ export default {
   background-color: #ebedf0
   padding: 10px
   border-radius: 5px
-  width: 100%
+  width: 400px
 
 .useful-link
   .van-cell__title
