@@ -1,7 +1,12 @@
 <template>
   <div id="vaccination-view">
     <doc-head :meta-info="metaInfo" />
-
+    <van-sticky>
+      <van-nav-bar
+        title="Impfstatus"
+        sticky
+      />
+    </van-sticky>
     <div class="container">
       <h3>Fortschritt: Deutschland</h3>
       <vaccination class="vaccinationProgress" />
