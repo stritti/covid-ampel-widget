@@ -93,7 +93,7 @@ export default {
       }
     },
     herdImmunity () {
-      return 80
+      return 70
     },
     deltaHerdImmunity () {
       return this.herdImmunity - this.firstVaccinationQuote - this.secondVaccinationQuote
