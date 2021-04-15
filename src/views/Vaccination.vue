@@ -48,7 +48,7 @@ export default {
           url: 'https://www.impfterminübersicht.de/'
         },
         {
-          title: 'Impfdahboard.de',
+          title: 'Impfdashboard.de',
           url: 'https://impfdashboard.de/'
         }
       ]
@@ -62,6 +62,7 @@ export default {
   background-color: #ebedf0
   padding: 10px
   border-radius: 5px
+  width: 100%
 
 .useful-link
   .van-cell__title
