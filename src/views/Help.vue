@@ -112,6 +112,10 @@ export default {
             {
               title: '💉 116117 - Impftermin Service',
               url: 'https://www.impfterminservice.de/'
+            },
+            {
+              title: 'Pandemieende Deutschland',
+              url: 'https://www.pandemieende.de/'
             }
           ]
         },
