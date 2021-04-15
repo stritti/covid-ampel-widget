@@ -11,6 +11,7 @@
   "dependencies": {
     "-": "0.0.1",
     "axios": "^0.21.1",
+    "chart.js": "^3.1.0",
     "core-js": "^3.10.0",
     "dexie": "^3.0.3",
     "eslint-plugin-standard": "^4.1.0",
@@ -20,7 +21,8 @@
     "vue": "^3.0.10",
     "vue-crono": "^2.0.9",
     "vue-gtag-next": "^1.14.0",
-    "vue-router": "^4.0.5"
+    "vue-router": "^4.0.5",
+    "vue3-chart-v2": "^0.8.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",

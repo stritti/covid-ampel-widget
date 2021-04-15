@@ -8,13 +8,12 @@
         <slot>Home</slot>
       </van-action-bar-icon>
       <van-action-bar-icon
-        url="https://www.impfterminservice.de/"
-        target="_blank"
+        to="/vaccination"
       >
         <slot name="icon">
           <vaccine />
         </slot>
-        <slot>Impfservice</slot>
+        <slot>Impfstatus</slot>
       </van-action-bar-icon>
       <van-action-bar-icon to="/help">
         <slot name="icon">
