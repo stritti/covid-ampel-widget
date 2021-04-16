@@ -47,7 +47,7 @@ export default {
   computed: {
     chartdata () {
       return {
-        labels: ['1. Impfung', 'Vollschutz', `min. ${this.herdImmunity}%`],
+        labels: ['min. 1. Impfung', 'Vollschutz', `angestrebte Herdenimmunität (${this.herdImmunity}%)`],
         datasets: [
           {
             label: 'Herden Immunität',
