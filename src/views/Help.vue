@@ -114,6 +114,10 @@ export default {
               url: 'https://www.impfterminservice.de/'
             },
             {
+              title: 'Zusammen gegen Corona - #ÄrmelHoch',
+              url: 'https://www.zusammengegencorona.de/'
+            },
+            {
               title: 'Pandemieende Deutschland',
               url: 'https://www.pandemieende.de/'
             }
