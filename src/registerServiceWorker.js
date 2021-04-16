@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === 'production') {
       document.dispatchEvent(
         new CustomEvent('swUpdated', { detail: registration })
       )
+      window.location.reload()
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')
