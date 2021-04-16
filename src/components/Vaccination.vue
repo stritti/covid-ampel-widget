@@ -19,6 +19,7 @@ export default {
       meta: {},
       options: {
         responsive: true,
+        aspectRatio: 2,
         maintainAspectRatio: false,
         scales: {
           x: {

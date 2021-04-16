@@ -124,6 +124,23 @@ export default {
           ]
         },
         {
+          headline: 'Impfung',
+          links: [
+            {
+              title: '💉 116117 - Impftermin Service',
+              url: 'https://www.impfterminservice.de/'
+            },
+            {
+              title: 'Impfterminübersicht',
+              url: 'https://www.impfterminübersicht.de/'
+            },
+            {
+              title: 'Impfdashboard.de',
+              url: 'https://impfdashboard.de/'
+            }
+          ]
+        },
+        {
           headline: 'Weltweite Informationen:',
           links: [
             {

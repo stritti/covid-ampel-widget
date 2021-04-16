@@ -8,8 +8,9 @@
       />
     </van-sticky>
     <div class="container">
-      <h3>Fortschritt: Deutschland</h3>
-      <vaccination class="vaccinationProgress" />
+      <div class="chart-container">
+        <vaccination class="vaccinationProgress" />
+      </div>
       <em>Quelle: <a href="https://api.corona-zahlen.org/">api.corona-zahlen.org</a></em>
     </div>
 
@@ -28,9 +29,6 @@
         />
       </a>
     </van-list>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
-    <div>&nbsp;</div>
   </div>
 </template>
 
@@ -45,32 +43,24 @@ export default {
     return {
       metaInfo: {
         title: 'Impfstatus | Covid-19 Ampel'
-      },
-      links: [
-        {
-          title: '💉 116117 - Impftermin Service',
-          url: 'https://www.impfterminservice.de/'
-        },
-        {
-          title: 'Impfterminübersicht',
-          url: 'https://www.impfterminübersicht.de/'
-        },
-        {
-          title: 'Impfdashboard.de',
-          url: 'https://impfdashboard.de/'
-        }
-      ]
-
+      }
     }
   }
 }
 </script>
 <style lang="sass">
-.vaccinationProgress
-  background-color: #ebedf0
-  padding: 10px
-  border-radius: 5px
-  width: 320px
+.chart-container
+  position: relative
+  left: auto
+  right: auto
+  height: 33vh
+  width:93vw
+  margin-bottom: 33vh
+
+  .vaccinationProgress
+    background-color: #ebedf0
+    padding: 10px
+    border-radius: 5px
 
 .useful-link
   .van-cell__title
