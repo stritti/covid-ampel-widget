@@ -1,52 +1,26 @@
+<template>
+  <vaccination-chart
+    v-if="isLoaded"
+    :chart-data="chartData"
+  />
+</template>
 
 <script>
-import { Doughnut } from 'vue3-chart-v2'
 import { coronaZahlenService } from '@/services/corona-zahlen.service'
+import VaccinationChart from './VaccinationChart.vue'
 
 export default {
   name: 'Vaccination',
-  extends: Doughnut,
+  components: { VaccinationChart },
   data () {
     return {
-      isLoading: true,
-      error: false,
-      data: {
-        quote: 0,
-        secondVaccination: {
-          quote: 0
-        }
-      },
-      meta: {},
-      options: {
-        responsive: true,
-        aspectRatio: 2,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            type: Number,
-            min: 0,
-            max: 100
-          }
-        },
-        elements: {
-          arc: {
-            borderColor: 'transparent'
-          }
-        },
-        plugins: {
-          legend: {
-            position: 'top'
-          },
-          title: {
-            display: true,
-            text: 'Impfquote Deutschland'
-          }
-        }
-      }
+      isLoaded: false,
+      data: {},
+      meta: {}
     }
   },
   computed: {
-    chartdata () {
+    chartData () {
       return {
         labels: ['min. 1. Impfung', 'Vollschutz', `angestrebte Herdenimmunität (${this.herdImmunity}%)`],
         datasets: [
@@ -100,31 +74,29 @@ export default {
       return this.herdImmunity - this.firstVaccinationQuote - this.secondVaccinationQuote
     }
   },
-  mounted () {
+  created () {
     this.getData()
   },
   methods: {
     getData () {
-      this.isLoading = true
+      this.isLoaded = false
 
       coronaZahlenService.getVaccinations()
         .then(result => {
           this.data = result.data
           this.meta = result.meta
-          this.renderChart(this.chartdata, this.options)
         })
         .catch(error => {
           console.error(error)
           this.error = 'Fehler beim Laden der Daten von api.corona-zahlen.org'
         })
         .finally(() => {
-          this.isLoading = false
+          this.isLoaded = true
         })
     },
     rounded (value) {
       return value.toFixed(2)
     }
   }
-
 }
 </script>

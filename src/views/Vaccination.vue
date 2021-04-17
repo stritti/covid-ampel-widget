@@ -13,28 +13,12 @@
       </div>
       <em>Quelle: <a href="https://api.corona-zahlen.org/">api.corona-zahlen.org</a></em>
     </div>
-
-    <van-list>
-      <a
-        v-for="link in links"
-        :key="link.url"
-        :href="link.url"
-        target="_blank"
-        class="useful-link"
-      >
-        <van-cell
-          icon="bookmark"
-          is-link
-          :title="link.title"
-        />
-      </a>
-    </van-list>
   </div>
 </template>
 
 <script>
 import DocHead from '@/components/DocHead.vue'
-import Vaccination from '@/components/Vaccination.vue'
+import Vaccination from '@/components/vaccin/Vaccination.vue'
 
 export default {
   name: 'PrivaceyView',
