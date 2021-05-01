@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="landkreise">
     <van-loading
       v-if="isLoading"
       size="24px"
@@ -16,7 +16,7 @@
     </div>
     <template v-else>
       <van-index-bar
-        class="landkreise"
+        class="landkreise--list"
       >
         <template
           v-for="item in data"
@@ -122,6 +122,9 @@ export default {
 </script>
 <style lang="scss">
 .landkreise {
+  height: 100vh;
+}
+.landkreise--list {
   .van-index-anchor {
     color: var(--text);
     background-color: var(--background-color-light);
