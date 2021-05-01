@@ -1,40 +1,38 @@
 <template>
-  <van-sticky position="bottom">
-    <van-action-bar class="van-hairline--top">
-      <van-action-bar-icon :to="home">
-        <slot name="icon">
-          <traffic-lights />
-        </slot>
-        <slot>Home</slot>
-      </van-action-bar-icon>
-      <van-action-bar-icon
-        to="/vaccination"
-      >
-        <slot name="icon">
-          <vaccine />
-        </slot>
-        <slot>Impfstatus</slot>
-      </van-action-bar-icon>
-      <van-action-bar-icon to="/help">
-        <slot name="icon">
-          <help />
-        </slot>
-        <slot>Hilfe</slot>
-      </van-action-bar-icon>
-      <van-action-bar-icon to="/config">
-        <slot name="icon">
-          <settings />
-        </slot>
-        <slot>Einstellungen</slot>
-      </van-action-bar-icon>
-      <van-action-bar-icon to="/more">
-        <slot name="icon">
-          <more />
-        </slot>
-        <slot>Mehr</slot>
-      </van-action-bar-icon>
-    </van-action-bar>
-  </van-sticky>
+  <van-action-bar class="van-hairline--top">
+    <van-action-bar-icon :to="home">
+      <slot name="icon">
+        <traffic-lights />
+      </slot>
+      <slot>Home</slot>
+    </van-action-bar-icon>
+    <van-action-bar-icon
+      to="/vaccination"
+    >
+      <slot name="icon">
+        <vaccine />
+      </slot>
+      <slot>Impfstatus</slot>
+    </van-action-bar-icon>
+    <van-action-bar-icon to="/help">
+      <slot name="icon">
+        <help />
+      </slot>
+      <slot>Hilfe</slot>
+    </van-action-bar-icon>
+    <van-action-bar-icon to="/config">
+      <slot name="icon">
+        <settings />
+      </slot>
+      <slot>Einstellungen</slot>
+    </van-action-bar-icon>
+    <van-action-bar-icon to="/more">
+      <slot name="icon">
+        <more />
+      </slot>
+      <slot>Mehr</slot>
+    </van-action-bar-icon>
+  </van-action-bar>
 </template>
 
 <script>
