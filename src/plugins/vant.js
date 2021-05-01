@@ -1,5 +1,5 @@
 import 'vant/lib/nav-bar/index.less'
-import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Dialog, Image as VanImage, Icon, IndexBar, IndexAnchor, Loading, Locale, Tag, List, PullRefresh, Progress } from 'vant'
+import { NavBar, Sticky, ActionBar, ActionBarIcon, ActionBarButton, Cell, CellGroup, Collapse, CollapseItem, Dialog, Image as VanImage, Icon, IndexBar, IndexAnchor, Loading, Locale, Tag, List, PullRefresh } from 'vant'
 import 'vant/lib/sticky/index.less'
 
 import 'vant/lib/action-bar/index.less'
@@ -28,8 +28,6 @@ import 'vant/lib/list/index.less'
 
 import 'vant/lib/pull-refresh/index.less'
 
-import 'vant/lib/progress/index.less'
-
 import deDE from 'vant/es/locale/lang/de-DE'
 
 export default {
@@ -54,6 +52,5 @@ export default {
     app.use(PullRefresh)
     app.use(List)
     app.use(Icon)
-    app.use(Progress)
   }
 }
