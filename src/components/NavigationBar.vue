@@ -88,14 +88,14 @@ export default {
     background-color: var(--background-color);
   }
   // Browsers which partially support CSS Environment variables (iOS 11.0-11.2).
-  @supports (padding-top: env(safe-area-inset-top)) {
-    --safe-area-inset-top: env(safe-area-inset-top);
-    padding-top: calc(var(--safe-area-inset-top));
+  @supports (padding-bottom: env(safe-area-inset-bottom)) {
+    --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    padding-bottom: calc(var(--safe-area-inset-bottom) + 8px);
   }
   // Browsers which fully support CSS Environment variables (iOS 11.2+).
-  @supports (padding-top: constant(safe-area-inset-top)) {
-    --safe-area-inset-top: constant(safe-area-inset-top);
-    padding-top: calc(var(--safe-area-inset-top) );
+  @supports (padding-bottom: constant(safe-area-inset-bottom)) {
+    --safe-area-inset-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: calc(var(--safe-area-inset-bottom) + 8px);
   }
 }
 
