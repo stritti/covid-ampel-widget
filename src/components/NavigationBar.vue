@@ -1,38 +1,40 @@
 <template>
-  <van-action-bar class="van-hairline--top">
-    <van-action-bar-icon :to="home">
-      <slot name="icon">
-        <traffic-lights />
-      </slot>
-      <slot>Home</slot>
-    </van-action-bar-icon>
-    <van-action-bar-icon
-      to="/vaccination"
-    >
-      <slot name="icon">
-        <vaccine />
-      </slot>
-      <slot>Impfstatus</slot>
-    </van-action-bar-icon>
-    <van-action-bar-icon to="/help">
-      <slot name="icon">
-        <help />
-      </slot>
-      <slot>Hilfe</slot>
-    </van-action-bar-icon>
-    <van-action-bar-icon to="/config">
-      <slot name="icon">
-        <settings />
-      </slot>
-      <slot>Einstellungen</slot>
-    </van-action-bar-icon>
-    <van-action-bar-icon to="/more">
-      <slot name="icon">
-        <more />
-      </slot>
-      <slot>Mehr</slot>
-    </van-action-bar-icon>
-  </van-action-bar>
+  <van-sticky position="bottom">
+    <van-action-bar class="van-hairline--top">
+      <van-action-bar-icon :to="home">
+        <slot name="icon">
+          <traffic-lights />
+        </slot>
+        <slot>Home</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon
+        to="/vaccination"
+      >
+        <slot name="icon">
+          <vaccine />
+        </slot>
+        <slot>Impfstatus</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon to="/help">
+        <slot name="icon">
+          <help />
+        </slot>
+        <slot>Hilfe</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon to="/config">
+        <slot name="icon">
+          <settings />
+        </slot>
+        <slot>Einstellungen</slot>
+      </van-action-bar-icon>
+      <van-action-bar-icon to="/more">
+        <slot name="icon">
+          <more />
+        </slot>
+        <slot>Mehr</slot>
+      </van-action-bar-icon>
+    </van-action-bar>
+  </van-sticky>
 </template>
 
 <script>
@@ -69,9 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .van-action-bar {
-  color: var(--text);
   background-color: var(--background-color);
-  padding: 8px;
 
   .icon-tabler {
     margin-left: auto;
@@ -85,16 +85,7 @@ export default {
     color: var(--text);
     background-color: var(--background-color);
   }
-  // Browsers which partially support CSS Environment variables (iOS 11.0-11.2).
-  @supports (padding-bottom: env(safe-area-inset-bottom)) {
-    --safe-area-inset-bottom: env(safe-area-inset-bottom);
-    padding-bottom: calc(var(--safe-area-inset-bottom) + 8px);
-  }
-  // Browsers which fully support CSS Environment variables (iOS 11.2+).
-  @supports (padding-bottom: constant(safe-area-inset-bottom)) {
-    --safe-area-inset-bottom: constant(safe-area-inset-bottom);
-    padding-bottom: calc(var(--safe-area-inset-bottom) + 8px);
-  }
+
 }
 
 @media only screen and (max-height: 376px) {
