@@ -1,6 +1,6 @@
 <template>
-  <van-sticky>
-    <van-action-bar class="van-hairline--top">
+  <van-sticky position="bottom">
+    <van-action-bar>
       <van-action-bar-icon :to="home">
         <slot name="icon">
           <traffic-lights />
@@ -85,7 +85,6 @@ export default {
     color: var(--text);
     background-color: var(--background-color);
   }
-
 }
 
 @media only screen and (max-height: 376px) {
