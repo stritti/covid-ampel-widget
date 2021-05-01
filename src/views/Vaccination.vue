@@ -11,7 +11,6 @@
       <div class="chart-container">
         <vaccination class="vaccinationProgress" />
       </div>
-      <em>Quelle: <a href="https://api.corona-zahlen.org/">api.corona-zahlen.org</a></em>
     </div>
   </div>
 </template>

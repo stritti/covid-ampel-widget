@@ -3,6 +3,29 @@
     v-if="isLoaded"
     :chart-data="chartData"
   />
+  <table id="vaccination-table">
+    <tr>
+      <td>1. Impfung:</td>
+      <td align="right">
+        {{ firstVaccinationQuote }}%
+      </td>
+    </tr>
+    <tr>
+      <td>Vollschutz:</td>
+      <td align="right">
+        {{ secondVaccinationQuote }}%
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <em>
+          <small>
+            Quelle: <a href="https://api.corona-zahlen.org/">api.corona-zahlen.org</a>
+          </small>
+        </em>
+      </td>
+    </tr>
+  </table>
 </template>
 
 <script>
@@ -100,3 +123,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+#vaccination-table {
+  position: relative;
+  top: -220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>

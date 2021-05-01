@@ -31,7 +31,10 @@ export default {
         },
         plugins: {
           legend: {
-            position: 'top'
+            position: 'top',
+            labels: {
+              color: 'var(--text)'
+            }
           },
           title: {
             display: true,
