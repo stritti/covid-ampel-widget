@@ -1,29 +1,30 @@
-importScripts("/covid-ampel-widget/precache-manifest.da00eae1f6fae1ba91e9e15c4dd0a911.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-/* eslint-disable no-undef, no-underscore-dangle, no-restricted-globals */
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-// This is the code piece that GenerateSW mode can't provide for us.
-// This code listens for the user's confirmation to update the app.
-self.addEventListener('message', (e) => {
-  if (!e.data) {
-    return
-  }
+importScripts(
+  "/covid-ampel-widget/precache-manifest.88b3ce9413b16bad6ed0e01f70823f7f.js"
+);
 
-  switch (e.data) {
-    case 'skipWaiting':
-      self.skipWaiting()
-      break
-    default:
-      // NOOP
-      break
-  }
-})
+workbox.core.setCacheNameDetails({prefix: "covid-ampel"});
 
-workbox.core.clientsClaim() // Vue CLI 4 and Workbox v4, else
-// workbox.clientsClaim() // Vue CLI 3 and Workbox v3.
+workbox.core.skipWaiting();
 
-// The precaching code provided by Workbox.
-self.__precacheManifest = [].concat(self.__precacheManifest || [])
-// workbox.precaching.suppressWarnings() // Only used with Vue CLI 3 and Workbox v3.
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
-
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
