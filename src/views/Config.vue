@@ -18,9 +18,7 @@
       <p>
         Diese Einstellung wird nur lokal im Browser gespeichert.
       </p>
-      <vant-container>
-        <landkreise />
-      </vant-container>
+      <landkreise />
     </div>
   </div>
 </template>
