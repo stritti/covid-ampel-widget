@@ -112,6 +112,31 @@ export default {
             {
               title: '💉 116117 - Impftermin Service',
               url: 'https://www.impfterminservice.de/'
+            },
+            {
+              title: 'Zusammen gegen Corona - #ÄrmelHoch',
+              url: 'https://www.zusammengegencorona.de/'
+            },
+            {
+              title: 'Pandemieende Deutschland',
+              url: 'https://www.pandemieende.de/'
+            }
+          ]
+        },
+        {
+          headline: 'Impfung',
+          links: [
+            {
+              title: '💉 116117 - Impftermin Service',
+              url: 'https://www.impfterminservice.de/'
+            },
+            {
+              title: 'Impfterminübersicht',
+              url: 'https://www.impfterminübersicht.de/'
+            },
+            {
+              title: 'Impfdashboard.de',
+              url: 'https://impfdashboard.de/'
             }
           ]
         },

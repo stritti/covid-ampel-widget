@@ -1,5 +1,5 @@
 <template>
-  <van-sticky>
+  <van-sticky position="bottom">
     <van-action-bar>
       <van-action-bar-icon :to="home">
         <slot name="icon">
@@ -8,13 +8,12 @@
         <slot>Home</slot>
       </van-action-bar-icon>
       <van-action-bar-icon
-        url="https://www.impfterminservice.de/"
-        target="_blank"
+        to="/vaccination"
       >
         <slot name="icon">
           <vaccine />
         </slot>
-        <slot>Impfservice</slot>
+        <slot>Impfstatus</slot>
       </van-action-bar-icon>
       <van-action-bar-icon to="/help">
         <slot name="icon">
@@ -72,9 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .van-action-bar {
-  color: var(--text);
   background-color: var(--background-color);
-  padding: 8px;
 
   .icon-tabler {
     margin-left: auto;

@@ -18,7 +18,6 @@
       <p>
         Diese Einstellung wird nur lokal im Browser gespeichert.
       </p>
-
       <landkreise />
     </div>
   </div>
