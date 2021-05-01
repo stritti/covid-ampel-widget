@@ -14,34 +14,37 @@
     >
       <van-icon name="warning-o" /> {{ error }}
     </div>
-    <van-index-bar
-      v-else
-      class="landkreise"
-    >
-      <span
-        v-for="item in data"
-        :key="item.OBJECTID"
+    <template v-else>
+      <van-index-bar
+        class="landkreise"
       >
-        <van-index-anchor
-          v-if="item.index"
-          :index="item.label"
-        />
-        <van-cell
-          v-else
-          clickable
-          is-link
-          icon="location-o"
-          :class="selectedClass(item.OBJECTID)"
-          @click="onClick(item.OBJECTID)"
+        <template
+          v-for="item in data"
+          :key="item.OBJECTID"
         >
-          <template #title>
-            <h4 class="custom-title">{{ item.GEN }}</h4>
-            <p>{{ item.BEZ }}</p>
-          </template>
-          <incidence-label :object-id="item.OBJECTID" />
-        </van-cell>
-      </span>
-    </van-index-bar>
+          <van-index-anchor
+            v-if="item.index"
+            :index="item.label"
+          />
+          <van-cell
+            v-else
+            clickable
+            is-link
+            icon="location-o"
+            :class="selectedClass(item.OBJECTID)"
+            @click="onClick(item.OBJECTID)"
+          >
+            <template #title>
+              <h4 class="custom-title">
+                {{ item.GEN }}
+              </h4>
+              <p>{{ item.BEZ }}</p>
+            </template>
+            <incidence-label :object-id="item.OBJECTID" />
+          </van-cell>
+        </template>
+      </van-index-bar>
+    </template>
   </div>
 </template>
 <script>
