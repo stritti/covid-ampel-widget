@@ -1,5 +1,5 @@
 <template>
-  <van-sticky position="bottom">
+  <van-sticky>
     <van-action-bar class="van-hairline--top">
       <van-action-bar-icon :to="home">
         <slot name="icon">
