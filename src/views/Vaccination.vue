@@ -3,7 +3,7 @@
     <doc-head :meta-info="metaInfo" />
     <van-sticky>
       <van-nav-bar
-        title="Impfstatus"
+        title="Impfstatus Deutschland"
         sticky
       />
     </van-sticky>
