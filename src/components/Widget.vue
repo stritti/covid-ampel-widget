@@ -107,6 +107,7 @@ export default {
       isLoading: true,
       error: false,
       data: null,
+      dataYesterday: null,
       indicator: null
     }
   },

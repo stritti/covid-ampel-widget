@@ -15,7 +15,7 @@ export default {
     return {
       options: {
         responsive: true,
-        aspectRatio: 2,
+        aspectRatio: 1,
         maintainAspectRatio: false,
         scales: {
           x: {
