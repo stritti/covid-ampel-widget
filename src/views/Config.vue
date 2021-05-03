@@ -12,13 +12,15 @@
     </van-sticky>
 
     <div class="container">
-      <p>
-        Wählen sie bitte den gewünschten Landkreis aus:
-      </p>
-      <p>
-        Diese Einstellung wird nur lokal im Browser gespeichert.
-      </p>
-      <landkreise />
+      <div class="head">
+        <p>
+          Wählen sie bitte den gewünschten Landkreis aus:
+        </p>
+        <p>
+          Diese Einstellung wird nur lokal im Browser gespeichert.
+        </p>
+        <landkreise />
+      </div>
     </div>
   </div>
 </template>
@@ -44,3 +46,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .head {
+    margin: 8px;
+  }
+</style>

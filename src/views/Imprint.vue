@@ -113,8 +113,11 @@ export default {
 }
 </script>
 
-<style scoped>
-p {
-  font-size: 0.8rem;
-}
+<style lang="sass" scoped>
+.container
+  margin-left: 8px
+  margin-right: 8px
+  margin-bottom: 1.5rem
+p
+  font-size: 0.8rem
 </style>

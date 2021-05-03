@@ -11,6 +11,24 @@
       <div class="chart-container">
         <vaccination class="vaccinationProgress" />
       </div>
+
+      <hr>
+      <div class="vaccination-cta">
+        <a
+          href="https://www.impfterminservice.de/"
+          target="_blank"
+        >
+          💉 116117 - Impftermin Service
+        </a>
+      </div>
+      <div class="vaccination-cta">
+        <a
+          href="https://www.impfterminübersicht.de/"
+          target="_blank"
+        >
+          📅 Impftermin Übersicht
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -32,20 +50,31 @@ export default {
 }
 </script>
 <style lang="sass">
+#vaccination-view
+  min-height: 100%
+  width: 100vw
+
 .chart-container
   position: relative
   left: auto
   right: auto
-  height: 33vh
-  width:93vw
-  margin-bottom: 33vh
 
   .vaccinationProgress
     background-color: #ebedf0
     padding: 10px
     border-radius: 5px
 
-.useful-link
-  .van-cell__title
+.vaccination-cta
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  padding: 0.5rem
+  text-align: center
+  cursor: pointer
+  background-color: rgba(45, 45, 45, 0.2)
+  border-radius: 5px
+  line-height: 1.5rem
+
+  a
     color: var(--blue)
 </style>

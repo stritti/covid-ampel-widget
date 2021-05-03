@@ -16,16 +16,14 @@
         {{ secondVaccinationQuote }}%
       </td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <em>
-          <small>
-            Quelle: <a href="https://api.corona-zahlen.org/">api.corona-zahlen.org</a>
-          </small>
-        </em>
-      </td>
-    </tr>
   </table>
+  <div class="source">
+    <em>
+      <small>
+        Quelle: <a href="https://api.corona-zahlen.org/">api.corona-zahlen.org</a>
+      </small>
+    </em>
+  </div>
 </template>
 
 <script>
@@ -124,11 +122,19 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-#vaccination-table {
-  position: relative;
-  top: -220px;
-  margin-left: auto;
-  margin-right: auto;
-}
+<style lang="sass" scoped>
+#vaccination-table
+  position: relative
+  top: -200px
+  font-size: 1rem
+  margin-left: auto
+  margin-right: auto
+
+.source
+  top: -25px
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+
 </style>

@@ -246,14 +246,16 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-p {
-  font-size: 0.8rem;
-}
+<style lang="sass" scoped>
+.container
+  margin-left: 8px
+  margin-right: 8px
+  margin-bottom: 1.5rem
+p
+  font-size: 0.8rem
 
-ul {
-  list-style-type: disc;
-  font-size: 0.8rem;
-  margin-left: 1rem;
-}
+ul
+  list-style-type: disc
+  font-size: 0.8rem
+  margin-left: 1rem
 </style>

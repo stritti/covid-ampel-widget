@@ -86,8 +86,9 @@ export default {
 }
 </script>
 
-<style scoped>
-.container {
-  margin-bottom: 1.5rem;
-}
+<style lang="sass" scoped>
+.container
+  margin-left: 8px
+  margin-right: 8px
+  margin-bottom: 1.5rem
 </style>
