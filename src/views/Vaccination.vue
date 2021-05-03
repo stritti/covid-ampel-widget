@@ -51,7 +51,7 @@ export default {
 </script>
 <style lang="sass">
 #vaccination-view
-  min-height: 100vh
+  min-height: auto
 
 .chart-container
   position: relative
@@ -68,12 +68,11 @@ export default {
   margin-left: auto
   margin-right: auto
   padding: 0.5rem
-  font-size: 1rem
   text-align: center
   cursor: pointer
   background-color: rgba(45, 45, 45, 0.2)
   border-radius: 5px
-  line-height: 2.5rem
+  line-height: 1.5rem
 
   a
     color: var(--blue)

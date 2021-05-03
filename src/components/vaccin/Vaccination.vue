@@ -123,6 +123,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.chartjs-render-monitor
+  overflow: hidden
+
 #vaccination-table
   position: relative
   top: -200px
@@ -131,7 +134,7 @@ export default {
   margin-right: auto
 
 .source
-  top: -15%
+  top: -25px
   position: relative
   margin-left: auto
   margin-right: auto
