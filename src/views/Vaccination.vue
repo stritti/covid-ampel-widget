@@ -51,7 +51,8 @@ export default {
 </script>
 <style lang="sass">
 #vaccination-view
-  min-height: auto
+  min-height: 100%
+  width: 100vw
 
 .chart-container
   position: relative

@@ -123,9 +123,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.chartjs-render-monitor
-  overflow: hidden
-
 #vaccination-table
   position: relative
   top: -200px
