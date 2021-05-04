@@ -81,7 +81,6 @@
 
 <script>
 import { rkiService } from '@/services/rki.service.js'
-import { database } from '@/services/database.js'
 import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
@@ -167,7 +166,6 @@ export default {
             this.data = incidence
 
             this.getIndicator(incidence)
-            database.add(incidence)
           }
         })
         .catch(error => {
@@ -187,21 +185,13 @@ export default {
       return date.toLocaleDateString('de-DE')
     },
     getIndicator (today) {
-      database.getData(today.OBJECTID, -1)
-        .then((yesterday) => {
-          let result
-          if (yesterday) {
-            if (today.cases7_per_100k < yesterday.cases7_per_100k) {
-              result = -1
-            } else if (today.cases7_per_100k > yesterday.cases7_per_100k) {
-              result = +1
-            } else {
-              result = 0
-            }
-          } else {
-            result = null
-          }
-          this.indicator = result
+      rkiService.getIncidenceHistory(this.data.RS)
+        .then(historicalData => {
+          const casesToday7 = historicalData.features.slice(0, 7).reduce((sum, feature) =>
+            sum + feature.attributes.AnzahlFall, 0)
+          const casesYesterday7 = historicalData.features.slice(1, 8).reduce((sum, feature) =>
+            sum + feature.attributes.AnzahlFall, 0)
+          this.indicator = (casesToday7 === casesYesterday7) ? 0 : (casesToday7 > casesYesterday7) ? +1 : -1
         })
     },
     getBezShort (IBZ) {

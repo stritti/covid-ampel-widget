@@ -5,7 +5,19 @@ const BASE_URL = 'https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/serv
 class RkiService {
   async getIncidence (objectId) {
     const url =
-      `${BASE_URL}query?where=OBJECTID in (${objectId})&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,GEN,IBZ&returnGeometry=false&f=json`
+      `${BASE_URL}query?where=OBJECTID in (${objectId})&outFields=objectId,last_update,cases7_per_100k,EWZ,BEZ,RS,GEN,IBZ&returnGeometry=false&f=json`
+
+    const result = await axios.get(url)
+    if (result.error) {
+      console.error(result.error)
+    } else {
+      return result.data
+    }
+  }
+
+  async getIncidenceHistory (objectId) {
+    const url =
+    `https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/Covid19_RKI_Sums/FeatureServer/0//query?where=IdLandkreis%3D${objectId}&objectIds=&time=&resultType=none&outFields=AnzahlFall,SummeFall,Meldedatum&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=Meldedatum+DESC&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=12&sqlFormat=none&f=json`
 
     const result = await axios.get(url)
     if (result.error) {
