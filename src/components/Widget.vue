@@ -57,7 +57,7 @@
             <small>
               <span class="time">
                 <span class="label">Stand: </span>
-                <span class="data">{{ formatDate(data.last_update) }}</span>
+                <span class="data">{{ data.last_update }}</span>
               </span>
               <span
                 class="source"
@@ -189,10 +189,6 @@ export default {
     rounded (value) {
       return Number(value.toFixed(1))
     },
-    formatDate (value) {
-      const date = new Date(value.replace(' Uhr', ''))
-      return date.toLocaleDateString('de-DE')
-    },
     getIndicator (today) {
       rkiService.getIncidenceHistory(this.data.RS)
         .then(historicalData => {
@@ -237,7 +233,7 @@ export default {
         text: `Aktuelle 7-Tage Inzidenz:
 In ${districtName} (${districtCategory}) wurden in den letzten 7 Tagen
      ${this.rounded(incidence)} ${this.indicatorEmoji} Menschen
-von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(today)}):`,
+von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${today}):`,
         url: window.location.href
       }
       navigator.share(data)
