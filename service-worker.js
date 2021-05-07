@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/covid-ampel-widget/precache-manifest.2c695093f418190581ead0732a13e6fc.js"
+  "/covid-ampel-widget/precache-manifest.fdb71e69f77750cda9ecbf28619e713b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "covid-ampel"});
