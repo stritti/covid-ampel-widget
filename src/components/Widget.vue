@@ -40,32 +40,40 @@
           />
         </p>
         <div class="info">
-          <small>
-            <span class="inzidenz-short">Inzidenz</span>
-            <span class="inzidenz">
-              Fälle der letzten 7 Tage pro 100.000 Einwohner
-            </span>
-          </small>
-          <br>
-          <small>
-            <span class="time">
-              <span class="label">Stand: </span>
-              <span class="data">{{ formatDate(data.last_update) }}</span>
-            </span>
-            <span
-              class="source"
-            >,
-              <span class="label">Datenquelle: </span>
-              <span class="data">
-                <a
-                  :class="incidenceColor"
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
-                >RKI</a>
+          <div>
+            <small>
+              <span class="inzidenz-short">Inzidenz</span>
+              <span class="inzidenz">
+                Fälle der letzten 7 Tage pro 100.000 Einwohner
               </span>
-            </span>
-          </small>
+            </small>
+          </div>
+          <div class="cases-absolute">
+            <small>
+              Absolute Fälle der letzten 7 Tage: {{ casesToday7 }} (Vortag: {{ casesYesterday7 }})
+            </small>
+          </div>
+          <div>
+            <small>
+              <span class="time">
+                <span class="label">Stand: </span>
+                <span class="data">{{ formatDate(data.last_update) }}</span>
+              </span>
+              <span
+                class="source"
+              >,
+                <span class="label">Datenquelle: </span>
+                <span class="data">
+                  <a
+                    :class="incidenceColor"
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://experience.arcgis.com/experience/478220a4c454480e823b17327b2bf1d4/page/page_1/"
+                  >RKI</a>
+                </span>
+              </span>
+            </small>
+          </div>
         </div>
         <div
           v-if="isShareable"
@@ -81,7 +89,6 @@
 
 <script>
 import { rkiService } from '@/services/rki.service.js'
-import { database } from '@/services/database.js'
 import { crono } from 'vue-crono'
 import IndicatorInc from '@/components/svg/IndicatorInc.vue'
 import IndicatorDec from '@/components/svg/IndicatorDec.vue'
@@ -107,7 +114,8 @@ export default {
       isLoading: true,
       error: false,
       data: null,
-      dataYesterday: null,
+      casesToday7: null,
+      casesYesterday7: null,
       indicator: null
     }
   },
@@ -167,7 +175,6 @@ export default {
             this.data = incidence
 
             this.getIndicator(incidence)
-            database.add(incidence)
           }
         })
         .catch(error => {
@@ -183,25 +190,19 @@ export default {
       return Number(value.toFixed(1))
     },
     formatDate (value) {
-      const date = new Date(value)
+      const date = new Date(value.replace(' Uhr', ''))
       return date.toLocaleDateString('de-DE')
     },
     getIndicator (today) {
-      database.getData(today.OBJECTID, -1)
-        .then((yesterday) => {
-          let result
-          if (yesterday) {
-            if (today.cases7_per_100k < yesterday.cases7_per_100k) {
-              result = -1
-            } else if (today.cases7_per_100k > yesterday.cases7_per_100k) {
-              result = +1
-            } else {
-              result = 0
-            }
-          } else {
-            result = null
-          }
-          this.indicator = result
+      rkiService.getIncidenceHistory(this.data.RS)
+        .then(historicalData => {
+          this.casesToday7 = historicalData.features.slice(0, 7).reduce((sum, feature) =>
+            sum + feature.attributes.AnzahlFall, 0)
+          this.casesYesterday7 = historicalData.features.slice(1, 8).reduce((sum, feature) =>
+            sum + feature.attributes.AnzahlFall, 0)
+          this.indicator = (this.casesToday7 === this.casesYesterday7)
+            ? 0
+            : ((this.casesToday7 > this.casesYesterday7) ? +1 : -1)
         })
     },
     getBezShort (IBZ) {
@@ -343,6 +344,10 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
   }
   .info {
     line-height: 1.2rem;
+
+    .cases-absolute {
+      margin-top: 2rem;
+    }
   }
   .share {
     margin-top: 280px;
@@ -399,6 +404,9 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
       .inzidenz-short {
         display: inline;
       }
+      .cases-absolute {
+        display: none;
+      }
       .source {
         display: none;
       }
@@ -437,6 +445,9 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
       .inzidenz-short {
         display: inline;
       }
+      .cases-absolute {
+        display: none;
+      }
       .source {
         display: none;
       }
@@ -472,6 +483,9 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
       .inzidenz-short {
         display: inline;
       }
+      .cases-absolute {
+        display: none;
+      }
       .source {
         display: none;
       }
@@ -501,6 +515,9 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${this.formatDate(tod
       }
       .inzidenz-short {
         display: none;
+      }
+      .cases-absolute {
+        display: block;
       }
     }
   }
