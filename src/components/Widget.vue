@@ -200,7 +200,8 @@ export default {
             sum + feature.attributes.AnzahlFall, 0)
           this.casesYesterday7 = historicalData.features.slice(1, 8).reduce((sum, feature) =>
             sum + feature.attributes.AnzahlFall, 0)
-          this.indicator = (this.casesToday7 === this.casesYesterday7) ? 0
+          this.indicator = (this.casesToday7 === this.casesYesterday7)
+            ? 0
             : ((this.casesToday7 > this.casesYesterday7) ? +1 : -1)
         })
     },
