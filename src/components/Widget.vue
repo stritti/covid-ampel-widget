@@ -140,17 +140,11 @@ export default {
       return 'widget-500'
     },
     indicatorComponentDirection () {
-      let dir = 'unknown'
-      if (this.indicator) {
-        dir = this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec'
-      }
+      const dir = (this.indicator === 0 ? 'eq' : this.indicator === 1 ? 'inc' : 'dec')
       return dir
     },
     indicatorEmoji () {
-      let indicatorEmoji = ''
-      if (this.indicator) {
-        indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
-      }
+      const indicatorEmoji = (this.indicator === 0 ? '➡️' : this.indicator === 1 ? '↗️' : '↘️')
       return indicatorEmoji
     },
     isShareable () {
@@ -199,6 +193,7 @@ export default {
           this.indicator = (this.casesToday7 === this.casesYesterday7)
             ? 0
             : ((this.casesToday7 > this.casesYesterday7) ? +1 : -1)
+          console.log('indicator: ' + this.indicator)
         })
     },
     getBezShort (IBZ) {
