@@ -75,6 +75,7 @@
             </small>
           </div>
         </div>
+        <federal-emergency-brake :ags="data.AGS" />
         <div
           v-if="isShareable"
           class="share"
@@ -95,11 +96,12 @@ import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
 import IndicatorUnknown from '@/components/svg/IndicatorUnknown.vue'
 import Share from '@/components/svg/Share.vue'
+import FederalEmergencyBrake from '@/components/FederalEmergencyBrake.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share
+    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share, FederalEmergencyBrake
   },
   mixins: [crono],
   props: {
@@ -193,7 +195,6 @@ export default {
           this.indicator = (this.casesToday7 === this.casesYesterday7)
             ? 0
             : ((this.casesToday7 > this.casesYesterday7) ? +1 : -1)
-          console.log('indicator: ' + this.indicator)
         })
     },
     getBezShort (IBZ) {
@@ -341,7 +342,7 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${today}):`,
     }
   }
   .share {
-    margin-top: 280px;
+    margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5rem;
