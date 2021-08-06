@@ -21,14 +21,6 @@
           💉 116117 - Impftermin Service
         </a>
       </div>
-      <div class="vaccination-cta">
-        <a
-          href="https://www.impfterminübersicht.de/"
-          target="_blank"
-        >
-          📅 Impftermin Übersicht
-        </a>
-      </div>
     </div>
   </div>
 </template>
