@@ -128,10 +128,6 @@ export default {
               url: 'https://www.impfterminservice.de/'
             },
             {
-              title: 'Impfterminübersicht',
-              url: 'https://www.impfterminübersicht.de/'
-            },
-            {
               title: 'Impfdashboard.de',
               url: 'https://impfdashboard.de/'
             }
