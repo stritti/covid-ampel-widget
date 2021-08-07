@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/config~21833f8f.31865856.css"
   },
   {
-    "revision": "8a578097884a3e7c7a59",
-    "url": "/covid-ampel-widget/css/help~f71cff67.8b0cdf2c.css"
+    "revision": "682deb14917be2e12efc",
+    "url": "/covid-ampel-widget/css/help~f71cff67.ab69c263.css"
   },
   {
     "revision": "94a48591f203d267dc6a",
@@ -48,7 +48,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/npm.vant~e7d38024.81fffece.css"
   },
   {
-    "revision": "0faee0772c0513877ed5",
+    "revision": "36e5193234c3626a696b",
     "url": "/covid-ampel-widget/css/vaccination~21833f8f.320cbf4f.css"
   },
   {
@@ -132,7 +132,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "70a0913a70bff2a19b9527414331712e",
+    "revision": "709303a239fa0e152126beec16fcd2f5",
     "url": "/covid-ampel-widget/index.html"
   },
   {
@@ -148,8 +148,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/config~21833f8f.533c1999.js"
   },
   {
-    "revision": "8a578097884a3e7c7a59",
-    "url": "/covid-ampel-widget/js/help~f71cff67.53ea3cb2.js"
+    "revision": "682deb14917be2e12efc",
+    "url": "/covid-ampel-widget/js/help~f71cff67.e48bd34b.js"
   },
   {
     "revision": "ced5bc723e64c5fe254a",
@@ -232,12 +232,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.webpack~bf81ad4b.8124306e.js"
   },
   {
-    "revision": "3d8d0f10232013c1527a",
-    "url": "/covid-ampel-widget/js/runtime.a56c152b.js"
+    "revision": "a6462437405c9d1ec827",
+    "url": "/covid-ampel-widget/js/runtime.1c8ff2be.js"
   },
   {
-    "revision": "0faee0772c0513877ed5",
-    "url": "/covid-ampel-widget/js/vaccination~21833f8f.64acc40d.js"
+    "revision": "36e5193234c3626a696b",
+    "url": "/covid-ampel-widget/js/vaccination~21833f8f.2f68023a.js"
   },
   {
     "revision": "263ae87dc0f50891fbc76e8c1e629f0a",
