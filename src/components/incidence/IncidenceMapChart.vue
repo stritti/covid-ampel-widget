@@ -10,7 +10,7 @@
         href="https://github.com/semohr/risikogebiete_deutschland"
         target="_blank"
       >
-        https://github.com/semohr/risikogebiete_deutschland
+        github.com/semohr/risikogebiete_deutschland
       </a>
     </small>
   </div>
@@ -24,6 +24,7 @@ export default {
 
 <style lang="sass" scoped>
 .chart
-  height: calc(100vh - 141px)
-  width: calc(100vw - 6px)
+  border-width: 0px
+  height: calc(80vh - 40px)
+  width: 100vw
 </style>
