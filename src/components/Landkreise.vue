@@ -49,7 +49,7 @@
 </template>
 <script>
 import { rkiService } from '@/services/rki.service.js'
-import IncidenceLabel from '@/components/IncidenceLabel.vue'
+import IncidenceLabel from '@/components/incidence/IncidenceLabel.vue'
 
 export default {
   name: 'Landkreise',
