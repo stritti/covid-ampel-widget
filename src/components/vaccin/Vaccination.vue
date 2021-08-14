@@ -1,22 +1,12 @@
 <template>
-  <vaccination-chart
+  <vue-highcharts
     v-if="isLoaded"
-    :chart-data="chartData"
+    type="chart"
+    :options="chartData"
+    :redraw-on-update="true"
+    :one-to-one-update="false"
+    :animate-on-update="true"
   />
-  <table id="vaccination-table">
-    <tr>
-      <td>1. Impfung:</td>
-      <td align="right">
-        {{ firstVaccinationQuote }}%
-      </td>
-    </tr>
-    <tr>
-      <td>Vollschutz:</td>
-      <td align="right">
-        {{ secondVaccinationQuote }}%
-      </td>
-    </tr>
-  </table>
   <div class="source">
     <em>
       <small>
@@ -28,11 +18,15 @@
 
 <script>
 import { coronaZahlenService } from '@/services/corona-zahlen.service'
-import VaccinationChart from './VaccinationChart.vue'
+import VueHighcharts from 'vue3-highcharts'
+import HighCharts from 'highcharts'
+import HighchartsMore from 'highcharts/highcharts-more'
+
+HighchartsMore(HighCharts)
 
 export default {
   name: 'Vaccination',
-  components: { VaccinationChart },
+  components: { VueHighcharts },
   data () {
     return {
       isLoaded: false,
@@ -43,33 +37,59 @@ export default {
   computed: {
     chartData () {
       return {
-        labels: ['min. 1. Impfung', 'Vollschutz', `angestrebte Herdenimmunität (${this.herdImmunity}%)`],
-        datasets: [
+        colors: ['#fc0008', 'rgb(255, 243, 128)', '#41B883'],
+        chart: {
+          type: 'column',
+          inverted: true,
+          polar: true
+        },
+        title: {
+          text: 'Impfstatus in Deutschland'
+        },
+        tooltip: {
+          outside: true
+        },
+        pane: {
+          size: '100%',
+          innerSize: '20%',
+          endAngle: 360 / 100 * this.herdImmunity
+        },
+        xAxis: {
+          lineWidth: 0,
+          categories: [
+            'Herdenimmunität',
+            '1. Imfpung',
+            'Vollschutz'
+          ]
+        },
+        yAxis: {
+          crosshair: {
+            enabled: true
+          },
+          lineWidth: 0,
+          tickInterval: 10,
+          endOnTick: true
+        },
+        plotOptions: {
+          column: {
+            stacking: 'normal',
+            borderWidth: 0,
+            pointPadding: 0,
+            groupPadding: 0.1
+          }
+        },
+        series: [
           {
-            label: 'Herden Immunität',
-            showLabel: true,
-            backgroundColor: ['rgb(255, 243, 128)', '#41B883', '#fc0008', 'transparent'],
-            data: [
-              0, 0,
-              this.herdImmunity,
-              100 - this.herdImmunity]
+            name: `Herdenimmunität: ~${this.herdImmunity}%`,
+            data: [parseFloat(this.herdImmunity), 0, 0]
           },
           {
-            label: 'Vollschutz',
-            backgroundColor: ['rgb(255, 243, 128)', '#41B883', '#fc0008', 'transparent'],
-            data: [
-              this.firstVaccinationQuote,
-              0, 0,
-              100 - this.firstVaccinationQuote]
+            name: `1. Impfung: ${this.firstVaccinationQuote}%`,
+            data: [0, parseFloat(this.firstVaccinationQuote), 0]
           },
           {
-            label: '1. Impfung',
-            backgroundColor: ['rgb(255, 243, 128)', '#41B883', '#fc0008', 'transparent'],
-            data: [
-              0,
-              this.secondVaccinationQuote,
-              0,
-              100 - this.secondVaccinationQuote]
+            name: `Vollschutz: ${this.secondVaccinationQuote}%`,
+            data: [0, 0, parseFloat(this.secondVaccinationQuote)]
           }
         ]
       }
@@ -78,21 +98,18 @@ export default {
       if (this.data.quote) {
         return this.rounded(this.data.quote * 100)
       } else {
-        return 0
+        return 0.0
       }
     },
     secondVaccinationQuote () {
       if (this.data.secondVaccination && this.data.secondVaccination.quote) {
         return this.rounded(this.data.secondVaccination.quote * 100)
       } else {
-        return 0
+        return 0.0
       }
     },
     herdImmunity () {
-      return 70
-    },
-    deltaHerdImmunity () {
-      return this.herdImmunity - this.firstVaccinationQuote - this.secondVaccinationQuote
+      return 70.0
     }
   },
   created () {
@@ -116,22 +133,18 @@ export default {
         })
     },
     rounded (value) {
-      return value.toFixed(2)
+      return value.toFixed(1)
     }
   }
 }
 </script>
 
-<style lang="sass" scoped>
-#vaccination-table
-  position: relative
-  top: -200px
-  font-size: 1rem
-  margin-left: auto
-  margin-right: auto
+<style lang="sass">
+.vue-highcharts
+  width: 100%
 
 .source
-  top: -25px
+  top: 0
   position: relative
   margin-left: auto
   margin-right: auto

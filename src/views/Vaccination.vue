@@ -9,7 +9,7 @@
     </van-sticky>
     <div class="container">
       <div class="chart-container">
-        <vaccination class="vaccinationProgress" />
+        <vaccination />
       </div>
 
       <hr>
@@ -53,16 +53,6 @@ export default {
 #vaccination-view
   min-height: 100%
   width: 100vw
-
-.chart-container
-  position: relative
-  left: auto
-  right: auto
-
-  .vaccinationProgress
-    background-color: #ebedf0
-    padding: 10px
-    border-radius: 5px
 
 .vaccination-cta
   position: relative
