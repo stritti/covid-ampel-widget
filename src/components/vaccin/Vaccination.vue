@@ -47,7 +47,7 @@ export default {
           text: 'Impfstatus in Deutschland'
         },
         tooltip: {
-          outside: true
+          enabled: false
         },
         pane: {
           size: '100%',
