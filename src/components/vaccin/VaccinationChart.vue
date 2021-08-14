@@ -140,9 +140,6 @@ export default {
 </script>
 
 <style lang="sass">
-.vue-highcharts
-  width: 100%
-
 .source
   top: 0
   position: relative

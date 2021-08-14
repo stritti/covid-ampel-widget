@@ -47,10 +47,6 @@ export default {
 }
 </script>
 <style lang="sass">
-#vaccination-view
-  min-height: 100%
-  width: 100vw
-
 .vaccination-cta
   position: relative
   margin-left: auto
