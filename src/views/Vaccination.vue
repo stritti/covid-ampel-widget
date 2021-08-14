@@ -23,10 +23,10 @@
       </div>
       <div class="vaccination-cta">
         <a
-          href="https://www.impfterminübersicht.de/"
+          href="https://impf-statistik.de/"
           target="_blank"
         >
-          📅 Impftermin Übersicht
+          📈 Impf-Statistik
         </a>
       </div>
     </div>
