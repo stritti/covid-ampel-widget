@@ -109,7 +109,7 @@ export default {
       }
     },
     herdImmunity () {
-      return 70.0
+      return 85.0
     }
   },
   created () {
