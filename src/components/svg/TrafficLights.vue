@@ -41,12 +41,6 @@
   </svg>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style lang="scss" scoped>
 .icon-tabler {
   stroke-width: 1.25;

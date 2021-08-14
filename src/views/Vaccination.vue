@@ -8,10 +8,7 @@
       />
     </van-sticky>
     <div class="container">
-      <div class="chart-container">
-        <vaccination class="vaccinationProgress" />
-      </div>
-
+      <vaccination-chart />
       <hr>
       <div class="vaccination-cta">
         <a
@@ -21,17 +18,25 @@
           💉 116117 - Impftermin Service
         </a>
       </div>
+      <div class="vaccination-cta">
+        <a
+          href="https://impf-statistik.de/"
+          target="_blank"
+        >
+          📈 Impf-Statistik
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import DocHead from '@/components/DocHead.vue'
-import Vaccination from '@/components/vaccin/Vaccination.vue'
+import VaccinationChart from '@/components/vaccin/VaccinationChart.vue'
 
 export default {
   name: 'PrivaceyView',
-  components: { DocHead, Vaccination },
+  components: { DocHead, VaccinationChart },
   data () {
     return {
       metaInfo: {
@@ -42,20 +47,6 @@ export default {
 }
 </script>
 <style lang="sass">
-#vaccination-view
-  min-height: 100%
-  width: 100vw
-
-.chart-container
-  position: relative
-  left: auto
-  right: auto
-
-  .vaccinationProgress
-    background-color: #ebedf0
-    padding: 10px
-    border-radius: 5px
-
 .vaccination-cta
   position: relative
   margin-left: auto

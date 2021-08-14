@@ -14,7 +14,7 @@
 
 <script>
 import DocHead from '@/components/DocHead.vue'
-import Widget from '@/components/Widget.vue'
+import Widget from '@/components/incidence/Widget.vue'
 import { rkiService } from '@/services/rki.service'
 
 export default {

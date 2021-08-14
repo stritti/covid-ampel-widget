@@ -7,6 +7,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/lkr/:id', component: Home, props: true },
   { path: '/vaccination', component: () => import(/* webpackChunkName: "vaccination" */ '../views/Vaccination.vue') },
+  { path: '/map', component: () => import(/* webpackChunkName: "map" */ '../views/IncidenceMap.vue') },
   { path: '/config', component: () => import(/* webpackChunkName: "config" */ '../views/Config.vue') },
   { path: '/help', component: () => import(/* webpackChunkName: "help" */ '../views/Help.vue') },
   { path: '/more', component: () => import(/* webpackChunkName: "about" */ '../views/More.vue') },
