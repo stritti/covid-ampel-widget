@@ -8,10 +8,7 @@
       />
     </van-sticky>
     <div class="container">
-      <div class="chart-container">
-        <vaccination />
-      </div>
-
+      <vaccination-chart />
       <hr>
       <div class="vaccination-cta">
         <a
@@ -35,11 +32,11 @@
 
 <script>
 import DocHead from '@/components/DocHead.vue'
-import Vaccination from '@/components/vaccin/Vaccination.vue'
+import VaccinationChart from '@/components/vaccin/VaccinationChart.vue'
 
 export default {
   name: 'PrivaceyView',
-  components: { DocHead, Vaccination },
+  components: { DocHead, VaccinationChart },
   data () {
     return {
       metaInfo: {

@@ -25,7 +25,7 @@ import HighchartsMore from 'highcharts/highcharts-more'
 HighchartsMore(HighCharts)
 
 export default {
-  name: 'Vaccination',
+  name: 'VaccinationChart',
   components: { VueHighcharts },
   data () {
     return {
