@@ -3,7 +3,7 @@
     <doc-head :meta-info="metaInfo" />
     <van-sticky>
       <van-nav-bar
-        title="Übersicht Inzidenz Deutschland"
+        title="Inzidenz-Karte"
         sticky
       />
     </van-sticky>
