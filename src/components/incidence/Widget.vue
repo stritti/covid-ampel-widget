@@ -75,7 +75,7 @@
             </small>
           </div>
         </div>
-        <federal-emergency-brake :ags="data.AGS" />
+        <intensive-registry :ags="data.AGS" />
         <div
           v-if="isShareable"
           class="share"
@@ -96,12 +96,12 @@ import IndicatorDec from '@/components/svg/IndicatorDec.vue'
 import IndicatorEq from '@/components/svg/IndicatorEq.vue'
 import IndicatorUnknown from '@/components/svg/IndicatorUnknown.vue'
 import Share from '@/components/svg/Share.vue'
-import FederalEmergencyBrake from '@/components/FederalEmergencyBrake.vue'
+import IntensiveRegistry from '@/components/IntensiveRegistry.vue'
 
 export default {
   name: 'Widget',
   components: {
-    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share, FederalEmergencyBrake
+    IndicatorInc, IndicatorDec, IndicatorEq, IndicatorUnknown, Share, IntensiveRegistry
   },
   mixins: [crono],
   props: {
