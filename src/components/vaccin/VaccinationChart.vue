@@ -37,14 +37,19 @@ export default {
   computed: {
     chartData () {
       return {
-        colors: ['#fc0008', 'rgb(255, 243, 128)', '#41B883'],
+        colors: ['#fc0008', 'rgb(255, 243, 128)', '#41B883', '#00ff55'],
         chart: {
           type: 'column',
           inverted: true,
           polar: true
         },
         title: {
-          text: 'Impfstatus in Deutschland'
+
+          visible: false,
+          text: 'Impfstatus in Deutschland',
+          style: {
+            color: 'transparent'
+          }
         },
         tooltip: {
           enabled: false
@@ -59,7 +64,8 @@ export default {
           categories: [
             'Herdenimmunität',
             '1. Imfpung',
-            'Vollschutz'
+            '2. Impfung',
+            'Booster'
           ]
         },
         yAxis: {
@@ -81,15 +87,19 @@ export default {
         series: [
           {
             name: `Herdenimmunität: ~${this.herdImmunity}%`,
-            data: [parseFloat(this.herdImmunity), 0, 0]
+            data: [parseFloat(this.herdImmunity), 0, 0, 0]
           },
           {
             name: `1. Impfung: ${this.firstVaccinationQuote}%`,
-            data: [0, parseFloat(this.firstVaccinationQuote), 0]
+            data: [0, parseFloat(this.firstVaccinationQuote), 0, 0]
           },
           {
-            name: `Vollschutz: ${this.secondVaccinationQuote}%`,
-            data: [0, 0, parseFloat(this.secondVaccinationQuote)]
+            name: `2. Impfung: ${this.secondVaccinationQuote}%`,
+            data: [0, 0, parseFloat(this.secondVaccinationQuote), 0]
+          },
+          {
+            name: `Booster: ${this.boosterVaccinationQuote}%`,
+            data: [0, 0, 0, parseFloat(this.boosterVaccinationQuote)]
           }
         ]
       }
@@ -102,8 +112,17 @@ export default {
       }
     },
     secondVaccinationQuote () {
-      if (this.data.secondVaccination && this.data.secondVaccination.quote) {
+      if (this.data.secondVaccination && this.data.secondVaccination.vaccinated) {
         return this.rounded(this.data.secondVaccination.quote * 100)
+      } else {
+        return 0.0
+      }
+    },
+    boosterVaccinationQuote () {
+      if (this.data.boosterVaccination && this.data.boosterVaccination.vaccinated) {
+        return this.rounded(
+          this.data.administeredVaccinations / 100 /
+          this.data.boosterVaccination.vaccinated)
       } else {
         return 0.0
       }
