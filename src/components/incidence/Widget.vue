@@ -50,7 +50,7 @@
           </div>
           <div class="cases-absolute">
             <small>
-              Absolute Fälle der letzten 7 Tage: {{ casesToday7 }} (Vortag: {{ casesYesterday7 }})
+              Absolute Fälle der letzten 7 Tage: {{ casesToday7 }} (Vorwoche: {{ casesLastWeek7 }})
             </small>
           </div>
           <div>
@@ -117,7 +117,7 @@ export default {
       error: false,
       data: null,
       casesToday7: null,
-      casesYesterday7: null,
+      casesLastWeek7: null,
       indicator: null
     }
   },
@@ -188,13 +188,22 @@ export default {
     getIndicator (today) {
       rkiService.getIncidenceHistory(this.data.RS)
         .then(historicalData => {
-          this.casesToday7 = historicalData.features.slice(0, 7).reduce((sum, feature) =>
-            sum + feature.attributes.AnzahlFall, 0)
-          this.casesYesterday7 = historicalData.features.slice(1, 8).reduce((sum, feature) =>
-            sum + feature.attributes.AnzahlFall, 0)
-          this.indicator = (this.casesToday7 === this.casesYesterday7)
+          console.log('historicalData', historicalData)
+          this.casesToday7 = historicalData.features.slice(0, 7).reduce((sum, feature) => {
+            console.log('casesToday7', feature.attributes.AnzahlFall)
+            console.log('date', new Date(feature.attributes.Meldedatum).toLocaleDateString())
+            return sum + feature.attributes.AnzahlFall
+          }, 0)
+          this.casesLastWeek7 = historicalData.features.slice(8, 15).reduce((sum, feature) => {
+            console.log('casesLastWeek7', feature.attributes.AnzahlFall)
+            console.log('date', new Date(feature.attributes.Meldedatum).toLocaleDateString())
+            return sum + feature.attributes.AnzahlFall
+          }
+          , 0)
+
+          this.indicator = (this.casesToday7 === this.casesLastWeek7)
             ? 0
-            : ((this.casesToday7 > this.casesYesterday7) ? +1 : -1)
+            : ((this.casesToday7 > this.casesLastWeek7) ? +1 : -1)
         })
     },
     getBezShort (IBZ) {
@@ -342,7 +351,7 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${today}):`,
     }
   }
   .share {
-    margin-top: 200px;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5rem;

@@ -18,7 +18,7 @@ class RkiService {
 
   async getIncidenceHistory (objectId) {
     const url =
-    `${SERVER}/Covid19_RKI_Sums/FeatureServer/0/query?where=IdLandkreis%3D${objectId}&objectIds=&time=&resultType=none&outFields=AnzahlFall,SummeFall,Meldedatum&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=Meldedatum+DESC&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=12&sqlFormat=none&f=json`
+    `${SERVER}/Covid19_RKI_Sums/FeatureServer/0/query?where=IdLandkreis%3D${objectId}&objectIds=&time=&resultType=none&outFields=AnzahlFall,SummeFall,Meldedatum&returnIdsOnly=false&returnUniqueIdsOnly=false&returnCountOnly=false&returnDistinctValues=false&cacheHint=false&orderByFields=Meldedatum+DESC&groupByFieldsForStatistics=&outStatistics=&having=&resultOffset=&resultRecordCount=15&sqlFormat=none&f=json`
 
     const result = await axios.get(url)
     if (result.error) {
