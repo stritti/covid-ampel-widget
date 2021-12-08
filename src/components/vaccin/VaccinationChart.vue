@@ -6,6 +6,7 @@
     :redraw-on-update="true"
     :one-to-one-update="false"
     :animate-on-update="true"
+    @destroy="onDestroy"
   />
   <div class="source">
     <em>
@@ -153,6 +154,9 @@ export default {
     },
     rounded (value) {
       return value.toFixed(1)
+    },
+    onDestroy () {
+      console.log('Chart destroyed')
     }
   }
 }

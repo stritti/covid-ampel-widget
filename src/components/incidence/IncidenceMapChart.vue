@@ -2,6 +2,7 @@
   <iframe
     class="chart"
     src="https://semohr.github.io/risikogebiete_deutschland/"
+    frameborder="0"
   />
   <div>
     <small>

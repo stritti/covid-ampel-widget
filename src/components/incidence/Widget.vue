@@ -36,7 +36,6 @@
           {{ rounded(data.cases7_per_100k) }}
           <component
             :is="'indicator-' + indicatorComponentDirection"
-            class="indicator"
           />
         </p>
         <div class="info">
@@ -188,15 +187,10 @@ export default {
     getIndicator (today) {
       rkiService.getIncidenceHistory(this.data.RS)
         .then(historicalData => {
-          console.log('historicalData', historicalData)
           this.casesToday7 = historicalData.features.slice(0, 7).reduce((sum, feature) => {
-            console.log('casesToday7', feature.attributes.AnzahlFall)
-            console.log('date', new Date(feature.attributes.Meldedatum).toLocaleDateString())
             return sum + feature.attributes.AnzahlFall
           }, 0)
           this.casesLastWeek7 = historicalData.features.slice(8, 15).reduce((sum, feature) => {
-            console.log('casesLastWeek7', feature.attributes.AnzahlFall)
-            console.log('date', new Date(feature.attributes.Meldedatum).toLocaleDateString())
             return sum + feature.attributes.AnzahlFall
           }
           , 0)
@@ -358,7 +352,7 @@ von 100.000 Einwohnern positiv auf 🦠 COVID-19 getestet (${today}):`,
     font-size: 1rem;
     text-align: center;
     cursor: pointer;
-    background-color: rgba(45, 45, 45, 0.2);
+    background-color: rgba(45, 45, 45, 0.4);
     border-radius: 5px;
     .icon-tabler-share {
       width: 1rem;

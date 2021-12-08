@@ -13,10 +13,22 @@
   </div>
 </template>
 <script>
-import IncidenceMapChart from '../components/incidence/IncidenceMapChart.vue'
+import DocHead from '@/components/DocHead.vue'
+import IncidenceMapChart from '@/components/incidence/IncidenceMapChart.vue'
 
 export default {
-  components: { IncidenceMapChart }
-
+  components: { DocHead, IncidenceMapChart },
+  data () {
+    return {
+      metaInfo: {
+        title: 'Übersichtskarte mit den Inzidenzen',
+        meta: {
+          vmid: 'description',
+          name: 'description',
+          description: 'Covid-19 Ampel: Behalte den Inzidenzwert deines Landkreises im Blick.'
+        }
+      }
+    }
+  }
 }
 </script>
