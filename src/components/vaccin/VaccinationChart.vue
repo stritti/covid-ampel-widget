@@ -1,6 +1,8 @@
 <template>
   <vue-highcharts
     v-if="isLoaded"
+    ref="chart"
+    class="chart"
     type="chart"
     :options="chartData"
     :redraw-on-update="true"
@@ -37,9 +39,10 @@ export default {
   computed: {
     chartData () {
       return {
-        colors: ['#fc0008', 'rgb(255, 243, 128)', '#41B883', '#00ff55'],
+        colors: ['#E24C00', '#E5BE01', '#41B883', '#00ff55'],
         chart: {
           type: 'column',
+          backgroundColor: '#323233',
           inverted: true,
           polar: true
         },
@@ -49,6 +52,13 @@ export default {
           text: 'Impfstatus in Deutschland',
           style: {
             color: 'transparent'
+          }
+        },
+        legend: {
+          itemStyle: {
+            color: '#FFFFFF',
+            fontWeight: 'normal',
+            fontSize: 'smaller'
           }
         },
         tooltip: {
@@ -62,11 +72,15 @@ export default {
         xAxis: {
           lineWidth: 0,
           categories: [
-            'Herdenimmunität',
             '1. Imfpung',
             '2. Impfung',
-            'Booster'
-          ]
+            '3. Impfung'
+          ],
+          labels: {
+            style: {
+              color: '#FFFFFF'
+            }
+          }
         },
         yAxis: {
           crosshair: {
@@ -74,7 +88,12 @@ export default {
           },
           lineWidth: 0,
           tickInterval: 10,
-          endOnTick: true
+          endOnTick: true,
+          labels: {
+            style: {
+              color: '#FFFFFF'
+            }
+          }
         },
         plotOptions: {
           column: {
@@ -86,20 +105,16 @@ export default {
         },
         series: [
           {
-            name: `Herdenimmunität: ~${this.herdImmunity}%`,
-            data: [parseFloat(this.herdImmunity), 0, 0, 0]
-          },
-          {
             name: `1. Impfung: ${this.firstVaccinationQuote}%`,
-            data: [0, parseFloat(this.firstVaccinationQuote), 0, 0]
+            data: [parseFloat(this.firstVaccinationQuote), 0, 0]
           },
           {
             name: `2. Impfung: ${this.secondVaccinationQuote}%`,
-            data: [0, 0, parseFloat(this.secondVaccinationQuote), 0]
+            data: [0, parseFloat(this.secondVaccinationQuote), 0]
           },
           {
             name: `Booster: ${this.boosterVaccinationQuote}%`,
-            data: [0, 0, 0, parseFloat(this.boosterVaccinationQuote)]
+            data: [0, 0, parseFloat(this.boosterVaccinationQuote)]
           }
         ]
       }
@@ -133,6 +148,10 @@ export default {
   },
   created () {
     this.getData()
+    window.addEventListener('resize', this.resize)
+  },
+  unmounted () {
+    window.removeEventListener('resize', this.resize)
   },
   methods: {
     getData () {
@@ -153,12 +172,17 @@ export default {
     },
     rounded (value) {
       return value.toFixed(1)
+    },
+    resize (e) {
+      this.$refs.chart.chart.reflow()
     }
   }
 }
 </script>
 
 <style lang="sass">
+.chart
+  height: calc(100vh - 240px)
 .source
   top: 0
   position: relative
