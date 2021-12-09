@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/npm.vant~e7d38024.6827c022.css"
   },
   {
-    "revision": "b4fcba263b196172ea9f",
-    "url": "/covid-ampel-widget/css/vaccination~21833f8f.b39d09a4.css"
+    "revision": "38bdbe16777a7bb7281e",
+    "url": "/covid-ampel-widget/css/vaccination~21833f8f.a98e9be5.css"
   },
   {
     "revision": "a39924373c67176712f25013acca2318",
@@ -140,7 +140,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "2ef0d09bb570442967c9553cc445db71",
+    "revision": "53f9541381cc00184d75af4657fb3d8a",
     "url": "/covid-ampel-widget/index.html"
   },
   {
@@ -252,12 +252,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.webpack~0faa04c6.62082304.js"
   },
   {
-    "revision": "000d2d5b7bb7c03eda8b",
-    "url": "/covid-ampel-widget/js/runtime.a091a4ff.js"
+    "revision": "0c6d48775852c85e9584",
+    "url": "/covid-ampel-widget/js/runtime.a34f4de8.js"
   },
   {
-    "revision": "b4fcba263b196172ea9f",
-    "url": "/covid-ampel-widget/js/vaccination~21833f8f.608b4859.js"
+    "revision": "38bdbe16777a7bb7281e",
+    "url": "/covid-ampel-widget/js/vaccination~21833f8f.0c8046b0.js"
   },
   {
     "revision": "263ae87dc0f50891fbc76e8c1e629f0a",
