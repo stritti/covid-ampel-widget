@@ -127,17 +127,15 @@ export default {
       }
     },
     secondVaccinationQuote () {
-      if (this.data.secondVaccination && this.data.secondVaccination.vaccinated) {
+      if (this.data.secondVaccination && this.data.secondVaccination.quote) {
         return this.rounded(this.data.secondVaccination.quote * 100)
       } else {
         return 0.0
       }
     },
     boosterVaccinationQuote () {
-      if (this.data.boosterVaccination && this.data.boosterVaccination.vaccinated) {
-        return this.rounded(
-          this.data.administeredVaccinations / 100 /
-          this.data.boosterVaccination.vaccinated)
+      if (this.data.boosterVaccination && this.data.boosterVaccination.quote) {
+        return this.rounded(this.data.boosterVaccination.quote * 100)
       } else {
         return 0.0
       }
