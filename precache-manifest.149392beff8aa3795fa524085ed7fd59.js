@@ -60,6 +60,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/css/vaccination~21833f8f.a98e9be5.css"
   },
   {
+    "revision": "fac8edb85225c36d45ed384f5bd8ca37",
+    "url": "/covid-ampel-widget/google0a43feae4594cb30.html"
+  },
+  {
     "revision": "a39924373c67176712f25013acca2318",
     "url": "/covid-ampel-widget/help/IMG_6911.jpg"
   },
