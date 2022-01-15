@@ -144,7 +144,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/index.css"
   },
   {
-    "revision": "0bd273dc5fd9483883f95ae24516ce3f",
+    "revision": "cb27bceb3a63cdaeab11806ccad38f26",
     "url": "/covid-ampel-widget/index.html"
   },
   {
@@ -232,8 +232,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/covid-ampel-widget/js/npm.vue-gtag-next~2584efac.8cdaa3be.js"
   },
   {
-    "revision": "2515eb4524616405420d",
-    "url": "/covid-ampel-widget/js/npm.vue-loader-v16~d7bad218.44044c15.js"
+    "revision": "bf5cabf0def8913902e4",
+    "url": "/covid-ampel-widget/js/npm.vue-loader-v16~d7bad218.9904207a.js"
   },
   {
     "revision": "214a66f0106b50a7d627",
