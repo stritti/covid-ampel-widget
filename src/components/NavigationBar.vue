@@ -15,14 +15,6 @@
         </slot>
         <slot>Übersicht</slot>
       </van-action-bar-icon>
-      <van-action-bar-icon
-        to="/vaccination"
-      >
-        <slot name="icon">
-          <vaccine />
-        </slot>
-        <slot>Impfstatus</slot>
-      </van-action-bar-icon>
       <van-action-bar-icon to="/help">
         <slot name="icon">
           <help />
@@ -49,13 +41,12 @@
 import TrafficLights from '@/components/svg/TrafficLights'
 import Settings from '@/components/svg/Settings'
 import Help from '@/components/svg/Help'
-import Vaccine from '@/components/svg/Vaccine'
 import More from '@/components/svg/More'
 import MapIcon from '@/components/svg/MapIcon'
 
 export default {
   name: 'NavigationBar',
-  components: { TrafficLights, Settings, Help, Vaccine, More, MapIcon },
+  components: { TrafficLights, Settings, Help, More, MapIcon },
   data () {
     return {
       home: '/'

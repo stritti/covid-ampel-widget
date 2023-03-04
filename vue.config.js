@@ -19,7 +19,7 @@ module.exports = {
   },
 
   configureWebpack: {
-    plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
+    plugins: [new webpack.IgnorePlugin({ resourceRegExp: /\.\/locale$/, contextRegExp: /moment$/ })],
     optimization: {
       runtimeChunk: 'single',
       splitChunks: {
